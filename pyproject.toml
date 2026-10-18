@@ -3,20 +3,21 @@ requires = ["setuptools>=69"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ao-glow-dao"
-version = "2026.10.6"
-description = "Portable DAO/Kaleid lens alignment simulation and feedback runtime"
+name = "kaleid-oneshot"
+version = "2026.10.17"
+description = "Kaleid: coordinated one-shot alignment for DAO optical systems"
+readme = "README.md"
 requires-python = ">=3.11"
-dependencies = ["numpy>=2.3,<3", "scipy>=1.15,<2", "rayoptics==0.9.8", "opticalglass>=1.0,<2", "matplotlib>=3.9,<4", "torch>=2.5,<3"]
+dependencies = ["numpy>=1.26,<3", "torch>=2.5,<3"]
+
+[project.urls]
+Repository = "https://github.com/TomaKakuei/DAO-Kaleid"
 
 [project.scripts]
-dao-kaleid = "dao_kaleid.cli:main"
+kaleid = "kaleid.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["dao_kaleid"]
+where = ["src"]
 
 [tool.setuptools.package-data]
-dao_kaleid = ["*.json", "vendor/**/*", "evidence/**/*", "fixtures/*"]
-
-[tool.setuptools.exclude-package-data]
-dao_kaleid = ["**/__pycache__/*", "**/*.pyc", "**/*.pyo", "**/.diagnostics/**/*"]
+kaleid = ["systems.json", "weights/*.pt"]

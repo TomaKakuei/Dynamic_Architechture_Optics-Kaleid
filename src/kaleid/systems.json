@@ -1,0 +1,269 @@
+{
+  "nikon": {
+    "label": "Nikon",
+    "input_shape": [
+      3,
+      49
+    ],
+    "input_units": "bias-referenced wavefront residual, waves",
+    "dofs": 35,
+    "epoch": 49,
+    "command_bound": 1.5,
+    "body_names": [
+      "L1",
+      "L2",
+      "L3",
+      "L4",
+      "L5",
+      "L6",
+      "L7p"
+    ],
+    "surface_ranges": [
+      [
+        3,
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        11,
+        13
+      ],
+      [
+        14,
+        16
+      ],
+      [
+        17,
+        20
+      ],
+      [
+        21,
+        24
+      ]
+    ],
+    "scales": [
+      0.02,
+      0.02,
+      0.02,
+      0.04,
+      0.04
+    ],
+    "mean_center_wrms_waves": 0.03975093103770751,
+    "coordinates": [
+      "dx",
+      "dy",
+      "dz",
+      "tx",
+      "ty"
+    ],
+    "physical_units": [
+      "mm",
+      "mm",
+      "mm",
+      "deg",
+      "deg"
+    ],
+    "recorded_cases": 11,
+    "recorded_passes": 11
+  },
+  "trepan": {
+    "label": "Trepan",
+    "input_shape": [
+      9,
+      128,
+      128
+    ],
+    "input_units": "noisy camera ADU",
+    "dofs": 40,
+    "epoch": 49,
+    "command_bound": 1.0,
+    "body_names": [
+      "body_1",
+      "body_2",
+      "body_3",
+      "body_4",
+      "body_5",
+      "body_6",
+      "body_7",
+      "body_8"
+    ],
+    "surface_ranges": [
+      [
+        68,
+        69
+      ],
+      [
+        70,
+        71
+      ],
+      [
+        72,
+        73
+      ],
+      [
+        74,
+        76
+      ],
+      [
+        77,
+        78
+      ],
+      [
+        79,
+        80
+      ],
+      [
+        81,
+        83
+      ],
+      [
+        84,
+        85
+      ]
+    ],
+    "fields": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        14.800000000000002,
+        0.0
+      ],
+      [
+        10.582326651964875,
+        10.582326651964875
+      ],
+      [
+        9.269472822572775e-16,
+        14.800000000000002
+      ],
+      [
+        -10.582326651964873,
+        10.582326651964875
+      ],
+      [
+        -14.800000000000002,
+        1.853894564514555e-15
+      ],
+      [
+        -10.582326651964877,
+        -10.582326651964873
+      ],
+      [
+        -2.780841846771832e-15,
+        -14.800000000000002
+      ],
+      [
+        10.582326651964872,
+        -10.582326651964877
+      ]
+    ],
+    "scales": [
+      0.1,
+      0.1,
+      0.1,
+      0.041666666666666664,
+      0.041666666666666664
+    ],
+    "mean_center_wrms_waves": 0.02599256631667406,
+    "coordinates": [
+      "dx",
+      "dy",
+      "dz",
+      "tx",
+      "ty"
+    ],
+    "physical_units": [
+      "mm",
+      "mm",
+      "mm",
+      "deg",
+      "deg"
+    ],
+    "recorded_cases": 11,
+    "recorded_passes": 11
+  },
+  "olympus": {
+    "label": "Olympus Mod.",
+    "input_shape": [
+      9,
+      128,
+      128
+    ],
+    "input_units": "whole-system noisy camera ADU",
+    "dofs": 35,
+    "epoch": 45,
+    "command_bound": 1.0,
+    "body_names": [
+      "body_1",
+      "body_2",
+      "body_3",
+      "body_4",
+      "body_5",
+      "body_6",
+      "body_7"
+    ],
+    "surface_ranges": [
+      [
+        3,
+        5
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        11,
+        14
+      ],
+      [
+        15,
+        18
+      ],
+      [
+        19,
+        20
+      ],
+      [
+        21,
+        22
+      ]
+    ],
+    "scales": [
+      0.1,
+      0.1,
+      0.1,
+      0.08333333333333333,
+      0.08333333333333333
+    ],
+    "mean_center_wrms_waves": 0.023632832722985834,
+    "coordinates": [
+      "dx",
+      "dy",
+      "dz",
+      "tx",
+      "ty"
+    ],
+    "physical_units": [
+      "mm",
+      "mm",
+      "mm",
+      "deg",
+      "deg"
+    ],
+    "recorded_cases": 11,
+    "recorded_passes": 11
+  }
+}

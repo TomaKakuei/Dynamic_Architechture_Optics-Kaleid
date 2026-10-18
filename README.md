@@ -1,120 +1,77 @@
-# AO-Glow
+# Kaleid · One shot
 
-**DAO + Kaleid server runtime (2026-10-06):** the complete headless package for Mod3, Trepan, KLA and Nikon is documented in [DAO_SERVER_README.md](DAO_SERVER_README.md). It includes 19 checkpoint files, RayOptics prescriptions, noisy camera/optical simulation, streaming generation and feedback paths. Start with `python -m dao_kaleid doctor`.
+**One observation packet. One model call. One joint correction.**
 
-Closed-loop active-alignment simulator for adaptive optics, built around a pure-Python `rayoptics` core so the application can be packaged into a portable Windows executable with PyInstaller.
+Kaleid predicts coordinated alignment commands for DAO optical systems. Multiscale
+spatial features and native sensor features feed attention across physical lens
+groups, producing the complete correction in one forward pass.
 
-## Current AO Benchmark Index
+![Kaleid one-shot architecture](docs/architecture.png)
 
-The active benchmark line now lives in the `ADAPTIVE_OPTICS_V10_*` branches. Use the links below to jump to the two most useful call paths:
+## Included models
 
-- Best 8-mode reference: [ADAPTIVE_OPTICS_V10_1/artifacts/v10_profile_sensor_trial/results.csv](</c:/Users/arthu/OneDrive/文档/_UCSB/ECE/Adaptive%20Optics/ADAPTIVE_OPTICS_V10_1/artifacts/v10_profile_sensor_trial/results.csv>)
-  - The best profile in that 8-mode comparison is `minimal`.
-  - Re-run the 8-mode mainline with:
+| System | Observation packet | Joint output | Recorded cases below 0.07 λ | Mean center WRMS |
+| --- | --- | --- | --- | --- |
+| Nikon | 3 × 49 wavefront samples | 35 coordinates / 7 bodies | 11 / 11 | 0.03975 λ |
+| Trepan | 9 × 128 × 128 camera ADU | 40 coordinates / 8 bodies | 11 / 11 | 0.02599 λ |
+| Olympus Mod. | 9 × 128 × 128 whole-system camera ADU | 35 coordinates / 7 bodies | 11 / 11 | 0.02363 λ |
 
-```powershell
-conda run -n ao311 python .\ADAPTIVE_OPTICS_V10_1\ao_v10_1_launcher.py
+These are the existing eleven-case simulation results for each optical system,
+using center absolute PTTD WRMS and the original mechanical/center-pupil validity
+criteria. One packet contains multiple sampled fields; it does not imply one
+camera exposure. See the [model card](docs/MODEL_CARD.md) for the measurement scope.
+
+## Install and run
+
+Python 3.11 or newer. NumPy and PyTorch are the runtime dependencies.
+The three selected checkpoints and their calibration are included in the package.
+
+```shell
+git clone https://github.com/TomaKakuei/DAO-Kaleid.git
+cd DAO-Kaleid
+python -m pip install .
+kaleid list
+kaleid demo olympus --device cpu --output outputs/demo.npz
 ```
 
-- Latest 12-mode study: [ADAPTIVE_OPTICS_V10_2/artifacts/v10_2_quantized12_mode5cases/results.csv](</c:/Users/arthu/OneDrive/文档/_UCSB/ECE/Adaptive%20Optics/ADAPTIVE_OPTICS_V10_2/artifacts/v10_2_quantized12_mode5cases/results.csv>)
-  - Supporting summaries:
-    - [mode_summary.csv](</c:/Users/arthu/OneDrive/文档/_UCSB/ECE/Adaptive%20Optics/ADAPTIVE_OPTICS_V10_2/artifacts/v10_2_quantized12_mode5cases/mode_summary.csv>)
-    - [mode_components_long.csv](</c:/Users/arthu/OneDrive/文档/_UCSB/ECE/Adaptive%20Optics/ADAPTIVE_OPTICS_V10_2/artifacts/v10_2_quantized12_mode5cases/mode_components_long.csv>)
-  - Re-run the 5-case 12-mode runner with:
+The demo uses synthetic sensor-shaped input to exercise the interface. For your
+own acquired packet, save a `.npy` array or a `.npz` with an `observations` array:
 
-```powershell
-conda run -n ao311 python .\ADAPTIVE_OPTICS_V10_2\tmp_v10_2_quantized12_mode5cases.py
+```shell
+kaleid predict olympus observation.npy --device cpu --output outputs/correction.npz
 ```
 
-If you only need the latest 12-mode runner file, start here:
+```python
+import numpy as np
+from kaleid import Kaleid
 
-- [tmp_v10_2_quantized12_mode5cases.py](</c:/Users/arthu/OneDrive/文档/_UCSB/ECE/Adaptive%20Optics/ADAPTIVE_OPTICS_V10_2/tmp_v10_2_quantized12_mode5cases.py>)
-
-Older branch snapshots are archived under [Historical/](</c:/Users/arthu/OneDrive/文档/_UCSB/ECE/Adaptive%20Optics/Historical>).
-
-## What Is Included
-
-- `optical_model_rayoptics.py`
-  - RayOptics-based optical physics engine
-  - 2P AO prescription injection path
-  - Rigid lens-element / cemented-group perturbation support
-  - Cemented-group handling for `74-76` and `81-83`
-  - Mechanical envelopes with `+/- 2.0 mm` lateral travel and axial non-contact clamps
-  - Wavefront OPD extraction and FFT PSF generation
-- `feedback_controller.py`
-  - `CNN Only` inference path
-  - `CNN + SciPy` sensorless refinement
-  - SHWFS / weighted-Bessel pseudo-inverse controller
-- `train_cnn_jitter.py`
-  - Simulated disturbance-to-compensator dataset generation
-  - 1000-sample lightweight CNN training pipeline
-  - Weighted-Bessel residual-to-compensator target generation for the rigid `74-76` group
-- `main_gui.py`
-  - PyQt6 GUI tying together model, controller, and view
-  - Worker-threaded optimization
-  - Matplotlib PSF / wavefront displays
-- `main_gui.spec`
-  - PyInstaller build spec for the portable Windows GUI bundle
-- `w_bessel_core.py`
-  - Weighted-Bessel basis generation and projection utilities
-
-## Current Model Setup
-
-- Optical design: injected `2P_AO` sequential prescription
-- Fast correction target: rigid compensator group `74-76` commanded through the `surface 74` anchor
-- Rigid element groups:
-  - `68-69`, `70-71`, `72-73`, `74-76`, `77-78`, `79-80`, `81-83`, `84-85`
-- Disturbance model for CNN training:
-  - jitter is applied only to non-compensator movable lens groups
-  - the CNN target is the absolute `[dx, dy, dz]` rigid-group command for `74-76`
-  - weighted-Bessel coefficients are converted to residuals against the nominal baseline before solving the compensator target
-- Hard mechanical constraints:
-  - lateral translation: `+/- 2.0 mm`
-  - axial translation: clamped by front/back non-contact clearance and then by `+/- 2.0 mm`
-  - tilt: `+/- 2.0 deg`
-
-## Trained Model
-
-The repository keeps the lightweight checkpoint used by the GUI:
-
-- `artifacts/2p_ao_psf_to_wbessel_comp7476_lightweight_cnn_1000samples.pt`
-
-Large generated datasets and packaged binaries are intentionally excluded from git.
-
-## Running From Source
-
-Use the existing `ao311` Conda environment.
-
-```powershell
-python main_gui.py
+aligner = Kaleid("olympus", device="auto")
+observation = np.load("observation.npy", allow_pickle=False)  # (9, 128, 128)
+command = aligner.predict(observation)                       # (35,)
+physical_command = aligner.to_physical(command)               # mm and degrees
 ```
 
-The GUI defaults to loading:
+Each model consumes the measured packet and returns an additive correction.
+There is no online optical optimization, recapture loop, or ground-truth input.
+CPU and CUDA use the same selected weights. Instrument controllers apply their
+own coordinate mapping and mechanical constraints before actuation.
 
-- `artifacts/2p_ao_psf_to_wbessel_comp7476_lightweight_cnn_1000samples.pt`
+## Architecture and integration
 
-## Training
+- **Nikon:** three spatial encoders, 147 native sensor nodes, and joint module attention.
+- **Trepan:** a spatial encoder and raw camera patches condition eight body tokens.
+- **Olympus Mod.:** both branch encoders receive the same whole-system packet;
+  joint attention coordinates all seven bodies.
 
-Example training command:
+The repository contains the current inference code, three checkpoints, API docs,
+an architecture figure, a small example, and portable tests. Each optical system
+has its own trained model and calibration. New prescriptions require matched
+sensor calibration and training.
 
-```powershell
-python train_cnn_jitter.py --num-samples 1000 --epochs 12 --batch-size 32 --pupil-samples 32 --fft-samples 128 --num-modes 5 --jacobian-step-mm 0.02 --jitter-limit-mm 0.01 --axial-jitter-scale 0.02 --activation-probability 0.15 --max-active-surfaces 1 --pinv-rcond 1e-2 --output-dir artifacts --device cpu
+[Input/output contract](docs/API.md) · [Model card](docs/MODEL_CARD.md) ·
+[Architecture PDF](docs/architecture.pdf) · [Editable SVG](docs/architecture.svg)
+
+```shell
+python examples/one_shot.py trepan
+python -m unittest discover -s tests -v
 ```
-
-## Packaging
-
-Build the portable GUI bundle with:
-
-```powershell
-python -m PyInstaller --clean --noconfirm main_gui.spec
-```
-
-The build output appears in:
-
-- `dist/AdaptiveOpticsGUI/`
-
-## Notes
-
-- The current packaged app is built in `onedir` mode for stability with `torch`, `PyQt6`, `matplotlib`, and `rayoptics`.
-- The GUI includes a `CNN Only` mode for fast correction and retains the slower refinement modes for testing and comparison.
-- The CNN checkpoint is trained on `128x128` PSF inputs; the runtime controller automatically resizes the live PSF input from the display resolution when needed.

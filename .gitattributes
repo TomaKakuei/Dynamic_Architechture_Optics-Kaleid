@@ -1,3 +1,8 @@
-# Preserve curated source bytes so provenance hashes survive Windows/Linux checkout.
-dao_kaleid/** -text
-scripts/*.sh text eol=lf
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.pt binary
+*.png binary
+*.pdf binary

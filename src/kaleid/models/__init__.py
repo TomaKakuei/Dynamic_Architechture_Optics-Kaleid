@@ -1,0 +1,1 @@
+"""Current one-shot architectures."""
