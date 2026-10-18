@@ -6,5 +6,7 @@ dist/
 .venv/
 .pytest_cache/
 outputs/
+data/
+runs/
 artifacts/
 *.log

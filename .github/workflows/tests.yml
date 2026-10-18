@@ -1,4 +1,4 @@
-name: One-shot package checks
+name: One-shot training and inference
 on: [push, pull_request]
 jobs:
   cpu:
@@ -15,6 +15,10 @@ jobs:
       - run: python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
       - run: python -m pip install .
       - run: python -m unittest discover -s tests -v
+      - run: kaleid-train nikon --smoke --device cpu --output outputs/train-nikon
+      - run: kaleid-train trepan --smoke --device cpu --output outputs/train-trepan
+      - run: kaleid-train olympus --smoke --device cpu --output outputs/train-olympus
+      - run: kaleid-train olympus --smoke --device cpu --output outputs/train-olympus --resume
       - run: python -m kaleid demo nikon --device cpu --output outputs/nikon.npz
       - run: python -m kaleid demo trepan --device cpu --output outputs/trepan.npz
       - run: python -m kaleid demo olympus --device cpu --output outputs/olympus.npz

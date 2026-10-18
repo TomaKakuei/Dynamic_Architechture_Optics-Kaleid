@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kaleid-oneshot"
-version = "2026.10.17"
-description = "Kaleid: coordinated one-shot alignment for DAO optical systems"
+version = "2026.10.17.1"
+description = "Train Kaleid for coordinated one-shot alignment in Dynamic Architecture Optics"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = ["numpy>=1.26,<3", "torch>=2.5,<3"]
@@ -15,9 +15,10 @@ Repository = "https://github.com/TomaKakuei/DAO-Kaleid"
 
 [project.scripts]
 kaleid = "kaleid.cli:main"
+kaleid-train = "kaleid.training.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
-kaleid = ["systems.json", "weights/*.pt"]
+kaleid = ["systems.json", "weights/*.pt", "training/assets/*.json", "training/assets/*.npz"]

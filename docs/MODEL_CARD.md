@@ -1,7 +1,8 @@
 # Kaleid one-shot models
 
 Kaleid is the alignment algorithm; DAO is the optical system architecture.
-This release provides three system-specific, trained one-shot models.
+The main release is the one-shot training implementation. Three system-specific
+trained models are included as inference and fine-tuning examples.
 
 ## Released checkpoints
 
@@ -12,10 +13,12 @@ This release provides three system-specific, trained one-shot models.
 | Olympus Mod. | 45 | Two branch encoders of the same whole-system packet, seven-body attention | Negative pose estimate, clipped to ±1 |
 
 The checkpoints include all inference parameters, reference values, and
-normalization buffers. Optimizer states, training datasets, local paths, logs,
-and development metadata are not distributed. The network classes remain
-ordinary PyTorch modules; this package is a deployment release, not a full
-training-data or optical-simulator release.
+normalization buffers. Historical optimizer states, full training datasets,
+local paths, logs and development metadata are not distributed. The package
+includes trainable PyTorch networks, differentiable optical objectives, mechanical
+models and a resumable training loop. See the [training guide](TRAINING.md) for
+the data requirements and the distinction between new training and reproducing
+the history of these example checkpoints.
 
 ## Recorded simulation results
 
@@ -33,7 +36,8 @@ Each route used one observation packet, one joint prediction, and one correction
 Nikon and Trepan use the recorded October 14 results; Olympus uses the joint
 epoch-45 model recorded on October 15, 2026 (Pacific time). These fixed cases are
 separate from training validation. No new optical benchmark or training run was
-performed to prepare this deployment package.
+performed to prepare this package. Bounded forward/backward and resume tests
+validate the extracted training implementation; they are not new accuracy results.
 
 The primary metric is the center field; it does not establish full-field
 diffraction-limited performance. These are simulated systems with matched
