@@ -1,0 +1,142 @@
+KLA input three-epoch ablation; fixed paired200. Generated results, assistant interpretation pending.
+baseline: 111/200 = 55.50%; mean WRMS 0.10108458 waves; invalid 0.
+bounded_control: 120/200 = 60.00%; mean WRMS 0.10199829 waves; invalid 0.
+candidate: 116/200 = 58.00%; mean WRMS 0.10146600 waves; invalid 0.
+
+{
+  "status": "complete",
+  "assistant_interpretation": "pending",
+  "protocol_file": "protocol.json",
+  "baseline": {
+    "count": 200,
+    "passes": 111,
+    "rate": 0.555,
+    "invalid": 0,
+    "q_mean": 0.4361803645541811,
+    "wrms_mean": 0.10108458467001785,
+    "worst_field_wrms_mean": 0.12885463488883686
+  },
+  "bounded_control": {
+    "count": 200,
+    "passes": 120,
+    "rate": 0.6,
+    "invalid": 0,
+    "q_mean": 0.43437481628653574,
+    "wrms_mean": 0.10199828969475946,
+    "worst_field_wrms_mean": 0.13096288914952
+  },
+  "candidate": {
+    "count": 200,
+    "passes": 116,
+    "rate": 0.58,
+    "invalid": 0,
+    "q_mean": 0.4355900360380144,
+    "wrms_mean": 0.10146600126367217,
+    "worst_field_wrms_mean": 0.12980541278370758
+  },
+  "arm": "nine_raw_adapter",
+  "direct_vs_control": {
+    "gained": 4,
+    "lost": 8,
+    "net": -4,
+    "gained_ids": [
+      9471,
+      19159,
+      19573,
+      29381
+    ],
+    "lost_ids": [
+      9476,
+      9869,
+      9361,
+      19539,
+      19210,
+      29021,
+      29923,
+      29325
+    ],
+    "valid_pairs": 200,
+    "wrms_improved": 113,
+    "q_improved": 105,
+    "wrms_improved_but_q_worse": 14,
+    "mean_wrms_change": -0.0005322884310872813
+  },
+  "direct_vs_initial": {
+    "gained": 12,
+    "lost": 7,
+    "net": 5,
+    "gained_ids": [
+      9238,
+      9120,
+      19350,
+      19949,
+      19573,
+      29255,
+      29746,
+      29771,
+      29156,
+      29270,
+      29381,
+      29716
+    ],
+    "lost_ids": [
+      9439,
+      9869,
+      9361,
+      19058,
+      19210,
+      29010,
+      29175
+    ],
+    "valid_pairs": 200,
+    "wrms_improved": 98,
+    "q_improved": 91,
+    "wrms_improved_but_q_worse": 17,
+    "mean_wrms_change": 0.0003814165936543133
+  },
+  "control_vs_initial": {
+    "gained": 15,
+    "lost": 6,
+    "net": 9,
+    "gained_ids": [
+      9476,
+      9238,
+      9120,
+      19350,
+      19539,
+      19949,
+      29255,
+      29746,
+      29771,
+      29021,
+      29156,
+      29923,
+      29325,
+      29270,
+      29716
+    ],
+    "lost_ids": [
+      9439,
+      9471,
+      19058,
+      19159,
+      29010,
+      29175
+    ],
+    "valid_pairs": 200,
+    "wrms_improved": 96,
+    "q_improved": 93,
+    "wrms_improved_but_q_worse": 14,
+    "mean_wrms_change": 0.0009137050247415948
+  },
+  "training_active_seconds": 398.99188779998804,
+  "evaluation_active_seconds": 8.377869199997804,
+  "inference": "one packet, one prediction, no loop",
+  "automatic_deployment": false,
+  "automatic_full3000": false,
+  "limitations": [
+    "Reused selection validation; not a fresh independent test",
+    "One seed and three epochs; masked inputs warm-start the full-field model",
+    "Same-packet feature changes cannot establish physical measurement sufficiency"
+  ]
+}

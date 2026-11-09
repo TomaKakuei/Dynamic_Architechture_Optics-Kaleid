@@ -1,0 +1,131 @@
+{
+  "status": "completed_and_interpreted",
+  "updated": "2026-11-01T07:08:54.185720+00:00",
+  "evidence": "Read saved metrics and training histories only; no inference, optical replay or new training",
+  "control": {
+    "count": 200,
+    "passes": 120,
+    "rate": 0.6,
+    "invalid": 0,
+    "q_mean": 0.43437481628653574,
+    "wrms_mean": 0.10199828969475946,
+    "worst_field_wrms_mean": 0.13096288914952
+  },
+  "initial": {
+    "count": 200,
+    "passes": 111,
+    "rate": 0.555,
+    "invalid": 0,
+    "q_mean": 0.4361803645541811,
+    "wrms_mean": 0.10108458467001785,
+    "worst_field_wrms_mean": 0.12885463488883686
+  },
+  "arms": {
+    "center_only": {
+      "count": 200,
+      "passes": 0,
+      "rate": 0.0,
+      "invalid": 0,
+      "q_mean": 0.039001474457306506,
+      "wrms_mean": 1.4835090697286626,
+      "worst_field_wrms_mean": 1.5215580175070176,
+      "gains_vs_control": 0,
+      "losses_vs_control": 120
+    },
+    "three_fields": {
+      "count": 200,
+      "passes": 1,
+      "rate": 0.005,
+      "invalid": 0,
+      "q_mean": 0.11179721662348616,
+      "wrms_mean": 0.4341355491603989,
+      "worst_field_wrms_mean": 0.47054832895550575,
+      "gains_vs_control": 0,
+      "losses_vs_control": 119
+    },
+    "nine_raw_adapter": {
+      "count": 200,
+      "passes": 116,
+      "rate": 0.58,
+      "invalid": 0,
+      "q_mean": 0.4355900360380144,
+      "wrms_mean": 0.10146600126367217,
+      "worst_field_wrms_mean": 0.12980541278370758,
+      "gains_vs_control": 4,
+      "losses_vs_control": 8
+    },
+    "nine_diff_adapter": {
+      "count": 200,
+      "passes": 105,
+      "rate": 0.525,
+      "invalid": 0,
+      "q_mean": 0.42959949294437016,
+      "wrms_mean": 0.10391769898250514,
+      "worst_field_wrms_mean": 0.13260249387914433,
+      "gains_vs_control": 5,
+      "losses_vs_control": 20
+    }
+  },
+  "paired": {
+    "center_only_to_three_fields": {
+      "gained": 1,
+      "lost": 0,
+      "net": 1
+    },
+    "three_fields_to_nine_control": {
+      "gained": 119,
+      "lost": 0,
+      "net": 119
+    },
+    "nine_control_to_nine_raw_adapter": {
+      "gained": 4,
+      "lost": 8,
+      "net": -4
+    },
+    "nine_raw_adapter_to_nine_diff_adapter": {
+      "gained": 4,
+      "lost": 15,
+      "net": -11
+    }
+  },
+  "effective_training_seconds": 1593.7391121999826,
+  "effective_evaluation_seconds": 28.278765499992005,
+  "epoch_training_wrms": {
+    "center_only": [
+      6.787102924168687,
+      3.247620183883988,
+      2.033816660716514
+    ],
+    "three_fields": [
+      4.115473097683491,
+      1.124293381855746,
+      0.5261913476516631
+    ],
+    "nine_raw_adapter": [
+      0.11143806115776834,
+      0.10693077353418073,
+      0.106247346359776
+    ],
+    "nine_diff_adapter": [
+      0.1109504140274105,
+      0.10762370707053541,
+      0.10675172381821682
+    ]
+  },
+  "conclusion": [
+    "No new input variant beats the original nine-field bounded-loss epoch3 control120/200.",
+    "Raw adapter116/200 adds4 and loses8 against control. Difference adapter105/200 adds5 and loses20.",
+    "At matched added capacity and identical initial prediction, signed-difference features lose11net cases versus raw features (4gains15losses).",
+    "The1/3field masks yield0/1passes but are not clean information-theoretic evidence. They warm-start nine-field weights with frozen BN and large input distribution changes, followed by only three epochs.",
+    "Masked training WRMS is still declining strongly across epochs: center6.787->3.248->2.034,three4.115->1.124->0.526waves. Adaptation and old-loss saturation remain confounded with information removal.",
+    "All200 endpoints are valid for every route; losses here are optical quality failures, not invalid-case exclusions.",
+    "No independent observation was added. This experiment measures channel-removal adaptation and same-packet representation, and does not settle whether the original measurement contains enough physical information.",
+    "One seed,3000training subset and reused200selection cases; do not claim an independent test or full3000 ranking.",
+    "Keep the incumbent. No candidate adoption, no automatic follow-up."
+  ],
+  "remaining_seconds": 0,
+  "queue_and_final_worker_exited": true,
+  "new_acquisitions": 0,
+  "loss_changed": false,
+  "automatic_followup": false
+}

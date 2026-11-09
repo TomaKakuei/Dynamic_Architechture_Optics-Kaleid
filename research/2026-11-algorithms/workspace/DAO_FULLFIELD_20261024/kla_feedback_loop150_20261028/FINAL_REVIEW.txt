@@ -1,0 +1,31 @@
+KLA feedback150 completed and interpreted,2026-10-28.
+
+Same150 cases,unchanged frozen checkpoint and original Q2000 scoring:
+one-shot,1observed packet:82/150=54.6667%,meanQ0.430158,WRMS0.111876waves.
+one extra feedback packet/action:99/150=66.0000%,meanQ0.472081,WRMS0.092715.
+two extra feedback packets/actions:113/150=75.3333%,meanQ0.494663,WRMS0.081177.
+Final gain31/loss0 relative to original one-shot;invalid0,capture failures0.
+Second feedback gains15/loses1 versus first feedback. No case is silently removed.
+
+On the exact same150,computational same-packet loop scored86/150 afterone and
+85/150 aftertwo. It improves sensor-image fit while worsening physical quality
+on some cases. Measured-feedback150 gives a materially larger benefit,with a
+different observation budget. This does not show that all one-shot information
+is intrinsically insufficient or isolate a unique cause of the inverse mismatch.
+
+All three observed packets are simulated,not hardware data. Original first
+noisy packet/command is reused;two fresh independent noisy packets are acquired
+after physical-model corrections. Controller receives only images;hidden pose
+belongs only to the plant and offline scorer. Fixed max0.05 normalized extra
+command,one action per packet,no oracle gains/rejections,new training or
+score-dependent routing. User's requested loop is evaluated honestly as
+multi-acquisition feedback,not re-labelled as one-shot.
+
+Aggregate compute94.57seconds across150,including original50;new100 worker
+65.35seconds. Real capture/actuator latency is not measured. Prior one-shot
+full3000 result remains1684/3000=56.1333%;75.3333% here is only150-case evidence.
+
+After review,unchanged method has been started on original3000 in
+../kla_feedback_full3000_20261028. Reuse150case records;compute remaining2850.
+No extra per-case feedback budget or weights are added. Estimated30-35minutes
+active compute. Read that run's state/logs;do not restart completed pilots.

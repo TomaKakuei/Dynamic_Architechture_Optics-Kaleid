@@ -1,0 +1,83 @@
+{
+  "completed": 50,
+  "total": 50,
+  "complete": true,
+  "metrics": {
+    "one_shot": {
+      "passes": 27,
+      "rate": 0.54,
+      "invalid": 0,
+      "q_mean": 0.43591131490632096,
+      "wrms_mean": 0.10355796299395945
+    },
+    "feedback1": {
+      "passes": 34,
+      "rate": 0.68,
+      "invalid": 0,
+      "q_mean": 0.48269897565921727,
+      "wrms_mean": 0.08512488267717158
+    },
+    "feedback2": {
+      "passes": 38,
+      "rate": 0.76,
+      "invalid": 0,
+      "q_mean": 0.5065534522787223,
+      "wrms_mean": 0.07567763683860582
+    }
+  },
+  "paired": {
+    "one_shot_to_feedback1": {
+      "gained": [
+        9419,
+        9126,
+        19693,
+        29723,
+        29746,
+        29665,
+        29181
+      ],
+      "lost": []
+    },
+    "one_shot_to_feedback2": {
+      "gained": [
+        9419,
+        9521,
+        19185,
+        19555,
+        19433,
+        19693,
+        19653,
+        29723,
+        29746,
+        29665,
+        29181
+      ],
+      "lost": []
+    },
+    "feedback1_to_feedback2": {
+      "gained": [
+        9521,
+        19185,
+        19555,
+        19433,
+        19653
+      ],
+      "lost": [
+        9126
+      ]
+    }
+  },
+  "mode": "Simulated measured-feedback,up to3camera packets; not one-shot",
+  "observed_packets_by_stage": {
+    "one_shot": 1,
+    "feedback1": 2,
+    "feedback2": 3
+  },
+  "controller_truth_input": false,
+  "training_updates": 0,
+  "automatic_full3000": false,
+  "seconds": 32.19796640006825,
+  "new_captures": 100,
+  "capture_failures": [],
+  "scope": "Same fixed50 as original computational-loop pilot; reused validation selection,not independent test"
+}

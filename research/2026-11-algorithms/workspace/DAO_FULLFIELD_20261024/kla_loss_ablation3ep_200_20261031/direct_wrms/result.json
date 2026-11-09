@@ -1,0 +1,141 @@
+{
+  "status": "complete",
+  "assistant_interpretation": "pending",
+  "protocol_file": "protocol.json",
+  "baseline": {
+    "count": 200,
+    "passes": 111,
+    "rate": 0.555,
+    "invalid": 0,
+    "q_mean": 0.4361803645541811,
+    "wrms_mean": 0.10108458467001785,
+    "worst_field_wrms_mean": 0.12885463488883686
+  },
+  "bounded_control": {
+    "count": 200,
+    "passes": 120,
+    "rate": 0.6,
+    "invalid": 0,
+    "q_mean": 0.43437481628653574,
+    "wrms_mean": 0.10199828969475946,
+    "worst_field_wrms_mean": 0.13096288914952
+  },
+  "candidate": {
+    "count": 200,
+    "passes": 117,
+    "rate": 0.585,
+    "invalid": 0,
+    "q_mean": 0.4402343511981642,
+    "wrms_mean": 0.0982679487117972,
+    "worst_field_wrms_mean": 0.12622109214096497
+  },
+  "arm": "direct_wrms",
+  "direct_vs_control": {
+    "gained": 7,
+    "lost": 10,
+    "net": -3,
+    "gained_ids": [
+      9439,
+      9053,
+      9087,
+      19159,
+      19573,
+      29010,
+      29175
+    ],
+    "lost_ids": [
+      9220,
+      9297,
+      9219,
+      9238,
+      19539,
+      19949,
+      29021,
+      29156,
+      29291,
+      29716
+    ],
+    "valid_pairs": 200,
+    "wrms_improved": 114,
+    "q_improved": 117,
+    "wrms_improved_but_q_worse": 13,
+    "mean_wrms_change": -0.00373034098296226
+  },
+  "direct_vs_initial": {
+    "gained": 12,
+    "lost": 6,
+    "net": 6,
+    "gained_ids": [
+      9476,
+      9053,
+      9087,
+      9120,
+      19350,
+      19573,
+      29255,
+      29746,
+      29771,
+      29923,
+      29325,
+      29270
+    ],
+    "lost_ids": [
+      9471,
+      9220,
+      9297,
+      9219,
+      19058,
+      29291
+    ],
+    "valid_pairs": 200,
+    "wrms_improved": 103,
+    "q_improved": 101,
+    "wrms_improved_but_q_worse": 18,
+    "mean_wrms_change": -0.0028166359582206656
+  },
+  "control_vs_initial": {
+    "gained": 15,
+    "lost": 6,
+    "net": 9,
+    "gained_ids": [
+      9476,
+      9238,
+      9120,
+      19350,
+      19539,
+      19949,
+      29255,
+      29746,
+      29771,
+      29021,
+      29156,
+      29923,
+      29325,
+      29270,
+      29716
+    ],
+    "lost_ids": [
+      9439,
+      9471,
+      19058,
+      19159,
+      29010,
+      29175
+    ],
+    "valid_pairs": 200,
+    "wrms_improved": 96,
+    "q_improved": 93,
+    "wrms_improved_but_q_worse": 14,
+    "mean_wrms_change": 0.0009137050247415948
+  },
+  "training_active_seconds": 403.3338721000473,
+  "evaluation_active_seconds": 13.916870199995174,
+  "inference": "one packet, one prediction, no loop",
+  "automatic_deployment": false,
+  "automatic_full3000": false,
+  "limitations": [
+    "Reused selection validation; not a fresh independent test",
+    "One seed and three epochs; loss scale and auxiliary balance change with optical loss",
+    "A single loss ablation cannot alone establish the unique cause of the KLA bottleneck"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "reviewed_utc": "2026-10-26T23:18:12.385750+00:00",
+  "action": "Read and interpret saved outputs; no numerical replay",
+  "status": "completed_no_background",
+  "epochs": 4,
+  "updates": 2240,
+  "active_training_seconds": 1617.5126338999996,
+  "evaluation_scope": "Original500; pure neural one-shot, no model refinement, one existing observation packet",
+  "baseline": {
+    "count": 500,
+    "center_pass": 447,
+    "fullfield_pass": 283,
+    "invalid": 7,
+    "valid_center_mean": 0.03451925451029793,
+    "valid_edge_diff_mean": 0.09613061868926759
+  },
+  "candidate": {
+    "count": 500,
+    "center_pass": 442,
+    "fullfield_pass": 317,
+    "invalid": 9,
+    "valid_center_mean": 0.04069906867037022,
+    "valid_edge_diff_mean": 0.08407248473621515
+  },
+  "fullfield_gain_pp": 6.8,
+  "gained": 35,
+  "lost": 1,
+  "interpretation": "Full-field recovery improved; center recovery and invalid count slightly worsened; candidate preserved without replacing original",
+  "repair_pilot": {
+    "cases": 4,
+    "invalid_after": 0,
+    "full_pass_before": 1,
+    "full_pass_after": 2,
+    "scope": "Known failure/control cases with old neural prior; not full500 combined pipeline"
+  },
+  "combined_network_plus_repaired_inverse_500_evaluated": false,
+  "automatic_deployment": false,
+  "automatic_followup": false,
+  "independent_review": false
+}

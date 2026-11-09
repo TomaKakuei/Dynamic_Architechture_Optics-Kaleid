@@ -1,0 +1,74 @@
+{
+  "seeds": {
+    "trepan": [
+      7100066,
+      7100105,
+      7100138,
+      7100167,
+      7100197,
+      7100201,
+      7100209,
+      7100267,
+      7100268,
+      7100269,
+      7100276
+    ],
+    "nikon": [
+      4,
+      7,
+      13,
+      14,
+      21,
+      25,
+      27,
+      31,
+      32,
+      41,
+      42
+    ],
+    "kla": [
+      121,
+      128,
+      135,
+      142,
+      156,
+      200,
+      221,
+      256,
+      270,
+      389,
+      480
+    ]
+  },
+  "count_per_system": 11,
+  "checkpoints": {
+    "trepan": "DAO_FULLFIELD_20261024/trepan_large/candidate.pt",
+    "nikon": "DAO_FULLFIELD_20261024/nikon_prior_supervision_4ep_20261025/last.pt",
+    "kla": "DAO_FULLFIELD_20261024/kla_objective_alignment_20261028/training_compare/old_wfe_stable/candidate.pt"
+  },
+  "checkpoint_sha256": {
+    "trepan": "f890dd7841db37271f74cd9dfcc11a97c7054585521f3f20b2d24c2f004011f0",
+    "nikon": "36008d0858bab017658fa1091f96133bb6c9b582b7e344fddab1c1b4406b2697",
+    "kla": "eef81e514668c723809cdf328c27249a512c8bef8aab325fc514be75d213b5b7"
+  },
+  "paper_registry": "Adaptive Optics/ADAPTIVE_OPTICS_V15P/OL/DAO_Universal_v32_Restored/data/published_results.json",
+  "paper_registry_sha256": "ee3973c01536ef1b87107303891f4fbf717b7d2bd8e86512f77b678c139ab94f",
+  "paper_manuscript": "DAO_FULL_MANUSCRIPT_20261029/DAO_manuscript_full.tex",
+  "training_updates": 0,
+  "observed_packets_per_case": 1,
+  "physical_corrections_per_case": 1,
+  "algorithms": {
+    "trepan": "Frozen selected larger network epoch37, direct command",
+    "nikon": "Frozen prior-supervision E4, original4 native plus4 full540 model-only steps",
+    "kla": "Frozen old_wfe_stable E4, direct neural command, no feedback"
+  },
+  "criteria": {
+    "trepan": "All nine absolute PTTD WRMS <0.07 waves, finite, mechanical path and >=98% support",
+    "nikon": "Center absolute and +/-0.1mm edge differential PTTD WRMS all <0.07 waves, finite valid traces",
+    "kla": "Registered nine-field Q2000=mean(MTF)-0.3std(MTF)>=0.45 with valid trace/path; also report min(MTF)>=0.45 separately"
+  },
+  "optics": "Current frozen controller native optical models/calibration; exact archived physical perturbations. Not a replay of historical old optical implementation.",
+  "seed_policy": "Fixed before inference: cameras 1933300000+case (KLA), 202610300000+case (Trepan); Nikon original RandomState(case) for native+center, registered SeedSequence for added outer channels.",
+  "invalid_policy": "Keep all eleven cases; capture errors count as failures; no resampling or tuning",
+  "paper_and_source_unchanged": true
+}

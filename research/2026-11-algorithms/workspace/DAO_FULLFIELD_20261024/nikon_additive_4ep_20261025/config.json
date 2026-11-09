@@ -1,0 +1,65 @@
+{
+  "system": "nikon",
+  "trial": "additive_observations_only",
+  "epochs": 4,
+  "batch": 128,
+  "seed": 2026102501,
+  "parameters": 14422124,
+  "extra_branch_parameters": 175651,
+  "neural_dtype": "float32",
+  "source_checkpoint": "DAO_FULLFIELD_20261024/nikon_large_debug_20261025/trajectory_4ep/candidate.pt",
+  "source_epoch": 3,
+  "training_count": 28000,
+  "original_training_count": 24000,
+  "all4000_added_in_training": true,
+  "validation_population": 6000,
+  "evaluation_count": 100,
+  "evaluation_epochs": [
+    0,
+    4
+  ],
+  "measurement_acquisitions": 1,
+  "measured_feedback": false,
+  "model_refinements": 4,
+  "native_input_shape": [
+    3,
+    49
+  ],
+  "native_fields_mm": [
+    0.0,
+    -0.05,
+    0.05
+  ],
+  "native_input_kind": "DIFF",
+  "extra_inputs": {
+    "center_abs197": true,
+    "edge_diff49_fields_mm": [
+      -0.1,
+      0.1,
+      -0.15,
+      0.15
+    ],
+    "count": 393
+  },
+  "total_measured_scalars": 540,
+  "original_preprocessing_preserved": true,
+  "original_architecture_and_heads_preserved": true,
+  "new_branch_initial_output": 0.0,
+  "all_neural_parameters_trainable": true,
+  "bn_running_statistics": "Frozen as in the original repaired run",
+  "inverse_residual": "Unchanged original147 DIFF; original ridge1e-4, cap0.25 and gains",
+  "training_backward": "Existing corrected four-step trajectory VJP, unchanged",
+  "loss": "Inherited original TrialSystem exact_local_response loss: centerABS +/-0.1 DIFF on197 nodes",
+  "initial_learning_rates": [
+    1e-05,
+    0.0001
+  ],
+  "cosine_horizon": 40,
+  "weight_decay": 0.0001,
+  "gradient_clip": 5.0,
+  "no_independent_review": true,
+  "no_full_validation": true,
+  "no_per_epoch_validation": true,
+  "followup_training": false,
+  "gpu": "NVIDIA GeForce RTX 3080"
+}

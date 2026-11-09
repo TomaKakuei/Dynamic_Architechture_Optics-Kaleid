@@ -1,0 +1,124 @@
+{
+  "completed": 150,
+  "total": 150,
+  "complete": true,
+  "metrics": {
+    "one_shot": {
+      "passes": 82,
+      "rate": 0.5466666666666666,
+      "invalid": 0,
+      "q_mean": 0.43015836602036644,
+      "wrms_mean": 0.1118756545301918
+    },
+    "feedback1": {
+      "passes": 99,
+      "rate": 0.66,
+      "invalid": 0,
+      "q_mean": 0.47208128920668685,
+      "wrms_mean": 0.09271490677455758
+    },
+    "feedback2": {
+      "passes": 113,
+      "rate": 0.7533333333333333,
+      "invalid": 0,
+      "q_mean": 0.49466265012881894,
+      "wrms_mean": 0.08117698446851317
+    }
+  },
+  "paired": {
+    "one_shot_to_feedback1": {
+      "gained": [
+        9419,
+        9126,
+        19693,
+        29723,
+        29746,
+        29665,
+        29181,
+        9401,
+        9139,
+        9238,
+        9538,
+        9403,
+        9957,
+        19362,
+        29567,
+        29771,
+        29975
+      ],
+      "lost": []
+    },
+    "one_shot_to_feedback2": {
+      "gained": [
+        9419,
+        9521,
+        19185,
+        19555,
+        19433,
+        19693,
+        19653,
+        29723,
+        29746,
+        29665,
+        29181,
+        9401,
+        9139,
+        9238,
+        9538,
+        9403,
+        9957,
+        9773,
+        19785,
+        19362,
+        19776,
+        19570,
+        19021,
+        29407,
+        29923,
+        29030,
+        29072,
+        29567,
+        29771,
+        29908,
+        29975
+      ],
+      "lost": []
+    },
+    "feedback1_to_feedback2": {
+      "gained": [
+        9521,
+        19185,
+        19555,
+        19433,
+        19653,
+        9773,
+        19785,
+        19776,
+        19570,
+        19021,
+        29407,
+        29923,
+        29030,
+        29072,
+        29908
+      ],
+      "lost": [
+        9126
+      ]
+    }
+  },
+  "mode": "Simulated measured-feedback,up to3camera packets; not one-shot",
+  "observed_packets_by_stage": {
+    "one_shot": 1,
+    "feedback1": 2,
+    "feedback2": 3
+  },
+  "controller_truth_input": false,
+  "training_updates": 0,
+  "automatic_full3000": false,
+  "seconds": 94.57371660001809,
+  "new_captures": 300,
+  "capture_failures": [],
+  "scope": "Same fixed150 as computational-loop extension;50feedback results reused,100new;reused selection,not independent test",
+  "cost_scope": "Aggregate per-case costs include reused50; fresh-worker elapsed excludes their computation"
+}

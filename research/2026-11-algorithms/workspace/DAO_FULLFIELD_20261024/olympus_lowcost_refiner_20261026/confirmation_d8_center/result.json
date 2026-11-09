@@ -1,0 +1,29 @@
+{
+  "cases": 32,
+  "scope": "New four-epoch network plus same-packet model refinement; offline labels only score decided commands",
+  "baseline": {
+    "fullfield_pass": 20,
+    "center_pass": 30,
+    "invalid": 0,
+    "center_mean_all_finite": 0.02270731205810902,
+    "edge_mean_all_finite": 0.07710508659384112
+  },
+  "candidate": {
+    "fullfield_pass": 23,
+    "center_pass": 30,
+    "invalid": 0,
+    "center_mean_all_finite": 0.02261991505684676,
+    "edge_mean_all_finite": 0.05856155105512256
+  },
+  "gained": 3,
+  "lost": 0,
+  "new_invalid": 0,
+  "fixed_invalid": 0,
+  "active_seconds": 285.37223139999514,
+  "mean_seconds_per_case": 8.917882231249848,
+  "actual_camera_calls": 215,
+  "note": "Elapsed includes scoring; cache reuse is explicitly counted. Per-candidate cold cost requires logical model call counts.",
+  "training_updates": 0,
+  "acquired_packets": 0,
+  "automatic_deployment": false
+}

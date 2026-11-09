@@ -1,0 +1,53 @@
+{
+  "center_only": {
+    "parameters": 981584,
+    "extra_parameters": 0,
+    "observed_fields": [
+      4
+    ],
+    "masked_input_leakage_max_error": 0.0
+  },
+  "three_fields": {
+    "parameters": 981584,
+    "extra_parameters": 0,
+    "observed_fields": [
+      0,
+      4,
+      8
+    ],
+    "masked_input_leakage_max_error": 0.0
+  },
+  "nine_raw_adapter": {
+    "parameters": 1298296,
+    "extra_parameters": 316712,
+    "observed_fields": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "initial_command_max_error": 0.0
+  },
+  "nine_diff_adapter": {
+    "parameters": 1298296,
+    "extra_parameters": 316712,
+    "observed_fields": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "initial_command_max_error": 0.0,
+    "feature_reconstruction_max_error": 2.2351741790771484e-08
+  }
+}

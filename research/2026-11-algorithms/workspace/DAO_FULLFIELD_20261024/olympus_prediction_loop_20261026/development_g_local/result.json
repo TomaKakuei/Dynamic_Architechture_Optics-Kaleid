@@ -1,0 +1,38 @@
+{
+  "cases": 12,
+  "network": {
+    "fullfield_pass": 6,
+    "center_pass": 8,
+    "invalid": 2,
+    "center_mean": 0.057606274074642604,
+    "edge_mean": 0.12589339031023053
+  },
+  "previous": {
+    "fullfield_pass": 7,
+    "center_pass": 8,
+    "invalid": 2,
+    "center_mean": 0.05697213647218801,
+    "edge_mean": 0.09797523297176007
+  },
+  "candidate": {
+    "fullfield_pass": 7,
+    "center_pass": 8,
+    "invalid": 2,
+    "center_mean": 0.05710729047271292,
+    "edge_mean": 0.0989593847959815
+  },
+  "gained_over_previous": 0,
+  "lost_previous": 0,
+  "center_gained": 0,
+  "center_lost": 0,
+  "new_invalid": 0,
+  "additional_seconds": 63.57895970000391,
+  "additional_model_calls": 47,
+  "additional_network_calls": 0,
+  "timing_scope": "Additional G search only after cached/saved F; not complete cold pipeline timing",
+  "observations_per_case": 1,
+  "truth_used_in_inference": false,
+  "training_updates": 0,
+  "automatic_deployment": false,
+  "previous_route": "F relinearized loop"
+}

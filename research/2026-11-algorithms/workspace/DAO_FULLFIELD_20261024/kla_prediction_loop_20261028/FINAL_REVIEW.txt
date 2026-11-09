@@ -1,0 +1,25 @@
+50-case prediction-loop pilot completed and interpreted,2026-10-28.
+Same fixed50:one-shot27/50(54%),loop1 29/50(58%),loop2 31/50(62%).
+Two-loop gain6/loss2 versus one-shot. No invalid corrected cases or model errors.
+MeanQ0.435911->0.453124;mean PT WRMS0.103558->0.094327waves.
+Second loop adds2threshold passes but meanQ is almost unchanged versus loop1.
+
+This is frozen neural computational looping over ONE observed packet. No new
+measurement, target metric or true pose is used for the proposed command or
+step selection. Actual image fit decides acceptance; physical metrics only
+score the finished candidates. This is not a measured-feedback closed loop.
+Original camera/exposure/diffuser/pupil definition and Q validity are retained.
+
+Recorded inference/scoring88.10seconds for50,about1.76seconds/case; initial
+startup makes total90.82seconds.304fresh model-camera renders,46cache hits,
+100extra neural forwards. Saved initial one-shot inference is excluded from
+these incremental costs. Tiny NumPy read-only warning is nonfatal: CUDA
+conversion copies the input and the observed tensor is never mutated.
+
+Both regressions29085/29344 remain in the result; no case-specific rescue or
+truth-based routing is added.50cases is an exploratory selection subset, not
+the3000-case recovery rate or independent validation.
+
+Continue unchanged method on fixed150:../kla_prediction_loop150_20261028.
+Original50records reused;100additional cases sampled before outcomes,balanced
+total50per cohort. No extra training,loop budget or search method change.

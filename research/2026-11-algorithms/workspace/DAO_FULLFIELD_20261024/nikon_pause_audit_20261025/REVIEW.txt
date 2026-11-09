@@ -1,0 +1,46 @@
+Nikon one-acquisition versus measured feedback: zero-training review, 2026-10-25
+
+This review does not resume the paused research/training pipeline or change the official +/-0.1 mm criterion.
+
+Verified from all 6000 saved epoch-3 commands of the 14,246,473-parameter trajectory model:
+- Original center ABS metric is identical in both comparisons: 5994/6000 below 0.07 waves.
+- Native measured fields are 0,-0.05,+0.05 mm, 49 DIFF samples per field.
+- At native +/-0.05 mm edges, center plus both DIFF edges pass 5252/6000 = 87.5333%.
+- At registered +/-0.1 mm edges, the same commands pass 1765/6000 = 29.4167%.
+- Mean edge DIFF is 0.038952/0.039151 waves at native fields and 0.103579/0.103658 at reported fields.
+- 3488 cases pass the narrower criterion and fail the registered wider criterion; one case does the reverse.
+- New native-field scores are diagnostic only. The official recovery rate remains 29.4167%.
+- Native pupil sampling has 49 nodes; the archived reporting optics uses 197 audit nodes. Both span [-1,1] on each pupil coordinate, but only 17 sensor nodes also occur in the audit grid. This is a change in sampling pattern and its PTTD projector, not merely a nested increase in sample count.
+
+Follow-up isolation completed on all the same 6000 commands (same center ABS retained):
+- +/-0.05 mm, 49 sensor nodes: 5252/6000 = 87.5333%.
+- +/-0.1 mm, the SAME 49 sensor nodes: 3436/6000 = 57.2667%.
+- +/-0.1 mm, 197 audit nodes: 1765/6000 = 29.4167%.
+- At +/-0.1 mm with 49 nodes, mean DIFF edges are 0.086198/0.086632 waves; with the audit grid they are 0.103579/0.103658.
+- Field position and pupil sampling/PTTD projection both materially change the observed success rate. This does not prove a sole implementation bug, nonidentifiability of the observation, or that larger networks cannot help. It does refute describing the current behavior as recovery at the center only: most cases pass at the measured off-axis positions on the sensor sampling.
+- Evidence: same_nodes_field_comparison.json and separate_field_and_sampling.py. Additional CPU scoring: 6000 states, 7.73 seconds; zero training or network inference.
+
+Protocol differences verified from code and matched saved arrays:
+- One-acquisition inversion uses the three native DIFF fields only (147 scalars).
+- MeasuredFeedback also reads a 197-node absolute center wavefront and refreshes observations after candidate actions; this is extra sensor content as well as extra acquisitions.
+- On the same historical 6000 poses and the same original selected 7.1M-parameter initializer, one acquisition passes 1726/6000 and measured feedback passes 3644/6000 (28.7667% versus 60.7333%). The measured-loop result has mean 4.1197 acquisitions, maximum 11.
+- These historical matched rates are not a newly measured loop result for the current 14.25M epoch-3 checkpoint.
+- The manuscript's original Nikon 11/11 claim uses the center criterion; it cannot establish 11/11 success at both outer DIFF fields.
+
+Implementation concerns remain:
+- The current large-model worker constructs TrialSystem('exact_local_response'), whose loss overrides System.loss. It still uses ell=log1p((field/0.07)^2), term=ell/(1+ell), with 0.5 mean+0.5 worst and pose weight 0.02; it does not use the separate pseudohuber branch.
+- The derivative of this scalar bounded penalty decreases for large errors: at 0.07 waves it is 4.98325; at 0.2 it is 0.86178; at 1.0 it is 0.04977. This is a confirmed objective property, not proof that it is the sole cause of poor recovery. Pixel/pose Jacobians and worst-field weighting also matter.
+- The previous terminal implicit backward differed substantially from the actual four-step trajectory derivative (cosine 0.16625 on 16 training examples). The current chosen-branch derivative passed the registered finite-difference tolerance, but this does not certify every training state or eliminate other bugs.
+- Earlier BN-statistic drift explained only part of regression; the fixed-BN four-epoch control still regressed.
+- In a fixed 32-case sample, true-state observation fit is 0.01479 waves RMS, while inferred-state observation fit is 0.12955. Four model steps do not uniformly fit the measurement to its noise level. The aggregate is diagnostic and does not prove that the inverse is identifiable or all failures are optimizer failures.
+
+Useful next isolation checks, not launched here:
+1. The same-node field isolation is now complete above. Next distinguish sampling pattern, PTTD projection and weakly constrained correction modes while preserving the registered audit criterion.
+2. Same measurement channels and same observations for one-acquisition and model-only inference, separating extra center ABS information from repeated measurement.
+3. Under the same single measurement, distinguish inverse-solver nonconvergence from weakly identifiable pose directions that change outer-field correction.
+4. Explicitly compare loss gradients on edge failures after the corrected trajectory backward, without silently treating the old pseudohuber experiment as a test of this new path.
+
+Executed work: zero optimizer updates, zero new network inference, CPU only, no CUDA context.
+Small diagnosis: 96 optical states, 3.24 seconds. Full saved-command native-field scoring: 6000 states, 7.82 seconds. Same-node outer-field scoring: 6000 states, 7.73 seconds.
+Evidence: sensor_scope_and_loss.json; native_edges6000.json/.npz; scripts in this directory.
+Training and coordinator state files remain paused; STOP retained.

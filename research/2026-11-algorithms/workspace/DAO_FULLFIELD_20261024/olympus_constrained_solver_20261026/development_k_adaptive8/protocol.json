@@ -1,0 +1,32 @@
+{
+  "ids": [
+    7072,
+    7238,
+    7050,
+    7289,
+    7260,
+    7037,
+    7288,
+    7354,
+    7032,
+    7463,
+    7094,
+    7044
+  ],
+  "scope": "Previously observed exploratory paired comparison",
+  "cycles": 3,
+  "fd": "central",
+  "rank": 8,
+  "radius": 0.2,
+  "center_limit": 0.01,
+  "adaptive": true,
+  "solve": "SLSQP convex local quadratic with joint box and center ellipsoid constraints",
+  "posthoc_radial_projection": false,
+  "local_gains": [
+    1,
+    0.5,
+    0.25
+  ],
+  "truth_in_inference": false,
+  "new_acquisitions": 0
+}

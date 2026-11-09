@@ -1,0 +1,19 @@
+{
+  "cases": 3000,
+  "selection": "All original3000;previous150feedback results reused;unchanged method",
+  "checkpoint": "DAO_FULLFIELD_20261024/kla_objective_alignment_20261028/training_compare/old_wfe_stable/candidate.pt",
+  "max_additional_feedback_steps": 2,
+  "max_total_observed_packets": 3,
+  "first_observation_and_command": "Reuse archived one-shot noisy packet and correction",
+  "feedback": "Apply prior correction, acquire new independent noisy packet at the resulting physical state, run same frozen neural controller",
+  "action": "Neural correction times min(1,0.05/maxabs(raw)); fixed bound before any score access",
+  "candidate_selection": "None; one fixed action per feedback packet, no true-score gains or oracle rejection",
+  "scoring": "Only after both proposed feedback actions have been fixed; original Q2000,129/257 with65disagreement; complete actual paths",
+  "physical_safety": "Paths evaluated offline; failed simulated observation keeps last state and records failure rather than silently dropping case",
+  "camera": "Original stochastic noisy fixed-exposure9field camera,original2048/4096/8192 bandwidth policy",
+  "observation_noise_seed": "New fixed study seed1933290000+case*10+cycle; hidden environment only,not controller input",
+  "training_updates": 0,
+  "truth_input_to_controller": false,
+  "one_shot": false,
+  "automatic_full3000": false
+}

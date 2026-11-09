@@ -1,0 +1,53 @@
+"""Render the experiment report from completed, checked case files only."""
+from pathlib import Path
+import json,hashlib
+HERE=Path(__file__).resolve().parent
+def read(name):return json.loads((HERE/name).read_text(encoding='utf-8'))
+result=read('result.json')['systems'];audit=read('saved_result_checks.json');protocol=read('protocol.json')
+assert all(audit[n]['rows']==11 and audit[n]['finite_fields'] and audit[n]['exact_paper_seed_set'] for n in result)
+assert all(result[n]['passes']==audit[n]['registered_passes'] for n in result)
+assert read('nikon/load_verification.json')['final_state_exact']
+lines=[
+'论文 exact 11 cases × 三系统：最新单次采集算法评测（2026-10-30）',
+'',
+f"Trepan2p：九场光学 WRMS 各<0.07波 {audit['trepan']['optical_all_positions']}/11；含机械路径与光线有效性 {result['trepan']['passes']}/11。",
+f"Nikon：中心 ABS 与±0.1mm两边缘 DIFF WRMS 各<0.07波 {result['nikon']['passes']}/11。",
+f"KLA：论文九场 Q2000>=0.45 {result['kla']['passes']}/11；另按九场各自MTF>=0.45检查 {result['kla']['all_fields_ge045']}/11。",
+'',
+'Trepan seed7100105 的原始初态未通过现行保守机械可行性证书，初态最小界-0.008833543mm。',
+'该例校正终点通过几何检查，九场WRMS最高0.058350906波，故光学达标但完整路径计为未通过。',
+'初态证书失败不能直接表述为已证明实际碰撞；该例保留在11分母中。',
+'',
+'所有案例均从当前论文 published_results.json 的种子集合取出。Trepan使用归档hard-case状态，',
+'KLA使用归档initial_state并将弧度正确换为新入口的度制归一化，Nikon与归档physical_check逐元素一致。',
+'没有重新挑选、替换案例或调参。每例一个含噪观测包、一次最终物理命令，零训练。',
+'Nikon 4+4步是同一观测包上的模型内部计算，没有新增实测反馈。',
+'',
+'使用各新算法现行光学模型、标定和下列冻结权重；不是对历史旧光学实现/旧控制器的重放。',
+'Trepan：trepan_large/candidate.pt，已选epoch37；按论文更严格0.07波计数，不用该训练的0.08波阈值替代。',
+'Nikon：nikon_prior_supervision_4ep_20261025/last.pt，4native+4full540。',
+'KLA：old_wfe_stable/candidate.pt，E4，直接一次神经预测，不加反馈。',
+'',
+'KLA综合达标种子：'+', '.join(map(str,result['kla']['passed_seeds'])),
+'KLA逐场全部达标种子：'+', '.join(str(s) for s in protocol['seeds']['kla'] if read(f'kla/cases/{s}.json')['all_fields_ge045']),
+'',
+'核验：全部33条逐场数值有限；重新从逐场数组计算通过标记；KLA重新计算mean-0.3std；',
+'Nikon全部最终参数和buffer逐张量等于冻结检查点；三套权重文件哈希保持。',
+'Nikon加载时跳过一份会被最终权重完全覆盖的历史warm-start文件，以解决OneDrive按需读取阻塞；',
+'最终模型一致检查见nikon/load_verification.json。未改变数值算法。',
+'',
+'明细：per_case.csv；完整终点/命令：各系统cases/*.json；观测：各系统observations/*.npz。',
+'协议：protocol.json；保存结果核对：saved_result_checks.json。',
+'所有计算完成，助手已读取并解释；EST=0，无后续训练、扩展试验或自动部署。论文文件未修改。',
+]
+(HERE/'FINAL_REVIEW.txt').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+(HERE/'HANDOFF.txt').write_text('COMPLETE AND INTERPRETED. EST=0. No experiment remains running.\n'
+    'Read FINAL_REVIEW.txt, result.json, per_case.csv and saved_result_checks.json.\n'
+    'Do not repeat completed predictions or resume old training.\n'
+    'Trepan optical11/11, complete-valid10/11; Nikon'+str(result['nikon']['passes'])+'/11; KLA Q4/11, all9 individual MTF3/11.\n'
+    'The exact paper cases and physical states were preserved; current frozen controller optics used.\n',encoding='utf-8')
+record=dict(status='completed_and_interpreted',cases=33,training_updates=0,
+    results=result,checks_passed=True,source_script_sha256=hashlib.sha256((HERE/'run.py').read_bytes()).hexdigest(),
+    report='FINAL_REVIEW.txt',paper_modified=False,automatic_followup=False)
+(HERE/'assistant_review.json').write_text(json.dumps(record,indent=2),encoding='utf-8')
+print('\n'.join(lines[:6]))

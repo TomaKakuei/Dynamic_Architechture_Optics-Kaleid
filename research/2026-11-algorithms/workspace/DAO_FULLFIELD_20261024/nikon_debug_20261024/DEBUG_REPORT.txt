@@ -1,0 +1,104 @@
+Nikon debugging and closed-loop small experiments, 2026-10-24
+
+Training is STOPPED by user. No neural-network optimizer updates were made
+during this investigation. Queue22908 and Trepan worker35732 were stopped;
+the queue and experiment entrypoints now reject automatic training restart.
+Trepan-large remains saved: best epoch37, 997/1000 all9fields<0.08waves,
+983/1000 all9fields<0.07waves, center999/1000. Resume checkpoint contains
+epoch38,next_batch260,processed8320. No Trepan objective/model changes.
+
+METRIC AND HISTORICAL COMPARISON
+Nikon: center absolute reference-sphere PTTD RMS; both edges DIFF relative
+to the fixed corrected operating bias. Threshold0.07waves. Evaluation fields
+are0,+/-0.1mm. Native noisy network observations are0,+/-0.05mm with49nodes
+each, plus the historical noisy absolute-center feedback packet.
+The full-field training and validation already used edge DIFF, not edge ABS.
+Absolute edge RMS is about14.16waves even at the corrected nominal bias;
+it must not be used as the edge recovery criterion.
+Nominal mixed fields=[0.03564031574,0,0]waves: the requested target is feasible.
+
+The original oneshot_resources_11_20261014 protocol explicitly defined11/11
+as CENTER recovery. Scoring those SAME saved original endpoints with edge
+DIFF gives center11/11 but full-field0/11; mean edge DIFF1.69468/1.76366waves.
+Saved center values agree with current calculation to7.16e-12waves.
+The new large network on these same11cases also retains center11/11 while
+full-field one-shot is0/11. Therefore full-field0% alone is not evidence
+that the previously reported center recovery collapsed.
+On the original full6000validation set, center88.05%->84.65% is nevertheless
+a real regression. No numerical invalids were observed in the saved result.
+
+BOUNDED LOSS DIAGNOSTIC
+192fixed old rows: first32 of each of3groups' first train/validation files.
+Archived center model, train96: center92/96,full-field0/96;
+large model, train96: center93/96,full-field0/96.
+Archived center model, validation96: center84/96,full-field0/96;
+large model, validation96: center81/96,full-field0/96.
+Validation edge means1.75410/1.74113->0.90449/0.90677waves. Thus full-field
+failure also occurs in sampled training rows, not solely validation overfit.
+
+The old bounded penalty ell/(1+ell),ell=log(1+(WRMS/0.07)^2), has slope
+4.98325 at0.07waves but0.049774 at1wave: roughly100x weaker pressure at a
+large edge error. Eight-state endpoint gradient finite differences pass
+(relative error7.41e-6). This is a diagnosed objective weakness, not proof
+that it is the only cause of one-shot failure.
+
+Changed Nikon-only future physical objective to non-saturating pseudo-Huber,
+retaining equal mean/worst-field weights, pose0.02 and historical invalid100.
+New objective version:nikon_fullfield_pseudohuber_v2. Old checkpoints cannot
+silently resume under it. Training stays disabled; retraining benefit is
+NOT established. Eight-state finite-difference relative error1.58e-6;
+two-row production loss/backward smoke has finite gradients, FP32 weights,
+zero optimizer updates. On equal0.001max-coordinate diagnostic probes,
+edge means1.07003/1.07464 become1.03159/1.03449 with the new objective,
+versus1.02930/1.06280 with the old objective. These are state probes only.
+
+FROZEN-MODEL CLOSED LOOP
+Reused the historical20reading cap,4feedback rounds after the initial
+proposal, gain trials1/0.5/0.25,0.25local-coordinate step cap and0.04noisy
+stop criterion. Every measured trial counts, including rejected trials.
+Control uses noisy observations and fixed optical calibration only. Hidden
+state is confined to the simulator and offline terminal scoring.
+
+Original11cases, each evaluated once per route:
+method                 center   full-field   mean mixed WRMS   mean readings
+large one-shot         11/11    0/11         0.554320          1.000
+original center loop   11/11    0/11         0.430045          4.909
+diff network loop       9/11    0/11         0.350738          7.273
+diff local calibration 11/11    5/11         0.053196          4.818
+diff field transport   11/11    9/11         0.042850          5.818
+
+The final route maps native0.05mm noisy residuals through a FIXED nominal
+Jacobian to estimated0.1mm fields and targets the corrected bias. It does
+not read true terminal WRMS or true residual pose to select commands.
+Its observed center remains an additional merit constraint. Native sensor
+and reference optical residual agreement is better than4e-7waves in the
+original first-case probe. Failed first implementation assumed0.1mm native
+observations; it failed before any control run and is retained separately.
+
+Frozen protocol confirmation on24original validation rows (first8 per group):
+large one-shot: center20/24,full-field0/24,mean0.628149waves,1reading.
+diff field transport: center24/24,full-field14/24,mean0.057751waves,
+mean6.042readings,invalid0. No parameter/threshold changes between cohorts.
+These remain old validation rows, not a new independent test population.
+
+REMAINING LIMITS
+The11case final-route failures are seeds7 and32, worst edge0.08818/0.08532.
+The linear field estimator can understate the true outer-field error:
+seed7 returned with estimated merit0.03879 while true worst edge0.08818.
+Some24case failures also reach the four-round limit with residual error.
+Therefore the restored loop improves recovery but is not a complete Nikon
+solution or a generalization guarantee. No extra rounds or hand-tuned
+thresholds were added to force all cases to pass. No deployment occurred.
+The new physical loss has code/numerical checks only; no trained result.
+
+FILES AND CONTINUATION
+../nikon_closed_loop.py: runnable frozen-network adapter and small experiments.
+../nikon_objective.py: future Nikon loss; ../TRAINING_STOPPED.json blocks train.
+diagnostic.json,objective_check.json: numerical diagnostics and loss smoke.
+closed_loop_summary.json: original11 five-route results; per-case events in
+closed_loop_cases/. validation24_summary.json and validation24_cases/ contain
+the fixed follow-up cohort. Initial sensor-probe failure is retained in
+initial_sensor_probe_failure.json. stop_record.json records termination.
+No training or experiment remains running; compute EST=0.
+Next authorized work remains Nikon debugging; do not resume training without
+a new user instruction. Trepan is retained unchanged.

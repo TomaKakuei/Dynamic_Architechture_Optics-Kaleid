@@ -1,0 +1,61 @@
+Olympus transfer of Nikon's observation-conditioned model refinement
+2026-10-26. PILOT INTERPRETED; ORIGINAL500 EVALUATION RUNNING.
+
+Reuse the selected Olympus joint epoch45 neural outputs and the existing noisy
+whole-assembly nine-field camera packets. The inference input is intensity
+images, not hidden true phase. Eight bounded known-camera model steps refine
+the neural pose estimate; no training, new measurements, or measured feedback.
+candidate.py accepts only images and the neural prior. Hidden initial poses
+enter evaluate500.py only after the command is fixed, for offline scoring.
+
+Pilot: eight original validation cases sampled before new inference, seed
+2026102607. IDs and all commands are retained under pilot/. No optical-quality
+filter selected these eight cases. These are development observations, not
+an independent generalization claim. Active inference/scoring time189.23s.
+
+Center ABS and eight edge DIFF fields, each below0.07waves, plus original
+validity:6/8 ->7/8;2 gained,1 lost. Edge DIFF is signed phase(endpoint)-phase(0)
+on the common pupil, followed by PTTD removal, NOT subtraction of scalar RMS.
+Mean edge DIFF over all8 computed endpoints:0.0433906390 ->0.0343600847waves
+(20.81percent reduction). Including the invalid endpoint here is explicit;
+invalid cases never count as recovered.
+Original center-only pass criterion:8/8 ->7/8, due to the invalid endpoint.
+Center mean:0.0068873160 ->0.0082793653waves; the small center error increased.
+Case7111 becomes invalid after correction. This loss is retained, not filtered,
+and no truth-based fallback is used. These8 do not establish overall improvement.
+
+Scoring clarification: the early pilot also stored all-field ABS diagnostics.
+Those are NOT the requested edge recovery metric. Nominal outer-field ABS is
+already0.0784230975waves, so ABS threshold counts mix design aberration and
+misalignment. Nominal center ABS is0.0123927426waves. The corrected DIFF results
+are pilot/diff_metrics.json; original ABS records remain unchanged.
+
+Candidate settings: eight model-only Gauss-Newton steps, ridge1e-4 toward the
+neural prior, coordinate step cap0.25, gains1/.5/.25, estimated pose clipped
+to[-1,1]. Acceptance uses observed-image likelihood only. Estimated geometry
+is checked on model proposals; true endpoint validity is scored afterwards.
+The500-run stops a case if none of the gains improves the same objective;
+the original pilot's later repeated rejected steps had not changed its output.
+Completed pilot commands are reused without re-inference or score replay.
+
+Numerical limitations: model rendering uses1024-pupil/2048FFT instead of the
+original data's2048-pupil/4096FFT, and degree24 rather than the data renderer's
+adaptive24/28/32/36 phase fit. The phase/ray model remains the existing nonlinear
+24-interface prescription. Local Jacobians freeze the pupil boundary; every
+objective proposal refreshes it. Rendering approximation, weak pose directions,
+and endpoint validity can therefore limit gains. No equivalence claim is made.
+
+Original500 evaluation launched2026-10-26 01:35:21PDT, initial PID39668.
+Original center baseline447/500=89.4percent. Full-field centerABS/edgeDIFF scores
+will be reported separately for both baseline and candidate on all500 cases.
+Results are written per case and per model step; failures retain the current
+available estimate and are recorded. No automatic follow-up or deployment.
+Estimated remaining active computation initially2-4hours; update from state/log.
+Computer must remain powered on. Process requests prevention of idle system
+sleep only while running; manual sleep/interrupt pauses effective progress.
+No notification is configured. Generated final results are not yet interpreted.
+
+Files: evaluation500/protocol.json,case_*.json,partial_*.json;
+on completion evaluation500/result.json and predictions.npz;
+state.json and evaluation500.stdout.log/evaluation500.stderr.log.
+No hashes, independent audits, or independent endpoint replay were performed.

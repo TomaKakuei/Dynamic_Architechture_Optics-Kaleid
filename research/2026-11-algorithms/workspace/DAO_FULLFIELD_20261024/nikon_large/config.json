@@ -1,0 +1,19 @@
+{
+  "stage": "train",
+  "system": "nikon",
+  "variant": "large",
+  "epochs": 50,
+  "batch": 128,
+  "microbatch": 128,
+  "seed": 20261024,
+  "parameters": 7121929,
+  "fields": 3,
+  "loss": "0.5 mean + 0.5 worst bounded log full-field penalty; fixed pose/mechanical terms",
+  "selection": "Most valid full-field passes; tie lowest worst-field P90 then field mean",
+  "invalids_count_as_failures": true,
+  "warm_start_epoch": 49,
+  "checkpoint_source": "Adaptive Optics/ADAPTIVE_OPTICS_V15P/nikon_coordinated_center_20261005",
+  "gpu": "NVIDIA GeForce RTX 3080",
+  "training_grid": "original Nikon audit nodes / Trepan pupil grid65",
+  "optics_implementation": "archived_nikon_fp64"
+}

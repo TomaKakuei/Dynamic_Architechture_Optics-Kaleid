@@ -1,0 +1,20 @@
+{
+  "scope": "Continue fixing Olympus refiner; frozen neural weights, one existing nine-field packet, no inference truth",
+  "I": "Jointly constrained local quadratic solve, original8 one-sided full-camera derivatives, max3 steps; complete",
+  "J": "Same constrained solve,8 central differences at h=.005, max3 steps; running",
+  "K_if_J_no_gain": "Same8 central-response directions,3 steps; center trust .01 -> .02 -> .04 only when accepted actual/predicted gain>=.75 and current center bound active",
+  "L_if_K_no_gain": "12 central-response directions, max2 steps and fixed.01 center trust; reuse compatible J responses at identical estimates",
+  "reprioritization_evidence": "Old F used only57-88percent center radius, so H never expanded. J hits center boundary with initial actual/predicted gain ratios .92-1.03 on hard cases; test repaired adaptive logic before more directions.",
+  "paired32_gate": "New fullfield OR center recovery over old F, zero lost F fullfield/center passes and zero newly invalid cases on development12",
+  "paired32": "At most one frozen candidate on the same previously observed32 cases; exploratory, not fresh confirmation",
+  "comparison": "Original center ABS + signed edge DIFF, all9 below.07 and original valid-endpoint gate",
+  "actual_command_constraint": "Actual subspace step is jointly constrained; no post-hoc radial projection of total neural-prior departure",
+  "center_model_trust": 0.01,
+  "pose_prior_departure_max": 0.2,
+  "per_step_pose_max": 0.05,
+  "full500": false,
+  "network_training": false,
+  "automatic_deployment": false,
+  "serial_gpu_only": true,
+  "stop_marker": "STOP_REQUESTED.json"
+}

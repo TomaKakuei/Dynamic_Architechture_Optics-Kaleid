@@ -1,0 +1,16 @@
+{
+  "spatial_head": {
+    "trainable_parameters": 1511160,
+    "initial_command_max_error": 0.0
+  },
+  "model_residual": {
+    "trainable_parameters": 522888,
+    "initial_prior_max_error": 0.0,
+    "largest_correction": 0.050000011920928955,
+    "fallback_prior_max_error": 0.0
+  },
+  "full_data": {
+    "trainable_parameters": 981584,
+    "initial_command_max_error": 0.0
+  }
+}

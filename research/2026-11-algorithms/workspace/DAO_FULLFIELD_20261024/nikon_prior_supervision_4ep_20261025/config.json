@@ -1,0 +1,48 @@
+{
+  "trial": "direct_prior_supervision",
+  "system": "nikon",
+  "new_epochs": 4,
+  "source_completed_epochs": 4,
+  "source_checkpoint": "DAO_FULLFIELD_20261024/nikon_additive_4ep_20261025/resume.pt",
+  "source_optimizer": "Continue completed E4 AdamW moments",
+  "neural_parameters": 14422124,
+  "neural_dtype": "float32",
+  "all_neural_parameters_trainable": true,
+  "batch": 128,
+  "seed": 2026102501,
+  "training_cases": 28000,
+  "original_training_cases": 24000,
+  "added_cases": 4000,
+  "all_added_in_training": true,
+  "validation_cases": 6000,
+  "evaluation_epochs": [
+    4
+  ],
+  "baseline": "Saved additive E4 original6000:1825passes",
+  "prior_loss": {
+    "type": "SmoothL1",
+    "beta": 0.25,
+    "weight": 0.02,
+    "location": "Normalized output before solver/clamp",
+    "labels": "Training pose only; never passed to model.forward"
+  },
+  "existing_loss": "Original endpoint physical +0.02 endpoint pose; unchanged",
+  "inverse": "Original147 DIFF;4steps;ridge1e-4;cap0.25;gains1,.5,.25;corrected trajectory VJP",
+  "inputs": "Original147 DIFF + cached center197ABS and outer4x49DIFF; same normalization",
+  "extra_branch": "Existing trained175651parameter branch retained",
+  "measurements": 1,
+  "measured_feedback": false,
+  "bn_statistics": "Frozen",
+  "optimizer": "Existing AdamW, weight_decay1e-4, clip5",
+  "initial_lrs": [
+    1e-05,
+    0.0001
+  ],
+  "lr_schedule": "Continue cosine horizon40 at global epochs5..8, local epochs1..4",
+  "independent_review": false,
+  "preliminary_evaluation": false,
+  "per_epoch_evaluation": false,
+  "new_observations_generated": 0,
+  "automatic_followup_training": false,
+  "automatic_deployment": false
+}

@@ -1,0 +1,68 @@
+{
+  "revision": "restored_trepan_joint_v1_20261008",
+  "authorization": "User: first ensure modifications correct, then restart Trepan generation and training.",
+  "scope": "Trepan only; retain obsolete physics/data/checkpoints unchanged. Nikon/mod3/KLA/SETSUNET unchanged.",
+  "data": {
+    "cohorts": [
+      "front_dominant",
+      "rear_dominant"
+    ],
+    "per_cohort_train": 7000,
+    "per_cohort_validation": 500,
+    "total": 15000,
+    "reuse_obsolete_data": false,
+    "all_samples": "All8bodies perturbed jointly; same noisy9field camera acquisition supplies both20D branches. No isolated-branch image pairing.",
+    "split": "Indices0..6999 train,7000..7499 validation in each cohort; every split uses the same four amplitude modes. No WRMS-based acceptance, easy-case quota or severity-only validation split.",
+    "sampling_limits": {
+      "xyz_mm": 0.1,
+      "tilt_arcmin": 2.5
+    },
+    "mechanics": "Reject proposals whose complete nominal-to-sample motion lacks1um glass-envelope clearance. Never project labels/gaps. Exact3D certificate includes tilts and the nested S80/S81 sphere pair.",
+    "limits_scope": "Sampling/command amplitudes, not hardware travel stops. Endpoints can reach twice sample range. Housing and unknown shoulders outside supplied geometry."
+  },
+  "optics": {
+    "wavelength_nm": 910,
+    "tissue_mm": 0.275,
+    "tissue_index": 1.42,
+    "image": "nonrefracting curved reference R=-263.157mm",
+    "source_beam_mm": 6,
+    "objective_beam_approx_mm": 24,
+    "na_approx": 0.4245,
+    "fields": "Centre plus8source angular azimuths at14.8deg SM-1/2; X/Y scanners fixed. Approximately3.61mm image field.",
+    "S71": "LE1015 -65.2mm catalog-consistent sign inference, original printed table preserved.",
+    "method": "Global rigid-body poses; cached unchanged upstream relay; explicit launch phase+OPL+fixed3D100mm reference sphere. No finite-object waveabr, mutable shared-gap overwrite or automatic aperture resizing."
+  },
+  "observation": {
+    "kind": "noisy sensorless speckle camera9x128x128 uint16",
+    "prohibited_inference_inputs": [
+      "ideal phase",
+      "ideal WRMS",
+      "true pose",
+      "SHWFS"
+    ],
+    "relay": "Modelled ideal pupil relay from6mm source coordinates to2mm camera pupil;2mm propagation,4mm sensor width; fixed diffuser. This calibration relay is not claimed as paper hardware.",
+    "integration": "degree16 continuous phase fit independently checked per capture,1024 pupil/2048 FFT,integrated pixels,physical tilt kept in carrier propagator",
+    "noise": "Single nominal fixed exposure, fixed PRNU0.5% and DSNU2+/-0.5e maps; independent Poisson shot and1.2e read noise;10000e full well,4ADU/e,100ADU offset,quantized. No per-frame peak normalization.",
+    "normalization": "Training-only mean camera frame; fixed scaling, no per-image amplitude renormalization."
+  },
+  "network": {
+    "architecture": "ArchA image backbone plus raw noisy8x8patch nodes, cross-attention and8body self-attention shared across front/rear; two groups of four5D heads",
+    "initialization": "Fresh weights and zero output heads; old low-NA inverse map is not resumed.",
+    "joint_output_dof": 40,
+    "inference": "Exactly one forward pass, command=-tanh(prediction) times physical scales, full40D action. No oracle line search/endpoint truth clipping; infeasible command paths count as failures."
+  },
+  "training": {
+    "epochs": 50,
+    "schedule": "Train front/rear heads together for50joint epochs over14000training observations, instead of50isolated-front plus50isolated-rear runs. Each branch receives whole-assembly optical loss; no second acquisition or feedback.",
+    "batch": 32,
+    "optimizer": "AdamW3e-4 cosine to3e-6;weight decay1e-4;gradient clip5",
+    "loss": "Centre absolute PTTD WRMS, bounded log1p(r^2)/(1+log1p(r^2)),r=WRMS/0.07; plus0.05pose loss and10mechanical barrier. Invalid optical/whole-command-path samples have optical penalty>=2 while valid optical loss<1. Exact nonlinear float64 trace gradients, no target oracle during inference.",
+    "pupil_grid_loss": 65,
+    "pupil_grid_validation": 65,
+    "selection": "Largest whole-system validation centre<0.07 pass count, then lower P90,then mean; epoch0eligible. Invalids remain denominator failures.",
+    "curves": "Epoch0..50: loss components, fixed500train probe,1000validation one-shot recovery,mean/P90centre,nine-field mean,invalids;CSV,JSON,PNG,PDF.",
+    "resume": "Atomic model/optimizer/RNG,minibatch progress every20batches; deterministic epoch permutation. Preserve source fingerprint."
+  },
+  "final_checks": "Joint1000validation endpoints;24fixed endpoint cases independently replayed through full NumPy85surface path at3fields plus scalar RayOptics;129grid centre score for all1000 with threshold disagreements retained.",
+  "reporting": "Validation is used for checkpoint selection, not an independent test set. Program completion is separate from assistant review. No automatic deployment/push or notifications. Effective elapsed time excludes standby."
+}

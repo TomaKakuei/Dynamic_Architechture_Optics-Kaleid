@@ -1,0 +1,20 @@
+Simulated measured-feedback50 completed and interpreted,2026-10-28.
+Exact same50:one-shot27/50(54%),one extra packet/correction34/50(68%),two extra
+packets/corrections38/50(76%). Final gains11/losses0 versus original one-shot.
+Second feedback loses1 case that first feedback gained,while gaining5 more.
+All corrected paths/endpoints valid;zero simulated capture failures.
+MeanQ0.435911->0.482699->0.506553;WRMS0.103558->0.085125->0.075678waves.
+
+Controller only receives a9-field noisy camera packet and predicts a correction
+with the same frozen weights. Additional correction is bounded to max0.05 in
+normalized coordinates,without using true state or score. Simulator state
+generates the observation; all scoring occurs after all actions are fixed.
+There is no oracle line search or score-based rejection of actions.
+
+This is THREE observed packets total,not one-shot and not hardware evidence.
+New observations explain a different information budget than the computational
+loop's31/50 on these cases. Simulation compute32.20seconds/50,100new simulated
+captures;real exposure/actuator/communication latency is not measured.
+
+Unchanged extension to matching150 is in ../kla_feedback_loop150_20261028.
+Original50records reused. No new training or extra per-case feedback budget.

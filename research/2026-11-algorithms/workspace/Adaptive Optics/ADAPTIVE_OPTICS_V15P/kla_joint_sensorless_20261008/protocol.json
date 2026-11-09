@@ -1,0 +1,67 @@
+{
+  "revision": "kla_angular_sensorless_joint_v1_20261008",
+  "authorization": "User: fix KLA issues and start data generation and training. Carry forward 10000 samples per KLA module, Q2000>=0.45, latest coordinated 50-epoch pipeline. User amendment2026-10-09: stop this joint run after20epochs for all three modules; retain full state for a later authorized continuation.",
+  "scope": "New isolated KLA module2/3/4 joint40D model; fixed module1 Mangin cavity. No edits to older KLA, Nikon, Trepan, mod3 or SETSUNET evidence.",
+  "data": {
+    "cohorts": [
+      "module2_dominant",
+      "module3_dominant",
+      "module4_dominant"
+    ],
+    "per_cohort": {
+      "train": 9000,
+      "validation": 1000
+    },
+    "total": 30000,
+    "whole_assembly": "All8controllable lens bodies perturbed in every sample, one shared9field camera acquisition. Three cohorts differ only in the dominant module, not isolated optical inputs.",
+    "sampling": {
+      "xyz_mm": 0.08,
+      "tilt_arcmin": 2.5,
+      "law": "Four interleaved mixed-amplitude modes, independent body/axis amplitudes, same distribution across split; deterministic per-index independent seeds. No Q/WRMS merit-based acceptance or easy-example quota."
+    },
+    "rejection": "Mechanical certificate only. Renderer/phase-fit failures halt instead of silently discarding difficult optical examples.",
+    "old_data_reused": false,
+    "mechanics": "Fixed glass envelopes with nominal graph-distance and global rigid-displacement conservative clearance certificate throughout command path,1um margin. Certificate failure does not by itself prove actual collision. Housing and unknown physical shoulders unavailable. No truth clipping or gap projection."
+  },
+  "optics": {
+    "source": "US6842298B1 Table1 radii/thickness, n_silica1.560289 at193.3nm; same6.7mm entrance pupil as existing benchmark",
+    "fields": "Nine true incident angles solved once for chief-ray image y=-0.132..+0.132mm, common fixed nominal image plane. These remain benchmark fields, not asserted patent Table1 field specification.",
+    "opd": "Include launch plane-wave phase and cumulative OPL; compare with fixed nominal image reference. Fit piston and tilt only; retain defocus. Do not subtract nominal wavefront aberration.",
+    "apertures": "Frozen nominal footprint plus0.30mm engineering envelopes, rounded upward to0.01mm. Patent does not specify physical semi-diameters. The fixed5% entrance annulus is a registered approximation of cavity obscuration, not an exact coating/hole model.",
+    "mtf": "Scalar annular pupil autocorrelation, tangential MTF at physical2000lp/mm using fractional-index interpolation and traced nominal NA. Q=mean9fields-0.3 populationSD, pass>=0.45. No fixed0.72 NA assumption or nearest-frequency rounding.",
+    "limits": "Monochromatic scalar diffraction benchmark. Measured NA about0.7147; not claiming full patented0.8NA, broadband, polarization or housing reproduction."
+  },
+  "observation": {
+    "kind": "sensorless speckle camera9x128x128uint16",
+    "relay": "Modelled ideal pupil-coordinate relay to2mm camera pupil,4mm sensor width,2mm propagation at193.3nm; fixed diffuser. Simulation sensor, not patent hardware.",
+    "integration": "Degree24 continuous phase independently checked to0.0003waves per capture; default2048pupil/4096FFT integrated pixels. Carrier-removed polynomial gradient guard keeps rare high-bandwidth cases via4096 or8192 CPU reference rendering, never merit-resamples. Physical carrier retained. Qualified against independently implemented denser CPU integration.",
+    "noise": "Fixed nominal exposure peaking4000electrons; fixedPRNU0.5%,DSNU2+/-0.5electrons; independent shot Poisson and1.2electron read noise,10000electron fullwell,4ADU/electron,100ADU offset. No per-image normalization. Noise sampled once per saved capture; reused across epochs.",
+    "input_forbidden": [
+      "ideal OPD",
+      "true pose",
+      "WRMS",
+      "SHWFS"
+    ],
+    "normalization": "Mean of training noisy images only; fixed ADU scale.",
+    "pupil_support_measure": "Physical annular area integral mean(r_boundary(theta)^2-0.05^2)/(1-0.05^2). Never equate nonuniform polynomial-fit node survival to area. Physical threshold remains0.98; renderer, exposure, sampling law and scoring unchanged."
+  },
+  "network": {
+    "architecture": "CNN backbone plus raw8x8noisy-pixel nodes, cross-attention and8body self-attention, joint5D heads grouped3/3/2. Fresh initialization, shared observation and optimizer.",
+    "inference": "Single forward pass, command=-tanh(logits), times fixed per-axis scales. Predict API receives only noisy frames. No true-state clipping, gain search or feedback."
+  },
+  "training": {
+    "epochs": 20,
+    "batch": 32,
+    "optimizer": "AdamW3e-4 cosine to3e-6,weight_decay1e-4,gradient_clip5; TF32disabled",
+    "loss": "Full9field absolute PT wavefront residual, bounded log1p((WRMS/.07)^2)/(1+log1p((WRMS/.07)^2)), plus0.05smoothL1inverse-pose and10mechanical barrier. Invalid optical/path cases have optical penalty>=2. Fixed-plane defocus remains. Smooth wavefront loss supplies gradients when highly aberrated MTF oscillates; checkpoint selection is Q2000, not WRMS.",
+    "optics_grid": 33,
+    "validation_grid": 65,
+    "selection": "Most whole-system Q2000>=0.45 validation passes, then higherP10,then mean; epoch0eligible. Uncertified commands remain failures in denominator.",
+    "curves": "Epoch0..requested stop (currently20) train loss components, fixed500training-probe one-shot rate and full3000validation one-shot rate,Qmean/P10,WRMSmean,invalid count; CSV,JSON,PNG,PDF.",
+    "resume": "Atomic minibatch checkpoint every20updates with weights,optimizer,RNG,history; deterministic epoch shuffles, source hashes. pipeline.py --until-epoch 20 is the default; a future authorized --until-epoch 50 continues resume.pt, retaining prior budget outputs before extension. No automatic extension.",
+    "schedule_epochs": 50,
+    "budget_amendment": "Complete epoch20 from its saved batch120. Stop before epoch21. Keep original50epoch cosine LR and unchanged optimizer/model/RNG/history so later continuation is continuous. This is joint training of all module heads."
+  },
+  "completion": "Replay24selected endpoints through full independent NumPy trace+MTF, scalarRayOptics rays; all3000endpoints rescored at129grid, threshold disagreements retained, near-threshold cases scored at257grid. Validation used for selection, not a new independent test. Program completion and assistant review distinct.",
+  "operation": "CPUworkers6 overlap GPUcamera rendering within generation; generation,training,audit serial. Effective-time clock excludes sleep, process-scoped stay-awake, no global power setting changes. No automatic push/deployment/notification."
+}

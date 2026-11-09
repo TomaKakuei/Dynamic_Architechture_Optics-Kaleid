@@ -1,0 +1,155 @@
+{
+  "status": "reviewed_not_adopted",
+  "updated": "2026-10-25T06:28:51.424133+00:00",
+  "models": {
+    "1x": {
+      "parameters": 7121987,
+      "optimizer_updates": 752,
+      "parameter_tensors": 101,
+      "epochs": {
+        "0": {
+          "count": 6000,
+          "passes": 33,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        },
+        "1": {
+          "count": 6000,
+          "passes": 38,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        },
+        "2": {
+          "count": 6000,
+          "passes": 38,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        },
+        "3": {
+          "count": 6000,
+          "passes": 45,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        },
+        "4": {
+          "count": 6000,
+          "passes": 36,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        }
+      },
+      "selected_epoch": 3,
+      "selected": {
+        "count": 6000,
+        "passes": 45,
+        "all7_count": 1333,
+        "all7_passes": 0,
+        "invalid": 0
+      },
+      "new_noise": {
+        "candidate": {
+          "count": 6000,
+          "passes": 50,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        },
+        "last": {
+          "count": 6000,
+          "passes": 40,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        }
+      },
+      "total_registered_active_seconds": 1472.5523583000468
+    },
+    "2x": {
+      "parameters": 14246531,
+      "optimizer_updates": 752,
+      "parameter_tensors": 101,
+      "epochs": {
+        "0": {
+          "count": 6000,
+          "passes": 33,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        },
+        "1": {
+          "count": 6000,
+          "passes": 41,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        },
+        "2": {
+          "count": 6000,
+          "passes": 41,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        },
+        "3": {
+          "count": 6000,
+          "passes": 40,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        },
+        "4": {
+          "count": 6000,
+          "passes": 27,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        }
+      },
+      "selected_epoch": 1,
+      "selected": {
+        "count": 6000,
+        "passes": 41,
+        "all7_count": 1333,
+        "all7_passes": 0,
+        "invalid": 0
+      },
+      "new_noise": {
+        "candidate": {
+          "count": 6000,
+          "passes": 41,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        },
+        "last": {
+          "count": 6000,
+          "passes": 29,
+          "all7_count": 1333,
+          "all7_passes": 0,
+          "invalid": 0
+        }
+      },
+      "total_registered_active_seconds": 1436.4827775000304
+    }
+  },
+  "array_sets_checked": 16,
+  "metric": "center ABS, both outer-field DIFF; all3<0.07waves",
+  "inference": "One observation packet,4model-only refinements, no measured feedback, no ground truth input",
+  "old_reference": {
+    "full_passes": 1726,
+    "count": 6000,
+    "all7_passes": 159,
+    "all7_count": 1333
+  },
+  "conclusion": "Both requested4epoch trials failed to recover old performance; doubling FFN capacity did not improve this initialization and training setting.",
+  "limitation": "New forward returns the transferred residual head alone. Old forward adds that head to the old grouped/coordinated predictor. Removing that base term changes prediction semantics: own epoch0 already falls from28.77percent to0.55percent. Thus old-versus-unified comparison confounds architecture with lost initialization, and cannot establish unified architectures are inferior.",
+  "preserved": "Original candidate, negative experiments and Trepan unchanged; no automatic adoption",
+  "suggested_next_design": "First train/initialize the unified35D predictor to represent the complete old predictor, using training-only labels or teacher predictions and explicitly accounting for that training budget; then compare capacity under matched conditions.",
+  "independent_scene_claim": false,
+  "network_dtype": "float32"
+}

@@ -1,0 +1,30 @@
+Completed50, paper beta_g group-gain comparison. No background; EST=0.
+Same saved N starts; one measured packet; no inference truth, training, or field reweighting.
+Original centerABS/signed edgeDIFF criterion unchanged.
+
+Route             Fullfield Center Invalid CenterMean EdgeMean ExtraSecondsPerCase
+N                 39/50     44/50  2       .03672477  .05312917 0 (saved baseline)
+equal unit loop   39/50     44/50  2       .03661773  .05289254 2.72015
+equal gain search 39/50     44/50  2       .03764059  .05341938 26.52102
+unequal group     40/50     44/50  2       .03898084  .05280452 38.98849
+No fullfield losses,center gate losses,new invalids or model errors for any route.
+Recorded extra times are cache-assisted,exclude original N and are not cold-route latency.
+Actual renders104/1244/1871; search caps equal but realized work is not equal.
+
+Only extra recovered case7223:
+N/equal worst.0788070193 -> unequal.0688915053waves;center.0337838179->.0290184462.
+All tested common gains fail to reduce image merit from7.94299177.
+First unequal accepted beta=[1,0,0,1,0,0,1],merit7.92848827.
+Later beta=[1,0,0,1,-1,0,0];fourth[-1,0,0,1,0,0];finalmerit7.88512305.
+This supports correcting relative group directions instead of merely scaling all groups.
+It does not prove the entire gain is independent of extra realized computation.
+
+Image merit improves7/32/40cases for equal-loop/equal-search/unequal respectively.
+Center and edge mean both worsen2/15/16cases despite that image-merit improvement.
+Unequal center mean+6.14percent vsN,edge mean-0.61percent;onlyone added pass.
+Do not equate image likelihood descent with wavefront improvement or claim broad dominance.
+
+Recommendation: unequal group gains are the best recovery-rate candidate in this50;
+retain N as the completed full500 reference. Equal unit loop is the inexpensive variant
+with tiny mean improvements; expanding common-gain search alone has no demonstrated payoff.
+Do not automatically rerun500 or deploy. Preserve all50results and negative outcomes.

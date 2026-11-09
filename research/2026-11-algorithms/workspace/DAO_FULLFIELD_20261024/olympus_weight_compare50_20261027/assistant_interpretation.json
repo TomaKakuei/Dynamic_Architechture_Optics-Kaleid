@@ -1,0 +1,122 @@
+{
+  "reviewed": "2026-10-27T21:00:17.206548+00:00",
+  "computations_completed": true,
+  "assistant_interpretation_pending": false,
+  "source": "result.json and saved case/stage records only; no replay or new optical scoring",
+  "best_by_fullfield": "unequal_search40/50 vs N/equal_loop/equal_search39/50;gain7223,zero losses or new invalid",
+  "best_low_cost_continuation": "equal_loop:39/50 unchanged,small center/edge mean improvements,recorded extra2.72s/case",
+  "common_gain_search": "No new recovered cases;center/edge means both worsen relativeN;not a useful expansion in this50",
+  "current_full500": "N373/500 remains the completed full-cohort result; unequal group search has only the reused50 evaluation",
+  "mechanism": {
+    "equal_loop": {
+      "image_merit_improved": 7,
+      "center_worse": 3,
+      "edge_mean_worse": 3,
+      "both_worse": 2,
+      "recorded_extra_seconds_per_case": 2.7201491739992343
+    },
+    "equal_search": {
+      "image_merit_improved": 32,
+      "center_worse": 21,
+      "edge_mean_worse": 19,
+      "both_worse": 15,
+      "recorded_extra_seconds_per_case": 26.52101799799959
+    },
+    "unequal_search": {
+      "image_merit_improved": 40,
+      "center_worse": 30,
+      "edge_mean_worse": 17,
+      "both_worse": 16,
+      "recorded_extra_seconds_per_case": 38.98849203999984
+    }
+  },
+  "rescued_case_7223": {
+    "N": {
+      "center": 0.033783817895630654,
+      "worst": 0.07880701930649357,
+      "beta": []
+    },
+    "equal_loop": {
+      "center": 0.033783817895630654,
+      "worst": 0.07880701930649357,
+      "beta": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "equal_search": {
+      "center": 0.033783817895630654,
+      "worst": 0.07880701930649357,
+      "beta": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "unequal_search": {
+      "center": 0.02901844624594408,
+      "worst": 0.06889150533718691,
+      "beta": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    }
+  },
+  "interpretation": "A common alpha only scales the combined proposal. Independent beta_g can select and reverse group proposals.7223 common tested gains cannot improve merit; group selection does and recovers the worst field.",
+  "limitations": [
+    "50 reused exploratory cases,not fresh independent confirmation",
+    "Same search caps,not equal realized calls:equal1244,unequal1871",
+    "Recorded times are sequential cache-assisted incremental costs,not cold route timing",
+    "Image-merit improvements can worsen true center/edge metrics;noise/model error/ambiguity causes are not separated here"
+  ],
+  "automatic_full500": false,
+  "automatic_deployment": false,
+  "background_running": false
+}

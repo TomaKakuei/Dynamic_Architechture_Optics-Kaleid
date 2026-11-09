@@ -1,0 +1,104 @@
+{
+  "reviewed": "2026-10-28T04:53:48.553845+00:00",
+  "complete": true,
+  "assistant_interpretation_pending": false,
+  "preferred_by_fullfield": "N4:115/150 versus N2:112,N8:114,N16:114",
+  "scope": "Same fixed150 reused validation; original N unchanged except iteration cap",
+  "conclusions": [
+    "N4 gains4 and loses1 relativeN2;net+3,+2percentagepoints",
+    "N8 loses one more success7373 and fixes the one invalid case,with no new full recovery",
+    "N16 adds no passes beyondN8;only2of150cases reach16 iterations,others retain original early stop",
+    "Center pass136to137;no new invalid/model errors"
+  ],
+  "incremental_loop_seconds": {
+    "2": 0.0,
+    "4": 161.83628640003735,
+    "8": 345.813370799995,
+    "16": 409.006953899996
+  },
+  "state_reconstruction_seconds": 140.3575550999958,
+  "actual_new_run_seconds": 553.0620824000071,
+  "targeted_saved_case_evidence": {
+    "7399": {
+      "2": {
+        "worst": 0.06678886337396915,
+        "center": 0.03574914385238894,
+        "valid": true,
+        "image_cost": 9.078334723251613
+      },
+      "4": {
+        "worst": 0.0701328701075433,
+        "center": 0.024246936091066342,
+        "valid": true,
+        "image_cost": 8.98623547700922
+      },
+      "8": {
+        "worst": 0.07097361256900346,
+        "center": 0.022950418059941774,
+        "valid": true,
+        "image_cost": 8.983513895687574
+      },
+      "16": {
+        "worst": 0.07097361256900346,
+        "center": 0.022950418059941774,
+        "valid": true,
+        "image_cost": 8.983513895687574
+      }
+    },
+    "7373": {
+      "2": {
+        "worst": 0.0697759151788004,
+        "center": 0.04198097557714536,
+        "valid": true,
+        "image_cost": 7.7876734007275505
+      },
+      "4": {
+        "worst": 0.06722786772672691,
+        "center": 0.04598316179089937,
+        "valid": true,
+        "image_cost": 7.666469289226032
+      },
+      "8": {
+        "worst": 0.07015851491669332,
+        "center": 0.0470660391167042,
+        "valid": true,
+        "image_cost": 7.6495160208305
+      },
+      "16": {
+        "worst": 0.07015851491669332,
+        "center": 0.0470660391167042,
+        "valid": true,
+        "image_cost": 7.6495160208305
+      }
+    },
+    "7252": {
+      "2": {
+        "worst": 0.07422102322109177,
+        "center": 0.05488177053047393,
+        "valid": true,
+        "image_cost": 7.74437540529822
+      },
+      "4": {
+        "worst": 0.06207449669984699,
+        "center": 0.04780387205936612,
+        "valid": true,
+        "image_cost": 7.408219776344418
+      },
+      "8": {
+        "worst": 0.0482916147257726,
+        "center": 0.03742455717625174,
+        "valid": true,
+        "image_cost": 7.279213966368259
+      },
+      "16": {
+        "worst": 0.04920948954740371,
+        "center": 0.03412575247100275,
+        "valid": true,
+        "image_cost": 7.249153909330963
+      }
+    }
+  },
+  "automatic_full500": false,
+  "automatic_deployment": false,
+  "background_running": false
+}

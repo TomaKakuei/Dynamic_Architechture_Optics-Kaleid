@@ -1,0 +1,126 @@
+{
+  "completed": 150,
+  "total": 150,
+  "complete": true,
+  "max_N_updates": 2,
+  "metrics": {
+    "N": {
+      "fullfield": 112,
+      "fullfield_rate": 0.7466666666666667,
+      "center": 136,
+      "invalid": 1,
+      "center_mean": 0.045520245788845726,
+      "edge_mean": 0.060410489028769575
+    },
+    "N_line": {
+      "fullfield": 113,
+      "fullfield_rate": 0.7533333333333333,
+      "center": 136,
+      "invalid": 1,
+      "center_mean": 0.04552419468695349,
+      "edge_mean": 0.06043472020079503
+    },
+    "N_pattern": {
+      "fullfield": 112,
+      "fullfield_rate": 0.7466666666666667,
+      "center": 136,
+      "invalid": 1,
+      "center_mean": 0.045520247647635494,
+      "edge_mean": 0.06041048986158161
+    },
+    "N_line_pattern": {
+      "fullfield": 113,
+      "fullfield_rate": 0.7533333333333333,
+      "center": 136,
+      "invalid": 1,
+      "center_mean": 0.04552419468695349,
+      "edge_mean": 0.06043472020079503
+    }
+  },
+  "paired_changes": {
+    "N_to_N_line": {
+      "gained": [
+        7428
+      ],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    },
+    "N_to_N_pattern": {
+      "gained": [],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    },
+    "N_to_N_line_pattern": {
+      "gained": [
+        7428
+      ],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    },
+    "N_line_to_N_line_pattern": {
+      "gained": [],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    },
+    "N_pattern_to_N_line_pattern": {
+      "gained": [
+        7428
+      ],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    }
+  },
+  "costs": {
+    "N_line": {
+      "actual_camera_calls": 516,
+      "cache_hits": 0,
+      "proposal_attempts": 516,
+      "seconds": 684.8153237000224,
+      "accepted_updates": 100,
+      "model_errors": [],
+      "selected_direction_updates": 0
+    },
+    "N_pattern": {
+      "actual_camera_calls": 361,
+      "cache_hits": 107,
+      "proposal_attempts": 923,
+      "seconds": 481.54712290003954,
+      "accepted_updates": 100,
+      "model_errors": [],
+      "selected_direction_updates": 0
+    },
+    "N_line_pattern": {
+      "actual_camera_calls": 0,
+      "cache_hits": 877,
+      "proposal_attempts": 1332,
+      "seconds": 4.187169599957997,
+      "accepted_updates": 100,
+      "model_errors": [],
+      "selected_direction_updates": 0
+    }
+  },
+  "active_search_cases": 52,
+  "reused_inactive_cases": 98,
+  "total_active_seconds": 1175.6982125000795,
+  "truth_in_inference": false,
+  "new_acquisitions": 0,
+  "training_updates": 0,
+  "scope": "Same150 reused-validation cases as previous N budget experiment;2x2 local-method ablation inside N2 from common K endpoint",
+  "timing_scope": "Sequential cache-assisted new search/scoring only; old N baseline/calibration/NN/D/K reused. Logical requests and cache hits reported; not cold latency.",
+  "fullfield_factorial_interaction_count": 0
+}

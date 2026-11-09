@@ -1,0 +1,15 @@
+{
+  "requested_rounds": 4,
+  "purpose": "Sequential controlled small experiments to identify Nikon failure mechanisms, not four controller iterations",
+  "metric": "center absolute PTTD RMS + edges difference from corrected bias, evaluated at0,+/-0.1mm, each<0.07waves",
+  "training": "Long training stays stopped; neural weights frozen; offline command optimization is explicitly an oracle diagnostic",
+  "trepan": "unchanged",
+  "development_cases": "Original11 plus original validation first8rows/group (24); cases never filtered by success",
+  "confirmation_cases": "Original validation next8rows/group (24), reserved until round4; not a fresh independent test population",
+  "round1": "Isolate loss shape/scale versus physical inverse conditioning using equal32 Adam command steps, plus separately labeled4-step oracle Gauss-Newton",
+  "round2": "Use round1 findings to separate measurement noise, weak modes and nominal linearization",
+  "round3": "Use round2 findings to isolate early stopping/feedback merit from estimator/direction error at fixed feedback budget",
+  "round4": "One mechanism-driven correction and fixed confirmation; retain failures and do not tune thresholds",
+  "no_hash_audits": true,
+  "automatic_large_training_resume": false
+}

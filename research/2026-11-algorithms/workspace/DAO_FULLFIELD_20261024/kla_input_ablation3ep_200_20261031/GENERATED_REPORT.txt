@@ -1,0 +1,10 @@
+KLA input ablation, old loss fixed: each new arm3epochs, same3000train and200validation.
+Generated metrics; assistant interpretation pending. Original Q2000>=0.45 and validity retained.
+Inference: one archived packet, one prediction. Selection validation reused, not an independent test.
+
+initial: 111/200; WRMS 0.10108458; invalid 0.
+bounded_epoch3: 120/200; WRMS 0.10199829; invalid 0.
+center_only: 0/200; WRMS 1.48350907; invalid 0; vs bounded +0/-120.
+three_fields: 1/200; WRMS 0.43413555; invalid 0; vs bounded +0/-119.
+nine_raw_adapter: 116/200; WRMS 0.10146600; invalid 0; vs bounded +4/-8.
+nine_diff_adapter: 105/200; WRMS 0.10391770; invalid 0; vs bounded +5/-20.

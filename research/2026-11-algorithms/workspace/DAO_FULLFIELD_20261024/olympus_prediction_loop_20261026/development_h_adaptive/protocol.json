@@ -1,0 +1,35 @@
+{
+  "ids": [
+    7072,
+    7238,
+    7050,
+    7289,
+    7260,
+    7037,
+    7288,
+    7354,
+    7032,
+    7463,
+    7094,
+    7044
+  ],
+  "split": "development",
+  "scope": "Paired extension of saved D on previously observed cases; exploratory, not fresh confirmation",
+  "cycles": 3,
+  "radius": 0.2,
+  "mode": "adaptive",
+  "noise_stop": 9.0,
+  "center_limit": 0.01,
+  "local_gains": [
+    1,
+    0.5,
+    1.5
+  ],
+  "current_state_repredicted_each_cycle": true,
+  "measurement_packets": 1,
+  "truth_in_inference": false,
+  "adaptive_center_trust": true,
+  "max_center_limit": 0.04,
+  "prediction_agreement_threshold": 0.75,
+  "reuses_first_linearization_cache": true
+}

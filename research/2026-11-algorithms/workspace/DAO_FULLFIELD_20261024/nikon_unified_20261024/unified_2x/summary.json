@@ -1,0 +1,247 @@
+{
+  "status": "completed",
+  "assistant_review": "pending",
+  "selected_epoch": 1,
+  "validation": {
+    "count": 6000,
+    "invalid": 0,
+    "full_field_passes": 41,
+    "full_field_rate": 0.006833333333333334,
+    "all_fields_below07_rate": 0.006833333333333334,
+    "all_fields_below08_rate": 0.007333333333333333,
+    "center07_rate": 0.017,
+    "center_and_mean08_rate": 0.008833333333333334,
+    "field_mean": 41.38233670394976,
+    "worst_field_mean": 52.47822499325074,
+    "worst_field_p90": 104.17481936054217,
+    "per_field_mean": [
+      41.219462569857264,
+      41.675665363140475,
+      41.25188217885147
+    ],
+    "per_field_pass_rate": [
+      0.017,
+      0.007166666666666667,
+      0.007
+    ],
+    "absolute_per_field_mean": [
+      41.219462569857264,
+      62.825412688105956,
+      61.062676166465195
+    ],
+    "threshold_waves": 0.07,
+    "cohorts": {
+      "0": {
+        "count": 2000,
+        "invalid": 0,
+        "full_field_passes": 0,
+        "full_field_rate": 0.0,
+        "all_fields_below07_rate": 0.0,
+        "all_fields_below08_rate": 0.0,
+        "center07_rate": 0.0,
+        "center_and_mean08_rate": 0.0,
+        "field_mean": 52.122617731365295,
+        "worst_field_mean": 66.12804784972282,
+        "worst_field_p90": 127.49072643837907,
+        "per_field_mean": [
+          55.83583666747524,
+          50.35136742629858,
+          50.18064910032193
+        ],
+        "per_field_pass_rate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "absolute_per_field_mean": [
+          55.83583666747524,
+          77.85462027638758,
+          77.91997466237507
+        ],
+        "threshold_waves": 0.07
+      },
+      "1": {
+        "count": 2000,
+        "invalid": 0,
+        "full_field_passes": 1,
+        "full_field_rate": 0.0005,
+        "all_fields_below07_rate": 0.0005,
+        "all_fields_below08_rate": 0.001,
+        "center07_rate": 0.007,
+        "center_and_mean08_rate": 0.0015,
+        "field_mean": 37.355727459574524,
+        "worst_field_mean": 47.45328227793801,
+        "worst_field_p90": 89.26044495888564,
+        "per_field_mean": [
+          35.218806340206484,
+          38.78020371949865,
+          38.06817231901837
+        ],
+        "per_field_pass_rate": [
+          0.007,
+          0.0005,
+          0.001
+        ],
+        "absolute_per_field_mean": [
+          35.218806340206484,
+          57.052241340235355,
+          54.01656098058243
+        ],
+        "threshold_waves": 0.07
+      },
+      "2": {
+        "count": 2000,
+        "invalid": 0,
+        "full_field_passes": 40,
+        "full_field_rate": 0.02,
+        "all_fields_below07_rate": 0.02,
+        "all_fields_below08_rate": 0.021,
+        "center07_rate": 0.044,
+        "center_and_mean08_rate": 0.025,
+        "field_mean": 34.66866492090947,
+        "worst_field_mean": 43.85334485209137,
+        "worst_field_p90": 85.3693892277913,
+        "per_field_mean": [
+          32.60374470189016,
+          35.89542494362434,
+          35.50682511721396
+        ],
+        "per_field_pass_rate": [
+          0.044,
+          0.021,
+          0.02
+        ],
+        "absolute_per_field_mean": [
+          32.60374470189016,
+          53.56937644769444,
+          51.25149285643802
+        ],
+        "threshold_waves": 0.07
+      }
+    }
+  },
+  "baseline": {
+    "count": 6000,
+    "invalid": 0,
+    "full_field_passes": 33,
+    "full_field_rate": 0.0055,
+    "all_fields_below07_rate": 0.0055,
+    "all_fields_below08_rate": 0.006833333333333334,
+    "center07_rate": 0.016,
+    "center_and_mean08_rate": 0.007833333333333333,
+    "field_mean": 41.262849068962836,
+    "worst_field_mean": 52.53819535575782,
+    "worst_field_p90": 104.66051231757525,
+    "per_field_mean": [
+      41.29027593292464,
+      41.24468914265852,
+      41.25358213130517
+    ],
+    "per_field_pass_rate": [
+      0.016,
+      0.005666666666666667,
+      0.006166666666666667
+    ],
+    "absolute_per_field_mean": [
+      41.29027593292464,
+      61.76751557588954,
+      61.22742541152199
+    ],
+    "threshold_waves": 0.07,
+    "cohorts": {
+      "0": {
+        "count": 2000,
+        "invalid": 0,
+        "full_field_passes": 0,
+        "full_field_rate": 0.0,
+        "all_fields_below07_rate": 0.0,
+        "all_fields_below08_rate": 0.0,
+        "center07_rate": 0.0,
+        "center_and_mean08_rate": 0.0,
+        "field_mean": 51.975864778373925,
+        "worst_field_mean": 66.36485191590805,
+        "worst_field_p90": 127.88116738664833,
+        "per_field_mean": [
+          55.97908880407561,
+          49.774113185142944,
+          50.17439234590313
+        ],
+        "per_field_pass_rate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "absolute_per_field_mean": [
+          55.97908880407561,
+          76.73419232319971,
+          78.17458646578046
+        ],
+        "threshold_waves": 0.07
+      },
+      "1": {
+        "count": 2000,
+        "invalid": 0,
+        "full_field_passes": 0,
+        "full_field_rate": 0.0,
+        "all_fields_below07_rate": 0.0,
+        "all_fields_below08_rate": 0.0,
+        "center07_rate": 0.005,
+        "center_and_mean08_rate": 0.0,
+        "field_mean": 37.2126398623408,
+        "worst_field_mean": 47.394875241183804,
+        "worst_field_p90": 88.7307442827237,
+        "per_field_mean": [
+          35.158898054357785,
+          38.397217789284866,
+          38.08180374337973
+        ],
+        "per_field_pass_rate": [
+          0.005,
+          0.0,
+          0.0
+        ],
+        "absolute_per_field_mean": [
+          35.158898054357785,
+          55.90522294527436,
+          54.08075635999064
+        ],
+        "threshold_waves": 0.07
+      },
+      "2": {
+        "count": 2000,
+        "invalid": 0,
+        "full_field_passes": 33,
+        "full_field_rate": 0.0165,
+        "all_fields_below07_rate": 0.0165,
+        "all_fields_below08_rate": 0.0205,
+        "center07_rate": 0.043,
+        "center_and_mean08_rate": 0.0235,
+        "field_mean": 34.60004256617378,
+        "worst_field_mean": 43.85485891018159,
+        "worst_field_p90": 87.72012842622422,
+        "per_field_mean": [
+          32.73284094034069,
+          35.562736453548254,
+          35.50455030463236
+        ],
+        "per_field_pass_rate": [
+          0.043,
+          0.017,
+          0.0185
+        ],
+        "absolute_per_field_mean": [
+          32.73284094034069,
+          52.66313145919385,
+          51.426933408794866
+        ],
+        "threshold_waves": 0.07
+      }
+    }
+  },
+  "parameters": 14246531,
+  "epochs": 4,
+  "active_seconds": 1436.4827775000304,
+  "validation_is_selection_set": true,
+  "independent_test": false,
+  "updated": "2026-10-25T05:58:27.641367+00:00"
+}

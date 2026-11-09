@@ -1,0 +1,11 @@
+Frozen Olympus original500 complete; generated results await assistant interpretation.
+Original centerABS + signed edgeDIFF, all9<.07 and original validity; one observed packet.
+44 completed cases reused;456 evaluated with unchanged frozen D/K/N rules.
+network: fullfield 317/500; center 442/500; invalid 9; edge mean 0.087530593
+D: fullfield 350/500; center 444/500; invalid 8; edge mean 0.075249138
+K: fullfield 360/500; center 442/500; invalid 6; edge mean 0.067336126
+N: fullfield 373/500; center 442/500; invalid 7; edge mean 0.062602041
+Full per-case data in predictions500.npz and cases/.
+Timing excludes archived44 and saved neural inference; not cold end-to-end latency.
+Validation includes previously used development/comparison cases, not a fresh independent test.
+No automatic next experiment, training or deployment.

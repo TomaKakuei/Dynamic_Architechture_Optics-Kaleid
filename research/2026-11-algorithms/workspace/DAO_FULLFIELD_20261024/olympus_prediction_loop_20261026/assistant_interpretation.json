@@ -1,0 +1,16 @@
+{
+  "stage": "completed_and_interpreted",
+  "updated": "2026-10-27T03:14:40.068987+00:00",
+  "running": false,
+  "active_process_ids": [],
+  "assistant_read_saved_results": true,
+  "independent_replay": false,
+  "training_updates": 0,
+  "new_measurement_packets": 0,
+  "automatic_followup": false,
+  "automatic_deployment": false,
+  "report": "REPORT.txt",
+  "comparison": "comparison.json",
+  "decision": "Keep D as comparison baseline; E/F/G/H not promoted; existing inference defaults untouched",
+  "full500_combined_result_available": false
+}

@@ -1,0 +1,129 @@
+{
+  "reviewed": "2026-10-28T05:27:51.595133+00:00",
+  "complete": true,
+  "assistant_interpretation_pending": false,
+  "source": "Saved result/case/stage JSON only; no new inference or scoring",
+  "conclusion": "At fixed N2,refined line search113/150 versus original112. Pattern alone112,combined113; no positive combination effect.",
+  "paired_changes": {
+    "N_to_N_line": {
+      "gained": [
+        7428
+      ],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    },
+    "N_to_N_pattern": {
+      "gained": [],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    },
+    "N_to_N_line_pattern": {
+      "gained": [
+        7428
+      ],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    },
+    "N_line_to_N_line_pattern": {
+      "gained": [],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    },
+    "N_pattern_to_N_line_pattern": {
+      "gained": [
+        7428
+      ],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    }
+  },
+  "metrics": {
+    "N": {
+      "fullfield": 112,
+      "fullfield_rate": 0.7466666666666667,
+      "center": 136,
+      "invalid": 1,
+      "center_mean": 0.045520245788845726,
+      "edge_mean": 0.060410489028769575
+    },
+    "N_line": {
+      "fullfield": 113,
+      "fullfield_rate": 0.7533333333333333,
+      "center": 136,
+      "invalid": 1,
+      "center_mean": 0.04552419468695349,
+      "edge_mean": 0.06043472020079503
+    },
+    "N_pattern": {
+      "fullfield": 112,
+      "fullfield_rate": 0.7466666666666667,
+      "center": 136,
+      "invalid": 1,
+      "center_mean": 0.045520247647635494,
+      "edge_mean": 0.06041048986158161
+    },
+    "N_line_pattern": {
+      "fullfield": 113,
+      "fullfield_rate": 0.7533333333333333,
+      "center": 136,
+      "invalid": 1,
+      "center_mean": 0.04552419468695349,
+      "edge_mean": 0.06043472020079503
+    }
+  },
+  "pattern_diagnostics": {
+    "N_pattern": {
+      "attempted": 816,
+      "constraint_rejected": 455,
+      "evaluated": 361,
+      "acceptable": 6,
+      "selected": 0
+    },
+    "N_line_pattern": {
+      "attempted": 816,
+      "constraint_rejected": 455,
+      "evaluated": 361,
+      "acceptable": 6,
+      "selected": 0
+    }
+  },
+  "rescued_case": {
+    "case": 7428,
+    "old_worst": 0.07058856383913327,
+    "new_worst": 0.06992101903153769,
+    "second_step_gain": 0.8005807666787034,
+    "selected_source": "line_quadratic",
+    "note": "Small threshold crossing; not a broad mean-quality improvement"
+  },
+  "recorded_evaluation_requests_including_hits": {
+    "N_line": 516,
+    "N_pattern": 468,
+    "N_line_pattern": 877
+  },
+  "timing_caution": "Combined arm0newrenders/4.19s came from reusing earlier two arms; not standalone speed. It requests877evaluations includinghits versus line516.",
+  "recommendation": "Within this fixed2-step150 experiment,prefer refined line over the combination;direction polling offers no selected update. Keep original full500 reference until a separate full comparison.",
+  "limitations": [
+    "Same reused150; no claim of fresh confirmation",
+    "Only52cases have active original N response;98retain original early exit",
+    "Center/edge means slightly worsen for line/combined despite+1pass",
+    "Methods have fixed2updates,not equal actual compute"
+  ],
+  "background_running": false,
+  "automatic_full500": false,
+  "automatic_deployment": false
+}

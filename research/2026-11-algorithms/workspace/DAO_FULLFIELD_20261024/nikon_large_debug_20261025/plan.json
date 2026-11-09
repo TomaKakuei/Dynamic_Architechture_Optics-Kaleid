@@ -1,0 +1,21 @@
+{
+  "authorization": "Latest user goal: continue debugging Nikon, then train new large-model candidates in four-epoch blocks and check progress; Trepan excluded",
+  "active_systems": ["nikon"],
+  "original_40_epoch_run_stays_paused": true,
+  "trial": "fixed_bn_4ep",
+  "epochs": 4,
+  "training_samples": 28000,
+  "new_samples_all_training": 4000,
+  "original_validation_samples": 6000,
+  "parameters": 14246473,
+  "neural_dtype": "float32",
+  "source": "../original_routes_40ep_20261025/nikon/candidate.pt",
+  "source_epoch": 0,
+  "baseline_passes": 1726,
+  "change": "Keep all 21 pretrained BatchNorm running means/variances fixed during training; train all affine and other model parameters",
+  "matched_controls": "Same weights, 28k data, epoch permutations, original loss, AdamW rates, clipping, 40-epoch cosine horizon, inference and validation as first4 epochs of failed run",
+  "checkpoints": "Every25 batches, each epoch, or local STOP at next batch boundary",
+  "inference": "One acquisition, full original grouped network plus residual and four model-only exact-response refinements; no measured closed loop or truth at inference",
+  "metric": "Center ABS and both edge DIFF, all three below0.07 waves",
+  "next_decision": "Compare all four epochs with initial28.7667% and old first4; do not equate the small diagnostic improvement with full-validation progress. Further ideas get separate four-epoch trials based on evidence."
+}

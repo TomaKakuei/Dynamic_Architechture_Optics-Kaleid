@@ -1,0 +1,27 @@
+KLA THREE CANDIDATES COMPLETE and interpreted2026-11-01.
+Finished2026-11-01 12:03 PST. Old loss unchanged; same200reused selection cases.
+Original control120/200=60%,initial checkpoint111/200=55.5%.
+All3epochs. Spatial/residual3000samples282updates;full-data27000samples2532updates.
+Original Q2000>=.45,path/support,129/257refinement retained; allinvalid0.
+
+Candidate | passes/200 | percent | mean WRMS waves | gains/losses vs control
+spatial_head | 115/200 | 57.5 | 0.10208427 | +5/-10
+model_residual | 119/200 | 59.5 | 0.09944897 | +8/-9
+full_data | 124/200 | 62.0 | 0.09448326 | +10/-6
+
+Interpretation:
+Full27000training is best in this trial:124/200=62%,versus matched-old3000control120/200=60%;10gains6losses,net4.
+Mean Q rises0.434375->0.453996 and mean WRMS falls0.101998->0.094483waves; quality change is broader than the4threshold crossings.
+This supports the full-data continuation recipe as a promising candidate, but does not isolate sample coverage from9xmore optimizer updates.
+Spatial readout115/200 loses5net versus control; no advantage established.
+Model-residual119/200 improves the frozen initial111/200 but remains1below the ordinary fine-tuning control and adds native-camera inference computation.
+All routes have0invalid endpoints; all3200model context renders succeeded without fallback.
+Small gain on reused200selection cases, one seed; not a confirmed full3000 improvement or independent generalization result.
+Keep existing full3000 incumbent and preserve this candidate separately; no automatic deployment or full3000 evaluation.
+
+Full-data mean WRMS reduction versus control:7.368%.
+Recorded training4862.64s,evaluation28.70s,model rendering1647.96s.
+Interrupted after154residual updates; resumed exact checkpoint and reused all3200contexts; no numerical changes.
+Interrupted downtime excluded. Models/sources/failure evidence remain preserved.
+One observed packet throughout. Residual route is frozenNN+nativecamera+correctionNN,not one pure neural pass.
+No backend running,EST=0. No full3000 or further training queued.

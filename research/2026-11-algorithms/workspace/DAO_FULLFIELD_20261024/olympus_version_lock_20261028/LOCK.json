@@ -1,0 +1,414 @@
+{
+  "status": "locked_by_user",
+  "created": "2026-10-28T12:26:38.195766+00:00",
+  "version": "Olympus_N2_refined_line_20261028",
+  "working_variant": "N_line",
+  "preserved_baseline": "N",
+  "entrypoint": "olympus_local_ablation150_20261027/search.py:SearchAblation.predict_arm(prepared, N_line)",
+  "max_N_updates": 2,
+  "response_rank": 12,
+  "gains": [
+    1.0,
+    0.5,
+    0.25,
+    0.125,
+    0.0625
+  ],
+  "quadratic_candidates_max": 1,
+  "checkpoint": "olympus_repair_4ep_20261026/training/last.pt",
+  "network_dtype": "float32",
+  "score": "Center ABS plus signed edge DIFF; PTTD removed; original nine-field <0.07 wave and validity rules",
+  "evidence": {
+    "original_N_full500": 373,
+    "original_N_same150": 112,
+    "refined_line_same150": 113,
+    "refined_line_full500": null,
+    "gains": [
+      7428
+    ],
+    "losses": [],
+    "mean_quality_improvement": false
+  },
+  "rejected": {
+    "search64_completed": 97,
+    "original_N": 75,
+    "refined_line": 76,
+    "search64": 74,
+    "search64_resume": false,
+    "pattern_search": false,
+    "group_gain_changes": false
+  },
+  "acquisition_packets": 1,
+  "truth_in_inference": false,
+  "training_updates": 0,
+  "automatic_resume": false,
+  "automatic_full500": false,
+  "snapshot_scope": "Source/checkpoint/calibration/evidence archive, not a relocated standalone executable. Retain original workspace paths for cameras, archived data and response caches.",
+  "files": [
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_constrained_solver_20261026/assistant_interpretation.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_constrained_solver_20261026\\assistant_interpretation.json",
+      "bytes": 1447
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_constrained_solver_20261026/coordinator.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_constrained_solver_20261026\\coordinator.py",
+      "bytes": 4276
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_constrained_solver_20261026/qp.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_constrained_solver_20261026\\qp.py",
+      "bytes": 1660
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_constrained_solver_20261026/REPORT.txt",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_constrained_solver_20261026\\REPORT.txt",
+      "bytes": 1938
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_constrained_solver_20261026/run_trial.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_constrained_solver_20261026\\run_trial.py",
+      "bytes": 4615
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_constrained_solver_20261026/solver.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_constrained_solver_20261026\\solver.py",
+      "bytes": 6973
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_full500_20261027/result.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_full500_20261027\\result.json",
+      "bytes": 4514
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_fullpacket_20261026/camera_inverse.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_fullpacket_20261026\\camera_inverse.py",
+      "bytes": 7188
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_fullpacket_20261026/candidate.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_fullpacket_20261026\\candidate.py",
+      "bytes": 2827
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_fullpacket_20261026/debug_camera_components.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_fullpacket_20261026\\debug_camera_components.py",
+      "bytes": 4814
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_fullpacket_20261026/debug_invalid.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_fullpacket_20261026\\debug_invalid.py",
+      "bytes": 6270
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_fullpacket_20261026/debug_resolution.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_fullpacket_20261026\\debug_resolution.py",
+      "bytes": 1358
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_fullpacket_20261026/diff_metrics.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_fullpacket_20261026\\diff_metrics.py",
+      "bytes": 3062
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_fullpacket_20261026/evaluate500.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_fullpacket_20261026\\evaluate500.py",
+      "bytes": 7539
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_fullpacket_20261026/pilot.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_fullpacket_20261026\\pilot.py",
+      "bytes": 4862
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_fullpacket_20261026/REPORT.txt",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_fullpacket_20261026\\REPORT.txt",
+      "bytes": 4001
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_fullpacket_20261026/support.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_fullpacket_20261026\\support.py",
+      "bytes": 759
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_local_ablation150_20261027/assistant_interpretation.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_local_ablation150_20261027\\assistant_interpretation.json",
+      "bytes": 3801
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_local_ablation150_20261027/predictions150.npz",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_local_ablation150_20261027\\predictions150.npz",
+      "bytes": 177468
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_local_ablation150_20261027/protocol.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_local_ablation150_20261027\\protocol.json",
+      "bytes": 4244
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_local_ablation150_20261027/REPORT.txt",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_local_ablation150_20261027\\REPORT.txt",
+      "bytes": 1682
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_local_ablation150_20261027/result.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_local_ablation150_20261027\\result.json",
+      "bytes": 3343
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_local_ablation150_20261027/run.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_local_ablation150_20261027\\run.py",
+      "bytes": 10907
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_local_ablation150_20261027/search.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_local_ablation150_20261027\\search.py",
+      "bytes": 10525
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_local_ablation150_20261027/selection.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_local_ablation150_20261027\\selection.json",
+      "bytes": 2031
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_lowcost_refiner_20261026/assistant_interpretation.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_lowcost_refiner_20261026\\assistant_interpretation.json",
+      "bytes": 760
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_lowcost_refiner_20261026/bridge.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_lowcost_refiner_20261026\\bridge.py",
+      "bytes": 710
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_lowcost_refiner_20261026/calibration.npz",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_lowcost_refiner_20261026\\calibration.npz",
+      "bytes": 78587
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_lowcost_refiner_20261026/center_constraint.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_lowcost_refiner_20261026\\center_constraint.py",
+      "bytes": 1135
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_lowcost_refiner_20261026/center_gram.npy",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_lowcost_refiner_20261026\\center_gram.npy",
+      "bytes": 9928
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_lowcost_refiner_20261026/prepare.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_lowcost_refiner_20261026\\prepare.py",
+      "bytes": 3848
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_lowcost_refiner_20261026/refiner.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_lowcost_refiner_20261026\\refiner.py",
+      "bytes": 9410
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_lowcost_refiner_20261026/REPORT.txt",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_lowcost_refiner_20261026\\REPORT.txt",
+      "bytes": 4141
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_lowcost_refiner_20261026/run_trial.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_lowcost_refiner_20261026\\run_trial.py",
+      "bytes": 4665
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_lowcost_refiner_20261026/selection.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_lowcost_refiner_20261026\\selection.json",
+      "bytes": 1099
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_prediction_loop_20261026/assistant_interpretation.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_prediction_loop_20261026\\assistant_interpretation.json",
+      "bytes": 563
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_prediction_loop_20261026/context.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_prediction_loop_20261026\\context.py",
+      "bytes": 459
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_prediction_loop_20261026/local_search.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_prediction_loop_20261026\\local_search.py",
+      "bytes": 4645
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_prediction_loop_20261026/model_loop.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_prediction_loop_20261026\\model_loop.py",
+      "bytes": 7385
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_prediction_loop_20261026/model_loop_f_preserved.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_prediction_loop_20261026\\model_loop_f_preserved.py",
+      "bytes": 5717
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_prediction_loop_20261026/predictor.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_prediction_loop_20261026\\predictor.py",
+      "bytes": 5774
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_prediction_loop_20261026/REPORT.txt",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_prediction_loop_20261026\\REPORT.txt",
+      "bytes": 5338
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_prediction_loop_20261026/run.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_prediction_loop_20261026\\run.py",
+      "bytes": 4982
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_prediction_loop_20261026/run_local.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_prediction_loop_20261026\\run_local.py",
+      "bytes": 3093
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_prediction_loop_20261026/summarize.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_prediction_loop_20261026\\summarize.py",
+      "bytes": 6782
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_repair_4ep_20261026/assistant_interpretation.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_repair_4ep_20261026\\assistant_interpretation.json",
+      "bytes": 1388
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_repair_4ep_20261026/continue_after_pilot.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_repair_4ep_20261026\\continue_after_pilot.py",
+      "bytes": 1659
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_repair_4ep_20261026/local.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_repair_4ep_20261026\\local.py",
+      "bytes": 617
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_repair_4ep_20261026/protocol.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_repair_4ep_20261026\\protocol.json",
+      "bytes": 1417
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_repair_4ep_20261026/repair_pilot.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_repair_4ep_20261026\\repair_pilot.py",
+      "bytes": 2419
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_repair_4ep_20261026/repaired_inverse.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_repair_4ep_20261026\\repaired_inverse.py",
+      "bytes": 3933
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_repair_4ep_20261026/train4.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_repair_4ep_20261026\\train4.py",
+      "bytes": 10276
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_repair_4ep_20261026/training/configuration.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_repair_4ep_20261026\\training\\configuration.json",
+      "bytes": 1310
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_repair_4ep_20261026/training/last.pt",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_repair_4ep_20261026\\training\\last.pt",
+      "bytes": 13899668
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_repair_4ep_20261026/training_objective.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_repair_4ep_20261026\\training_objective.py",
+      "bytes": 2316
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_search64_loop2_20261028/partial_summary.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_search64_loop2_20261028\\partial_summary.json",
+      "bytes": 2058
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_search64_loop2_20261028/STOP_REQUESTED.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_search64_loop2_20261028\\STOP_REQUESTED.json",
+      "bytes": 172
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_secant_20261027/assistant_interpretation.json",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_secant_20261027\\assistant_interpretation.json",
+      "bytes": 1927
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_secant_20261027/REPORT.txt",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_secant_20261027\\REPORT.txt",
+      "bytes": 3671
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_secant_20261027/report_saved.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_secant_20261027\\report_saved.py",
+      "bytes": 4431
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_secant_20261027/run.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_secant_20261027\\run.py",
+      "bytes": 4856
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_secant_20261027/secant.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_secant_20261027\\secant.py",
+      "bytes": 7213
+    },
+    {
+      "original": "DAO_FULLFIELD_20261024/olympus_secant_20261027/secant_m_preserved.py",
+      "snapshot": "snapshot\\DAO_FULLFIELD_20261024\\olympus_secant_20261027\\secant_m_preserved.py",
+      "bytes": 5688
+    },
+    {
+      "original": "RAYOPTICS_RESTORE_20260929/dao_mod03/sampling_front3_rear4/olympus_joint_20261015/backbone.py",
+      "snapshot": "snapshot\\RAYOPTICS_RESTORE_20260929\\dao_mod03\\sampling_front3_rear4\\olympus_joint_20261015\\backbone.py",
+      "bytes": 810
+    },
+    {
+      "original": "RAYOPTICS_RESTORE_20260929/dao_mod03/sampling_front3_rear4/olympus_joint_20261015/common.py",
+      "snapshot": "snapshot\\RAYOPTICS_RESTORE_20260929\\dao_mod03\\sampling_front3_rear4\\olympus_joint_20261015\\common.py",
+      "bytes": 2757
+    },
+    {
+      "original": "RAYOPTICS_RESTORE_20260929/dao_mod03/sampling_front3_rear4/olympus_joint_20261015/data.py",
+      "snapshot": "snapshot\\RAYOPTICS_RESTORE_20260929\\dao_mod03\\sampling_front3_rear4\\olympus_joint_20261015\\data.py",
+      "bytes": 8514
+    },
+    {
+      "original": "RAYOPTICS_RESTORE_20260929/dao_mod03/sampling_front3_rear4/olympus_joint_20261015/legacy_branch.py",
+      "snapshot": "snapshot\\RAYOPTICS_RESTORE_20260929\\dao_mod03\\sampling_front3_rear4\\olympus_joint_20261015\\legacy_branch.py",
+      "bytes": 4511
+    },
+    {
+      "original": "RAYOPTICS_RESTORE_20260929/dao_mod03/sampling_front3_rear4/olympus_joint_20261015/network.py",
+      "snapshot": "snapshot\\RAYOPTICS_RESTORE_20260929\\dao_mod03\\sampling_front3_rear4\\olympus_joint_20261015\\network.py",
+      "bytes": 2147
+    },
+    {
+      "original": "RAYOPTICS_RESTORE_20260929/dao_mod03/sampling_front3_rear4/olympus_joint_20261015/objective.py",
+      "snapshot": "snapshot\\RAYOPTICS_RESTORE_20260929\\dao_mod03\\sampling_front3_rear4\\olympus_joint_20261015\\objective.py",
+      "bytes": 2883
+    },
+    {
+      "original": "RAYOPTICS_RESTORE_20260929/dao_mod03/sampling_front3_rear4/olympus_joint_20261015/pipeline.py",
+      "snapshot": "snapshot\\RAYOPTICS_RESTORE_20260929\\dao_mod03\\sampling_front3_rear4\\olympus_joint_20261015\\pipeline.py",
+      "bytes": 3310
+    },
+    {
+      "original": "RAYOPTICS_RESTORE_20260929/dao_mod03/sampling_front3_rear4/olympus_joint_20261015/predict.py",
+      "snapshot": "snapshot\\RAYOPTICS_RESTORE_20260929\\dao_mod03\\sampling_front3_rear4\\olympus_joint_20261015\\predict.py",
+      "bytes": 659
+    },
+    {
+      "original": "RAYOPTICS_RESTORE_20260929/dao_mod03/sampling_front3_rear4/olympus_joint_20261015/start_first_block.py",
+      "snapshot": "snapshot\\RAYOPTICS_RESTORE_20260929\\dao_mod03\\sampling_front3_rear4\\olympus_joint_20261015\\start_first_block.py",
+      "bytes": 184
+    },
+    {
+      "original": "RAYOPTICS_RESTORE_20260929/dao_mod03/sampling_front3_rear4/olympus_joint_20261015/train.py",
+      "snapshot": "snapshot\\RAYOPTICS_RESTORE_20260929\\dao_mod03\\sampling_front3_rear4\\olympus_joint_20261015\\train.py",
+      "bytes": 10875
+    }
+  ]
+}

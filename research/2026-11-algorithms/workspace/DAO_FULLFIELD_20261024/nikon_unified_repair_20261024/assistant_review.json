@@ -1,0 +1,13 @@
+{
+  "updated": "2026-10-25T07:22:09.853768+00:00",
+  "status": "reviewed_not_adopted",
+  "completed_epochs": 4,
+  "optimizer_updates": 752,
+  "selected_epoch": 0,
+  "initial_passes": 1491,
+  "final_passes": 351,
+  "final_rate": 0.0585,
+  "final_noise_passes": 347,
+  "diagnosis": "DAO_FULLFIELD_20261024/nikon_unified_debug_20261025/diagnosis_review.json",
+  "next_run": "DAO_FULLFIELD_20261024/nikon_unified_debug_20261025/state.json"
+}

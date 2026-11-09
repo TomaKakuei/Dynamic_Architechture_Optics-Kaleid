@@ -1,0 +1,5 @@
+Fixed2-update original N local search factorial ablation on150; generated results await interpretation.
+N:fullfield112/150;center136;invalid1;center_mean0.045520246;edge_mean0.060410489
+N_line:fullfield113/150;center136;invalid1;center_mean0.045524195;edge_mean0.060434720
+N_pattern:fullfield112/150;center136;invalid1;center_mean0.045520248;edge_mean0.060410490
+N_line_pattern:fullfield113/150;center136;invalid1;center_mean0.045524195;edge_mean0.060434720

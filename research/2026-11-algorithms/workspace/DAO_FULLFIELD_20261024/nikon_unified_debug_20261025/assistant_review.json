@@ -1,0 +1,87 @@
+{
+  "updated": "2026-10-25T07:51:02.819151+00:00",
+  "status": "reviewed_not_adopted",
+  "completed_epochs": 4,
+  "optimizer_updates": 752,
+  "parameters": 7121987,
+  "parameter_tensors": 101,
+  "rows": [
+    {
+      "epoch": 0,
+      "passes": 1491,
+      "rate": 0.2485,
+      "all7_passes": 106,
+      "all7_rate": 0.0795198799699925,
+      "invalid": 0,
+      "field_mean": 0.17268831855135744
+    },
+    {
+      "epoch": 1,
+      "passes": 1470,
+      "rate": 0.245,
+      "all7_passes": 103,
+      "all7_rate": 0.07726931732933233,
+      "invalid": 0,
+      "field_mean": 0.1802895183853189
+    },
+    {
+      "epoch": 2,
+      "passes": 1488,
+      "rate": 0.248,
+      "all7_passes": 104,
+      "all7_rate": 0.07801950487621906,
+      "invalid": 0,
+      "field_mean": 0.18423940861339014
+    },
+    {
+      "epoch": 3,
+      "passes": 1485,
+      "rate": 0.2475,
+      "all7_passes": 104,
+      "all7_rate": 0.07801950487621906,
+      "invalid": 0,
+      "field_mean": 0.18148029180652392
+    },
+    {
+      "epoch": 4,
+      "passes": 1492,
+      "rate": 0.24866666666666667,
+      "all7_passes": 102,
+      "all7_rate": 0.07651912978244561,
+      "invalid": 0,
+      "field_mean": 0.1794761157789335
+    }
+  ],
+  "selected_epoch": 4,
+  "new_noise_rate": 0.24333333333333335,
+  "new_noise_passes": 1460,
+  "new_passes_vs_initial": 97,
+  "lost_passes_vs_initial": 96,
+  "update_monitor_records": 78,
+  "max_observed_prediction_update_rms": 0.01948610693216324,
+  "last_observed_prediction_update_rms": 0.0013653202913701534,
+  "conclusion": "Severe update instability did not recur. Final recovery exceeds initial by one case, while all7 and mean optical error worsen; no clear learning improvement demonstrated.",
+  "ongoing_work": null,
+  "original_modular_model_retained": true,
+  "trepan_unchanged": true,
+  "gradient_check_review": {
+    "updated": "2026-10-25T07:54:53.602099+00:00",
+    "status": "reviewed",
+    "training_cases": 64,
+    "checkpoints": [
+      "initial",
+      "last"
+    ],
+    "central_difference_checks": 18,
+    "optimizer_updates": 0,
+    "checked_descent_directions_decrease_loss": 18,
+    "sign_reversals_observed": 0,
+    "total_direction_relative_amplitude_discrepancy_at_h1e4": {
+      "initial": 0.19489898875865364,
+      "last": 0.320970060161768
+    },
+    "conclusion": "No sign reversal in these sampled training directions; the approximate backward has magnitude errors, and this limited check does not establish its complete correctness or explain absent validation gain.",
+    "invalid_first_diagnostic_preserved": "report_stale_direct_probe.json",
+    "scope": "64 training samples only; no additional neural updates; no validation-based gradient tuning"
+  }
+}

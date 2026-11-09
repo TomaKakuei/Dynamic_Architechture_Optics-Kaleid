@@ -1,0 +1,16 @@
+{
+  "gain_e_per_intensity": 3686.1700643429103,
+  "nominal_peak_e": 4000.0,
+  "fixed_exposure": true,
+  "prnu_sigma": 0.005,
+  "dsnu_mean_e": 2.0,
+  "dsnu_sigma_e": 0.5,
+  "read_sigma_e": 1.2,
+  "full_well_e": 10000.0,
+  "adu_per_e": 4.0,
+  "bias_adu": 100.0,
+  "sensor_seed": 193320261008,
+  "grid": 2048,
+  "degree": 24,
+  "diffuser_sha256": "bca041eaf5c8896a0e587193761640cd5aed849bee3bbbf1af144647e5c64800"
+}

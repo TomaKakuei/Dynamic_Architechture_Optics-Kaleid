@@ -1,0 +1,28 @@
+{
+  "status": "outputs_reviewed",
+  "training_updates": 0,
+  "independent_replay": false,
+  "training_guards": [
+    {
+      "command": [
+        "DAO_FULLFIELD_20261024\\pipeline.py"
+      ],
+      "returncode": 1,
+      "message": "Training stopped by user; do not resume the queue without a new training instruction."
+    },
+    {
+      "command": [
+        "DAO_FULLFIELD_20261024\\experiment.py",
+        "train",
+        "--system",
+        "nikon"
+      ],
+      "returncode": 1,
+      "message": "Training and optimizer probes stopped by user; use the separate zero-training debug scripts."
+    }
+  ],
+  "no_automatic_resume": true,
+  "completed_original_case_routes": 55,
+  "completed_validation_case_routes": 48,
+  "report": "DEBUG_REPORT.txt"
+}

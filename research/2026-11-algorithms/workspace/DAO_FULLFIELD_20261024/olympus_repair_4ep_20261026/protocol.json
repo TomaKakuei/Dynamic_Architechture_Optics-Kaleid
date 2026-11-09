@@ -1,0 +1,37 @@
+{
+  "authorized": "2026-10-26T22:37:24.969732+00:00",
+  "user_request": "Solve the problems and continue training",
+  "scope": "Olympus only; repaired local image inverse then four neural training epochs",
+  "preserve_failed_244": true,
+  "pilot_cases": [
+    7111,
+    7007,
+    7049,
+    7363
+  ],
+  "pilot_steps_per_case": 2,
+  "pilot_gate": "All endpoints valid; preserve baseline fullfield passes on these four diagnostics",
+  "camera_pupil_grid": 2048,
+  "fft_grid": 4096,
+  "jacobian": "Complete finite response including aperture boundary and amplitude; h=.01, original model domain",
+  "total_prior_departure_limit": 0.1,
+  "per_step_limit": 0.05,
+  "prior_ridge": 0.01,
+  "adaptive_curvature_damping": true,
+  "network_start_epoch": 45,
+  "training_epochs": 4,
+  "expected_optimizer_updates": 2240,
+  "training_samples_per_epoch": {
+    "whole_system_joint": 7000,
+    "isolated_rehearsal": 7000
+  },
+  "neural_dtype": "float32",
+  "physical_objective": "center ABS plus eight signed edge DIFF fields",
+  "truth_allowed": "Supervised training targets and offline scoring only; never inverse inference/line search",
+  "final_evaluation_cases": 500,
+  "final_evaluation_mode": "neural output only, distinct from repaired-inverse local test",
+  "automatic_deployment": false,
+  "independent_review": false,
+  "digest_comparisons": false,
+  "notification_configured": false
+}

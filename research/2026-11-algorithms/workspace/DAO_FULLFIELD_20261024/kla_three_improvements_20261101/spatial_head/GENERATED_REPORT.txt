@@ -1,0 +1,146 @@
+KLA three-candidate study; fixed paired200. Generated results, assistant interpretation pending.
+baseline: 111/200 = 55.50%; mean WRMS 0.10108458 waves; invalid 0.
+bounded_control: 120/200 = 60.00%; mean WRMS 0.10199829 waves; invalid 0.
+candidate: 115/200 = 57.50%; mean WRMS 0.10208427 waves; invalid 0.
+
+{
+  "status": "complete",
+  "assistant_interpretation": "pending",
+  "protocol_file": "protocol.json",
+  "baseline": {
+    "count": 200,
+    "passes": 111,
+    "rate": 0.555,
+    "invalid": 0,
+    "q_mean": 0.4361803645541811,
+    "wrms_mean": 0.10108458467001785,
+    "worst_field_wrms_mean": 0.12885463488883686
+  },
+  "bounded_control": {
+    "count": 200,
+    "passes": 120,
+    "rate": 0.6,
+    "invalid": 0,
+    "q_mean": 0.43437481628653574,
+    "wrms_mean": 0.10199828969475946,
+    "worst_field_wrms_mean": 0.13096288914952
+  },
+  "candidate": {
+    "count": 200,
+    "passes": 115,
+    "rate": 0.575,
+    "invalid": 0,
+    "q_mean": 0.4336427820564128,
+    "wrms_mean": 0.10208426908623972,
+    "worst_field_wrms_mean": 0.13025228758167187
+  },
+  "arm": "spatial_head",
+  "direct_vs_control": {
+    "gained": 5,
+    "lost": 10,
+    "net": -5,
+    "gained_ids": [
+      9933,
+      9471,
+      19573,
+      29975,
+      29381
+    ],
+    "lost_ids": [
+      9476,
+      9361,
+      9238,
+      19539,
+      19210,
+      29255,
+      29021,
+      29923,
+      29325,
+      29716
+    ],
+    "valid_pairs": 200,
+    "wrms_improved": 95,
+    "q_improved": 96,
+    "wrms_improved_but_q_worse": 12,
+    "mean_wrms_change": 8.597939148024668e-05
+  },
+  "direct_vs_initial": {
+    "gained": 11,
+    "lost": 7,
+    "net": 4,
+    "gained_ids": [
+      9933,
+      9120,
+      19350,
+      19949,
+      19573,
+      29975,
+      29746,
+      29771,
+      29156,
+      29270,
+      29381
+    ],
+    "lost_ids": [
+      9439,
+      9361,
+      19058,
+      19159,
+      19210,
+      29010,
+      29175
+    ],
+    "valid_pairs": 200,
+    "wrms_improved": 95,
+    "q_improved": 92,
+    "wrms_improved_but_q_worse": 14,
+    "mean_wrms_change": 0.0009996844162218415
+  },
+  "control_vs_initial": {
+    "gained": 15,
+    "lost": 6,
+    "net": 9,
+    "gained_ids": [
+      9476,
+      9238,
+      9120,
+      19350,
+      19539,
+      19949,
+      29255,
+      29746,
+      29771,
+      29021,
+      29156,
+      29923,
+      29325,
+      29270,
+      29716
+    ],
+    "lost_ids": [
+      9439,
+      9471,
+      19058,
+      19159,
+      29010,
+      29175
+    ],
+    "valid_pairs": 200,
+    "wrms_improved": 96,
+    "q_improved": 93,
+    "wrms_improved_but_q_worse": 14,
+    "mean_wrms_change": 0.0009137050247415948
+  },
+  "training_active_seconds": 401.81703840001865,
+  "evaluation_active_seconds": 8.607082599999558,
+  "inference": "One observed packet per case; model_residual adds model computation and a correction head, no observed feedback",
+  "automatic_deployment": false,
+  "automatic_full3000": false,
+  "limitations": [
+    "Reused selection validation; not a fresh independent test",
+    "Full-data has9x training coverage and optimizer updates; not equal compute",
+    "Model residual adds computation from one observation, not a second physical observation"
+  ],
+  "actual_training_samples": 3000,
+  "actual_optimizer_updates": 282
+}

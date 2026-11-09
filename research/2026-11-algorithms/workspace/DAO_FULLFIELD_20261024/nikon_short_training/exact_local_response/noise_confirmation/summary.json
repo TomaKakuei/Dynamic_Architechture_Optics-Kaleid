@@ -1,0 +1,1045 @@
+{
+  "results": {
+    "original_direct": {
+      "validation": {
+        "count": 6000,
+        "invalid": 0,
+        "full_field_passes": 0,
+        "full_field_rate": 0.0,
+        "all_fields_below07_rate": 0.0,
+        "all_fields_below08_rate": 0.0,
+        "center07_rate": 0.8471666666666666,
+        "center_and_mean08_rate": 0.0,
+        "field_mean": 0.6472596455329274,
+        "worst_field_mean": 1.035963105301107,
+        "worst_field_p90": 1.63157946882582,
+        "per_field_mean": [
+          0.054489050741718774,
+          0.9383229938148735,
+          0.9489668920421881
+        ],
+        "per_field_pass_rate": [
+          0.8471666666666666,
+          0.0,
+          0.0
+        ],
+        "absolute_per_field_mean": [
+          0.054489050741718774,
+          14.155981933589196,
+          14.333865442723543
+        ],
+        "threshold_waves": 0.07,
+        "cohorts": {
+          "0": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 0,
+            "full_field_rate": 0.0,
+            "all_fields_below07_rate": 0.0,
+            "all_fields_below08_rate": 0.0,
+            "center07_rate": 0.825,
+            "center_and_mean08_rate": 0.0,
+            "field_mean": 0.7310232578936879,
+            "worst_field_mean": 1.176697095558959,
+            "worst_field_p90": 1.762130626015929,
+            "per_field_mean": [
+              0.056478610218729186,
+              1.0629548471756385,
+              1.0736363162866993
+            ],
+            "per_field_pass_rate": [
+              0.825,
+              0.0,
+              0.0
+            ],
+            "absolute_per_field_mean": [
+              0.056478610218729186,
+              14.148304576688432,
+              14.331070495207735
+            ],
+            "threshold_waves": 0.07
+          },
+          "1": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 0,
+            "full_field_rate": 0.0,
+            "all_fields_below07_rate": 0.0,
+            "all_fields_below08_rate": 0.0,
+            "center07_rate": 0.848,
+            "center_and_mean08_rate": 0.0,
+            "field_mean": 0.6609599169240813,
+            "worst_field_mean": 1.0549033001463461,
+            "worst_field_p90": 1.610953380969158,
+            "per_field_mean": [
+              0.0551979186388198,
+              0.9612550605883543,
+              0.9664267715450686
+            ],
+            "per_field_pass_rate": [
+              0.848,
+              0.0,
+              0.0
+            ],
+            "absolute_per_field_mean": [
+              0.0551979186388198,
+              14.153436168455658,
+              14.332217757298798
+            ],
+            "threshold_waves": 0.07
+          },
+          "2": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 0,
+            "full_field_rate": 0.0,
+            "all_fields_below07_rate": 0.0,
+            "all_fields_below08_rate": 0.0,
+            "center07_rate": 0.8685,
+            "center_and_mean08_rate": 0.0,
+            "field_mean": 0.549795761781013,
+            "worst_field_mean": 0.8762889201980161,
+            "worst_field_p90": 1.4484738095302625,
+            "per_field_mean": [
+              0.05179062336760715,
+              0.7907590736806233,
+              0.8068375882948097
+            ],
+            "per_field_pass_rate": [
+              0.8685,
+              0.0,
+              0.0
+            ],
+            "absolute_per_field_mean": [
+              0.05179062336760715,
+              14.166205055623614,
+              14.338308075664026
+            ],
+            "threshold_waves": 0.07
+          }
+        }
+      },
+      "epoch": 0,
+      "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt",
+      "inference_protocol": "one acquisition: direct network",
+      "acquisitions_mean": 1.0,
+      "acquisitions_max": 1,
+      "fixed_pose_count": 6000,
+      "separate_measurement_noise": true,
+      "reused_from": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/noise_confirmation/original_direct.json"
+    },
+    "original_measured_loop": {
+      "validation": {
+        "count": 6000,
+        "invalid": 0,
+        "full_field_passes": 2835,
+        "full_field_rate": 0.4725,
+        "all_fields_below07_rate": 0.4725,
+        "all_fields_below08_rate": 0.5773333333333334,
+        "center07_rate": 0.9985,
+        "center_and_mean08_rate": 0.8051666666666667,
+        "field_mean": 0.07123970887215425,
+        "worst_field_mean": 0.09814963802647211,
+        "worst_field_p90": 0.14943165141186163,
+        "per_field_mean": [
+          0.03596907547805005,
+          0.0889480737518875,
+          0.08880197738652514
+        ],
+        "per_field_pass_rate": [
+          0.9985,
+          0.5583333333333333,
+          0.5551666666666667
+        ],
+        "absolute_per_field_mean": [
+          0.03596907547805005,
+          14.152832309339177,
+          14.158551967314542
+        ],
+        "threshold_waves": 0.07,
+        "cohorts": {
+          "0": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 825,
+            "full_field_rate": 0.4125,
+            "all_fields_below07_rate": 0.4125,
+            "all_fields_below08_rate": 0.5265,
+            "center07_rate": 0.998,
+            "center_and_mean08_rate": 0.7645,
+            "field_mean": 0.0773046258436666,
+            "worst_field_mean": 0.10825307955070314,
+            "worst_field_p90": 0.1664581114907952,
+            "per_field_mean": [
+              0.0360093925351786,
+              0.09843672421662353,
+              0.09746776077919773
+            ],
+            "per_field_pass_rate": [
+              0.998,
+              0.495,
+              0.503
+            ],
+            "absolute_per_field_mean": [
+              0.0360093925351786,
+              14.154241432819946,
+              14.1586788391771
+            ],
+            "threshold_waves": 0.07
+          },
+          "1": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 826,
+            "full_field_rate": 0.413,
+            "all_fields_below07_rate": 0.413,
+            "all_fields_below08_rate": 0.5275,
+            "center07_rate": 0.998,
+            "center_and_mean08_rate": 0.801,
+            "field_mean": 0.07371092268434862,
+            "worst_field_mean": 0.10220068510941238,
+            "worst_field_p90": 0.1557308436554258,
+            "per_field_mean": [
+              0.03604619761872436,
+              0.09254218446186224,
+              0.092544385972459
+            ],
+            "per_field_pass_rate": [
+              0.998,
+              0.5215,
+              0.502
+            ],
+            "absolute_per_field_mean": [
+              0.03604619761872436,
+              14.150380622534739,
+              14.158378805613202
+            ],
+            "threshold_waves": 0.07
+          },
+          "2": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 1184,
+            "full_field_rate": 0.592,
+            "all_fields_below07_rate": 0.592,
+            "all_fields_below08_rate": 0.678,
+            "center07_rate": 0.9995,
+            "center_and_mean08_rate": 0.85,
+            "field_mean": 0.06270357808844754,
+            "worst_field_mean": 0.08399514941930088,
+            "worst_field_p90": 0.1315224941599114,
+            "per_field_mean": [
+              0.03585163628024728,
+              0.07586531257717627,
+              0.07639378540791915
+            ],
+            "per_field_pass_rate": [
+              0.9995,
+              0.6585,
+              0.6605
+            ],
+            "absolute_per_field_mean": [
+              0.03585163628024728,
+              14.153874872662788,
+              14.158598257153296
+            ],
+            "threshold_waves": 0.07
+          }
+        }
+      },
+      "epoch": 0,
+      "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt",
+      "inference_protocol": "network plus original diff_calibrated measured feedback",
+      "acquisitions_mean": 5.881166666666667,
+      "acquisitions_max": 9,
+      "fixed_pose_count": 6000,
+      "separate_measurement_noise": true,
+      "reused_from": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/noise_confirmation/original_measured_loop.json"
+    },
+    "idea_epoch0_measured_loop": {
+      "validation": {
+        "count": 6000,
+        "invalid": 0,
+        "full_field_passes": 3670,
+        "full_field_rate": 0.6116666666666667,
+        "all_fields_below07_rate": 0.6116666666666667,
+        "all_fields_below08_rate": 0.7285,
+        "center07_rate": 1.0,
+        "center_and_mean08_rate": 0.9403333333333334,
+        "field_mean": 0.05201768251221511,
+        "worst_field_mean": 0.06686767567834612,
+        "worst_field_p90": 0.10174211348400683,
+        "per_field_mean": [
+          0.0356285707021616,
+          0.06003727185549962,
+          0.06038720497898403
+        ],
+        "per_field_pass_rate": [
+          1.0,
+          0.7023333333333334,
+          0.6896666666666667
+        ],
+        "absolute_per_field_mean": [
+          0.0356285707021616,
+          14.163543907440204,
+          14.16519521252991
+        ],
+        "threshold_waves": 0.07,
+        "cohorts": {
+          "0": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 1200,
+            "full_field_rate": 0.6,
+            "all_fields_below07_rate": 0.6,
+            "all_fields_below08_rate": 0.7095,
+            "center07_rate": 1.0,
+            "center_and_mean08_rate": 0.935,
+            "field_mean": 0.05299601579034252,
+            "worst_field_mean": 0.06821354982571994,
+            "worst_field_p90": 0.10274580727073256,
+            "per_field_mean": [
+              0.035640451002514374,
+              0.06144729939990694,
+              0.061900296968606036
+            ],
+            "per_field_pass_rate": [
+              1.0,
+              0.6835,
+              0.6805
+            ],
+            "absolute_per_field_mean": [
+              0.035640451002514374,
+              14.16383967151018,
+              14.165702760713167
+            ],
+            "threshold_waves": 0.07
+          },
+          "1": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 1093,
+            "full_field_rate": 0.5465,
+            "all_fields_below07_rate": 0.5465,
+            "all_fields_below08_rate": 0.6755,
+            "center07_rate": 1.0,
+            "center_and_mean08_rate": 0.93,
+            "field_mean": 0.05391312233990275,
+            "worst_field_mean": 0.07020316087202315,
+            "worst_field_p90": 0.10471384792471024,
+            "per_field_mean": [
+              0.03564676607861971,
+              0.06274627231696568,
+              0.06334632862412284
+            ],
+            "per_field_pass_rate": [
+              1.0,
+              0.6615,
+              0.634
+            ],
+            "absolute_per_field_mean": [
+              0.03564676607861971,
+              14.162876896416702,
+              14.16415373668739
+            ],
+            "threshold_waves": 0.07
+          },
+          "2": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 1377,
+            "full_field_rate": 0.6885,
+            "all_fields_below07_rate": 0.6885,
+            "all_fields_below08_rate": 0.8005,
+            "center07_rate": 1.0,
+            "center_and_mean08_rate": 0.956,
+            "field_mean": 0.04914390940640006,
+            "worst_field_mean": 0.062186316337295225,
+            "worst_field_p90": 0.09624682823125383,
+            "per_field_mean": [
+              0.035598495025350355,
+              0.055918243849626376,
+              0.055914989344223495
+            ],
+            "per_field_pass_rate": [
+              1.0,
+              0.762,
+              0.7545
+            ],
+            "absolute_per_field_mean": [
+              0.035598495025350355,
+              14.163915154393713,
+              14.165729140189177
+            ],
+            "threshold_waves": 0.07
+          }
+        }
+      },
+      "epoch": 0,
+      "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/candidate.pt",
+      "inference_protocol": "one acquisition: network plus4exact-response nonlinear model refinements + original diff_calibrated measured feedback",
+      "acquisitions_mean": 4.064333333333333,
+      "acquisitions_max": 10,
+      "fixed_pose_count": 6000,
+      "separate_measurement_noise": true
+    },
+    "idea_epoch0": {
+      "validation": {
+        "count": 6000,
+        "invalid": 0,
+        "full_field_passes": 1692,
+        "full_field_rate": 0.282,
+        "all_fields_below07_rate": 0.282,
+        "all_fields_below08_rate": 0.38283333333333336,
+        "center07_rate": 0.9996666666666667,
+        "center_and_mean08_rate": 0.6618333333333334,
+        "field_mean": 0.08058508246323733,
+        "worst_field_mean": 0.1137617923249015,
+        "worst_field_p90": 0.18718343953595995,
+        "per_field_mean": [
+          0.036068077052379126,
+          0.10277684792021562,
+          0.10291032241711834
+        ],
+        "per_field_pass_rate": [
+          0.9996666666666667,
+          0.37133333333333335,
+          0.37416666666666665
+        ],
+        "absolute_per_field_mean": [
+          0.036068077052379126,
+          14.165020232884784,
+          14.166433188251528
+        ],
+        "threshold_waves": 0.07,
+        "cohorts": {
+          "0": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 443,
+            "full_field_rate": 0.2215,
+            "all_fields_below07_rate": 0.2215,
+            "all_fields_below08_rate": 0.333,
+            "center07_rate": 0.999,
+            "center_and_mean08_rate": 0.617,
+            "field_mean": 0.08592456953183607,
+            "worst_field_mean": 0.12270844123484385,
+            "worst_field_p90": 0.19550107383670157,
+            "per_field_mean": [
+              0.036027486068984614,
+              0.11066142206997896,
+              0.11108480045654485
+            ],
+            "per_field_pass_rate": [
+              0.999,
+              0.31,
+              0.315
+            ],
+            "absolute_per_field_mean": [
+              0.036027486068984614,
+              14.169459473907402,
+              14.170335953914444
+            ],
+            "threshold_waves": 0.07
+          },
+          "1": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 439,
+            "full_field_rate": 0.2195,
+            "all_fields_below07_rate": 0.2195,
+            "all_fields_below08_rate": 0.308,
+            "center07_rate": 1.0,
+            "center_and_mean08_rate": 0.617,
+            "field_mean": 0.08449054749347404,
+            "worst_field_mean": 0.12042036195235499,
+            "worst_field_p90": 0.19663943368250159,
+            "per_field_mean": [
+              0.0361998627111931,
+              0.10836401382433204,
+              0.10890776594489684
+            ],
+            "per_field_pass_rate": [
+              1.0,
+              0.319,
+              0.315
+            ],
+            "absolute_per_field_mean": [
+              0.0361998627111931,
+              14.159874130815272,
+              14.160815215392644
+            ],
+            "threshold_waves": 0.07
+          },
+          "2": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 810,
+            "full_field_rate": 0.405,
+            "all_fields_below07_rate": 0.405,
+            "all_fields_below08_rate": 0.5075,
+            "center07_rate": 1.0,
+            "center_and_mean08_rate": 0.7515,
+            "field_mean": 0.07134013036440184,
+            "worst_field_mean": 0.09815657378750564,
+            "worst_field_p90": 0.15932372592767904,
+            "per_field_mean": [
+              0.035976882376959306,
+              0.08930510786633453,
+              0.08873840084991164
+            ],
+            "per_field_pass_rate": [
+              1.0,
+              0.485,
+              0.4925
+            ],
+            "absolute_per_field_mean": [
+              0.035976882376959306,
+              14.165727093931702,
+              14.168148395447494
+            ],
+            "threshold_waves": 0.07
+          }
+        }
+      },
+      "epoch": 0,
+      "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/candidate.pt",
+      "inference_protocol": "one acquisition: network plus4exact-response nonlinear model refinements",
+      "acquisitions_mean": 1.0,
+      "acquisitions_max": 1,
+      "fixed_pose_count": 6000,
+      "separate_measurement_noise": true,
+      "recorded_before_feedback": true,
+      "source_loop_route": "idea_epoch0_measured_loop"
+    },
+    "idea_selected_measured_loop": {
+      "validation": {
+        "count": 6000,
+        "invalid": 0,
+        "full_field_passes": 3670,
+        "full_field_rate": 0.6116666666666667,
+        "all_fields_below07_rate": 0.6116666666666667,
+        "all_fields_below08_rate": 0.7285,
+        "center07_rate": 1.0,
+        "center_and_mean08_rate": 0.9403333333333334,
+        "field_mean": 0.05201768251221511,
+        "worst_field_mean": 0.06686767567834612,
+        "worst_field_p90": 0.10174211348400683,
+        "per_field_mean": [
+          0.0356285707021616,
+          0.06003727185549962,
+          0.06038720497898403
+        ],
+        "per_field_pass_rate": [
+          1.0,
+          0.7023333333333334,
+          0.6896666666666667
+        ],
+        "absolute_per_field_mean": [
+          0.0356285707021616,
+          14.163543907440204,
+          14.16519521252991
+        ],
+        "threshold_waves": 0.07,
+        "cohorts": {
+          "0": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 1200,
+            "full_field_rate": 0.6,
+            "all_fields_below07_rate": 0.6,
+            "all_fields_below08_rate": 0.7095,
+            "center07_rate": 1.0,
+            "center_and_mean08_rate": 0.935,
+            "field_mean": 0.05299601579034252,
+            "worst_field_mean": 0.06821354982571994,
+            "worst_field_p90": 0.10274580727073256,
+            "per_field_mean": [
+              0.035640451002514374,
+              0.06144729939990694,
+              0.061900296968606036
+            ],
+            "per_field_pass_rate": [
+              1.0,
+              0.6835,
+              0.6805
+            ],
+            "absolute_per_field_mean": [
+              0.035640451002514374,
+              14.16383967151018,
+              14.165702760713167
+            ],
+            "threshold_waves": 0.07
+          },
+          "1": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 1093,
+            "full_field_rate": 0.5465,
+            "all_fields_below07_rate": 0.5465,
+            "all_fields_below08_rate": 0.6755,
+            "center07_rate": 1.0,
+            "center_and_mean08_rate": 0.93,
+            "field_mean": 0.05391312233990275,
+            "worst_field_mean": 0.07020316087202315,
+            "worst_field_p90": 0.10471384792471024,
+            "per_field_mean": [
+              0.03564676607861971,
+              0.06274627231696568,
+              0.06334632862412284
+            ],
+            "per_field_pass_rate": [
+              1.0,
+              0.6615,
+              0.634
+            ],
+            "absolute_per_field_mean": [
+              0.03564676607861971,
+              14.162876896416702,
+              14.16415373668739
+            ],
+            "threshold_waves": 0.07
+          },
+          "2": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 1377,
+            "full_field_rate": 0.6885,
+            "all_fields_below07_rate": 0.6885,
+            "all_fields_below08_rate": 0.8005,
+            "center07_rate": 1.0,
+            "center_and_mean08_rate": 0.956,
+            "field_mean": 0.04914390940640006,
+            "worst_field_mean": 0.062186316337295225,
+            "worst_field_p90": 0.09624682823125383,
+            "per_field_mean": [
+              0.035598495025350355,
+              0.055918243849626376,
+              0.055914989344223495
+            ],
+            "per_field_pass_rate": [
+              1.0,
+              0.762,
+              0.7545
+            ],
+            "absolute_per_field_mean": [
+              0.035598495025350355,
+              14.163915154393713,
+              14.165729140189177
+            ],
+            "threshold_waves": 0.07
+          }
+        }
+      },
+      "epoch": 0,
+      "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/candidate.pt",
+      "inference_protocol": "one acquisition: network plus4exact-response nonlinear model refinements + original diff_calibrated measured feedback",
+      "acquisitions_mean": 4.064333333333333,
+      "acquisitions_max": 10,
+      "fixed_pose_count": 6000,
+      "separate_measurement_noise": true,
+      "reused_from": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/noise_confirmation/idea_epoch0_measured_loop.json",
+      "initializer_state_exactly_equal": true
+    },
+    "idea_selected": {
+      "validation": {
+        "count": 6000,
+        "invalid": 0,
+        "full_field_passes": 1692,
+        "full_field_rate": 0.282,
+        "all_fields_below07_rate": 0.282,
+        "all_fields_below08_rate": 0.38283333333333336,
+        "center07_rate": 0.9996666666666667,
+        "center_and_mean08_rate": 0.6618333333333334,
+        "field_mean": 0.08058508246323733,
+        "worst_field_mean": 0.1137617923249015,
+        "worst_field_p90": 0.18718343953595995,
+        "per_field_mean": [
+          0.036068077052379126,
+          0.10277684792021562,
+          0.10291032241711834
+        ],
+        "per_field_pass_rate": [
+          0.9996666666666667,
+          0.37133333333333335,
+          0.37416666666666665
+        ],
+        "absolute_per_field_mean": [
+          0.036068077052379126,
+          14.165020232884784,
+          14.166433188251528
+        ],
+        "threshold_waves": 0.07,
+        "cohorts": {
+          "0": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 443,
+            "full_field_rate": 0.2215,
+            "all_fields_below07_rate": 0.2215,
+            "all_fields_below08_rate": 0.333,
+            "center07_rate": 0.999,
+            "center_and_mean08_rate": 0.617,
+            "field_mean": 0.08592456953183607,
+            "worst_field_mean": 0.12270844123484385,
+            "worst_field_p90": 0.19550107383670157,
+            "per_field_mean": [
+              0.036027486068984614,
+              0.11066142206997896,
+              0.11108480045654485
+            ],
+            "per_field_pass_rate": [
+              0.999,
+              0.31,
+              0.315
+            ],
+            "absolute_per_field_mean": [
+              0.036027486068984614,
+              14.169459473907402,
+              14.170335953914444
+            ],
+            "threshold_waves": 0.07
+          },
+          "1": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 439,
+            "full_field_rate": 0.2195,
+            "all_fields_below07_rate": 0.2195,
+            "all_fields_below08_rate": 0.308,
+            "center07_rate": 1.0,
+            "center_and_mean08_rate": 0.617,
+            "field_mean": 0.08449054749347404,
+            "worst_field_mean": 0.12042036195235499,
+            "worst_field_p90": 0.19663943368250159,
+            "per_field_mean": [
+              0.0361998627111931,
+              0.10836401382433204,
+              0.10890776594489684
+            ],
+            "per_field_pass_rate": [
+              1.0,
+              0.319,
+              0.315
+            ],
+            "absolute_per_field_mean": [
+              0.0361998627111931,
+              14.159874130815272,
+              14.160815215392644
+            ],
+            "threshold_waves": 0.07
+          },
+          "2": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 810,
+            "full_field_rate": 0.405,
+            "all_fields_below07_rate": 0.405,
+            "all_fields_below08_rate": 0.5075,
+            "center07_rate": 1.0,
+            "center_and_mean08_rate": 0.7515,
+            "field_mean": 0.07134013036440184,
+            "worst_field_mean": 0.09815657378750564,
+            "worst_field_p90": 0.15932372592767904,
+            "per_field_mean": [
+              0.035976882376959306,
+              0.08930510786633453,
+              0.08873840084991164
+            ],
+            "per_field_pass_rate": [
+              1.0,
+              0.485,
+              0.4925
+            ],
+            "absolute_per_field_mean": [
+              0.035976882376959306,
+              14.165727093931702,
+              14.168148395447494
+            ],
+            "threshold_waves": 0.07
+          }
+        }
+      },
+      "epoch": 0,
+      "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/candidate.pt",
+      "inference_protocol": "one acquisition: network plus4exact-response nonlinear model refinements",
+      "acquisitions_mean": 1.0,
+      "acquisitions_max": 1,
+      "fixed_pose_count": 6000,
+      "separate_measurement_noise": true,
+      "recorded_before_feedback": true,
+      "source_loop_route": "idea_epoch0_measured_loop",
+      "reused_from": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/noise_confirmation/idea_epoch0.json",
+      "initializer_state_exactly_equal": true
+    },
+    "idea_epoch4_measured_loop": {
+      "validation": {
+        "count": 6000,
+        "invalid": 0,
+        "full_field_passes": 3756,
+        "full_field_rate": 0.626,
+        "all_fields_below07_rate": 0.626,
+        "all_fields_below08_rate": 0.7418333333333333,
+        "center07_rate": 0.9996666666666667,
+        "center_and_mean08_rate": 0.9403333333333334,
+        "field_mean": 0.05218286397043952,
+        "worst_field_mean": 0.06699635439216638,
+        "worst_field_p90": 0.10098586485076702,
+        "per_field_mean": [
+          0.03566137929184641,
+          0.06026920240658934,
+          0.06061801021288317
+        ],
+        "per_field_pass_rate": [
+          0.9996666666666667,
+          0.7085,
+          0.7046666666666667
+        ],
+        "absolute_per_field_mean": [
+          0.03566137929184641,
+          14.162542356179173,
+          14.163525669027479
+        ],
+        "threshold_waves": 0.07,
+        "cohorts": {
+          "0": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 1220,
+            "full_field_rate": 0.61,
+            "all_fields_below07_rate": 0.61,
+            "all_fields_below08_rate": 0.7255,
+            "center07_rate": 0.9995,
+            "center_and_mean08_rate": 0.93,
+            "field_mean": 0.05380516581944201,
+            "worst_field_mean": 0.0693474291947101,
+            "worst_field_p90": 0.10273223330437527,
+            "per_field_mean": [
+              0.03568996968937612,
+              0.06274181078443712,
+              0.06298371698451276
+            ],
+            "per_field_pass_rate": [
+              0.9995,
+              0.689,
+              0.6885
+            ],
+            "absolute_per_field_mean": [
+              0.03568996968937612,
+              14.163046123126216,
+              14.163390229705795
+            ],
+            "threshold_waves": 0.07
+          },
+          "1": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 1134,
+            "full_field_rate": 0.567,
+            "all_fields_below07_rate": 0.567,
+            "all_fields_below08_rate": 0.6965,
+            "center07_rate": 0.9995,
+            "center_and_mean08_rate": 0.9345,
+            "field_mean": 0.053779217043727186,
+            "worst_field_mean": 0.06976031552686414,
+            "worst_field_p90": 0.10384297726883669,
+            "per_field_mean": [
+              0.0356823767392752,
+              0.06258957074908228,
+              0.06306570364282427
+            ],
+            "per_field_pass_rate": [
+              0.9995,
+              0.666,
+              0.662
+            ],
+            "absolute_per_field_mean": [
+              0.0356823767392752,
+              14.162088867190597,
+              14.162759989623543
+            ],
+            "threshold_waves": 0.07
+          },
+          "2": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 1402,
+            "full_field_rate": 0.701,
+            "all_fields_below07_rate": 0.701,
+            "all_fields_below08_rate": 0.8035,
+            "center07_rate": 1.0,
+            "center_and_mean08_rate": 0.9565,
+            "field_mean": 0.04896420904814938,
+            "worst_field_mean": 0.06188131845492491,
+            "worst_field_p90": 0.09464440311269576,
+            "per_field_mean": [
+              0.035611791446887864,
+              0.05547622568624774,
+              0.055804610011312546
+            ],
+            "per_field_pass_rate": [
+              1.0,
+              0.7705,
+              0.7635
+            ],
+            "absolute_per_field_mean": [
+              0.035611791446887864,
+              14.162492078220671,
+              14.164426787752964
+            ],
+            "threshold_waves": 0.07
+          }
+        }
+      },
+      "epoch": 4,
+      "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/last.pt",
+      "inference_protocol": "one acquisition: network plus4exact-response nonlinear model refinements + original diff_calibrated measured feedback",
+      "acquisitions_mean": 4.174666666666667,
+      "acquisitions_max": 11,
+      "fixed_pose_count": 6000,
+      "separate_measurement_noise": true
+    },
+    "idea_epoch4": {
+      "validation": {
+        "count": 6000,
+        "invalid": 0,
+        "full_field_passes": 1472,
+        "full_field_rate": 0.24533333333333332,
+        "all_fields_below07_rate": 0.24533333333333332,
+        "all_fields_below08_rate": 0.33116666666666666,
+        "center07_rate": 0.9861666666666666,
+        "center_and_mean08_rate": 0.5586666666666666,
+        "field_mean": 0.11839378028286163,
+        "worst_field_mean": 0.17791679607298305,
+        "worst_field_p90": 0.3718242966133234,
+        "per_field_mean": [
+          0.037170182068649894,
+          0.16462570796152065,
+          0.15338545081841445
+        ],
+        "per_field_pass_rate": [
+          0.9861666666666666,
+          0.32,
+          0.32166666666666666
+        ],
+        "absolute_per_field_mean": [
+          0.037170182068649894,
+          14.212107261614403,
+          14.20674302056313
+        ],
+        "threshold_waves": 0.07,
+        "cohorts": {
+          "0": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 397,
+            "full_field_rate": 0.1985,
+            "all_fields_below07_rate": 0.1985,
+            "all_fields_below08_rate": 0.2805,
+            "center07_rate": 0.985,
+            "center_and_mean08_rate": 0.522,
+            "field_mean": 0.12619083409110307,
+            "worst_field_mean": 0.1890636993894141,
+            "worst_field_p90": 0.3750310403086453,
+            "per_field_mean": [
+              0.03747077282755616,
+              0.1735607351007668,
+              0.16754099434498604
+            ],
+            "per_field_pass_rate": [
+              0.985,
+              0.2685,
+              0.271
+            ],
+            "absolute_per_field_mean": [
+              0.03747077282755616,
+              14.20658310822836,
+              14.20463244324916
+            ],
+            "threshold_waves": 0.07
+          },
+          "1": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 366,
+            "full_field_rate": 0.183,
+            "all_fields_below07_rate": 0.183,
+            "all_fields_below08_rate": 0.265,
+            "center07_rate": 0.9835,
+            "center_and_mean08_rate": 0.5105,
+            "field_mean": 0.12605544243530664,
+            "worst_field_mean": 0.191400147397454,
+            "worst_field_p90": 0.41219069118726465,
+            "per_field_mean": [
+              0.03720273069222641,
+              0.1779813933860705,
+              0.16298220322762327
+            ],
+            "per_field_pass_rate": [
+              0.9835,
+              0.266,
+              0.2605
+            ],
+            "absolute_per_field_mean": [
+              0.03720273069222641,
+              14.21907382050329,
+              14.211429709621271
+            ],
+            "threshold_waves": 0.07
+          },
+          "2": {
+            "count": 2000,
+            "invalid": 0,
+            "full_field_passes": 709,
+            "full_field_rate": 0.3545,
+            "all_fields_below07_rate": 0.3545,
+            "all_fields_below08_rate": 0.448,
+            "center07_rate": 0.99,
+            "center_and_mean08_rate": 0.6435,
+            "field_mean": 0.10293506432217511,
+            "worst_field_mean": 0.15328654143208098,
+            "worst_field_p90": 0.30403807762393903,
+            "per_field_mean": [
+              0.03683704268616732,
+              0.14233499539772457,
+              0.12963315488263324
+            ],
+            "per_field_pass_rate": [
+              0.99,
+              0.4255,
+              0.4335
+            ],
+            "absolute_per_field_mean": [
+              0.03683704268616732,
+              14.210664856111523,
+              14.204166908818927
+            ],
+            "threshold_waves": 0.07
+          }
+        }
+      },
+      "epoch": 4,
+      "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/last.pt",
+      "inference_protocol": "one acquisition: network plus4exact-response nonlinear model refinements",
+      "acquisitions_mean": 1.0,
+      "acquisitions_max": 1,
+      "fixed_pose_count": 6000,
+      "separate_measurement_noise": true,
+      "recorded_before_feedback": true,
+      "source_loop_route": "idea_epoch4_measured_loop"
+    }
+  },
+  "plan": {
+    "scope": "Same6000original validation poses, separate fixed measurement-noise realization",
+    "noise_seed_rule": "(original_id + 1000000007) modulo 2**32",
+    "noise_standard_deviation_waves": 0.015,
+    "initial_measurement": "Regenerate raw native DIFF and the original grid from the same original pose; no hidden pose reaches network or controller",
+    "metric": "All3fields below0.07waves: center ABS and both outer-field DIFF relative to corrected fixed bias",
+    "closed_loop_budget": "Original4rounds and20readings ceiling,0.25step cap,0.04stop,gains1/0.5/0.25",
+    "routes": "Original candidate49 vs selected completed4epoch idea; report epoch4 separately if selected differs. For a one-acquisition refinement idea, also evaluate unchanged original measured feedback after its epoch0 and selected network on all6000poses.",
+    "interpretation": "Noise robustness on the same poses; not independent-scene confirmation",
+    "frozen_before_new_noise_evaluation": true
+  },
+  "updated": "2026-10-25T00:09:02.133682+00:00",
+  "assistant_review": "pending"
+}

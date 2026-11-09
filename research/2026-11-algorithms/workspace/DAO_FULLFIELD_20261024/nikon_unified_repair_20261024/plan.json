@@ -1,0 +1,32 @@
+{
+  "created": "2026-10-25T06:42:35.280568+00:00",
+  "parameters": 7121987,
+  "authorized_epochs": 4,
+  "optimizer_updates": 752,
+  "train_count": 24000,
+  "validation_count": 6000,
+  "readout_initialization": {
+    "training_labels": 24000,
+    "ridge": 0.001,
+    "extra_optimizer_epochs": 0
+  },
+  "direct_prior_loss": {
+    "weight": 1.0,
+    "kind": "SmoothL1",
+    "beta": 0.25
+  },
+  "selection": "Original validation only; maximum full-field passes then worst P90 then field mean; E0 eligible",
+  "inference": {
+    "acquisitions": 1,
+    "model_only_refinements": 4,
+    "measured_feedback": false,
+    "truth_input": false
+  },
+  "hashes": {
+    "C:\\Users\\Ar114514\\OneDrive\\\u6587\u6863\\_UCSB\\ECE\\DAO_FULLFIELD_20261024\\nikon_unified_repair_20261024\\repair.py": "1555c48d9cbe72d22c8ae33133c63988679d186d14dc296e78267670c603ab7f",
+    "C:\\Users\\Ar114514\\OneDrive\\\u6587\u6863\\_UCSB\\ECE\\DAO_FULLFIELD_20261024\\nikon_unified_repair_20261024\\prepare.py": "66359800a164858b14a591c5ba172eb2480c626273c2cb46a2ec9092962ca2f1",
+    "C:\\Users\\Ar114514\\OneDrive\\\u6587\u6863\\_UCSB\\ECE\\DAO_FULLFIELD_20261024\\nikon_unified_repair_20261024\\run.py": "a1572cbba7581c5a5e81c0c1ac85ddee7504d4d490135ac17bc06cac3b6252d5",
+    "C:\\Users\\Ar114514\\OneDrive\\\u6587\u6863\\_UCSB\\ECE\\DAO_FULLFIELD_20261024\\nikon_unified_repair_20261024\\initialized.pt": "9ce59be3c0a8a714f4a83a12225722326d8d2281c7cf61c242955e2c3cee5fe8",
+    "C:\\Users\\Ar114514\\OneDrive\\\u6587\u6863\\_UCSB\\ECE\\DAO_FULLFIELD_20261024\\nikon_short_training\\exact_local_response\\candidate.pt": "8ca9ec245adbaa873ab05130de76c036037e8eb14505360381a2963c7762f3cd"
+  }
+}

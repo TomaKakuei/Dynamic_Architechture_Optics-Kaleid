@@ -1,0 +1,30 @@
+{
+  "ids": [
+    7072,
+    7238,
+    7050,
+    7289,
+    7260,
+    7037,
+    7288,
+    7354,
+    7032,
+    7463,
+    7094,
+    7044
+  ],
+  "source": "development_f_model_loop",
+  "scope": "Previously observed cases, exploratory paired extension after F",
+  "axes": [
+    8,
+    9
+  ],
+  "bracket": 0.025,
+  "tangent_to_active_center": true,
+  "quadratic_interpolation": true,
+  "radius": 0.2,
+  "center_limit": 0.01,
+  "noise_stop": 9,
+  "measurement_packets": 1,
+  "truth_in_inference": false
+}

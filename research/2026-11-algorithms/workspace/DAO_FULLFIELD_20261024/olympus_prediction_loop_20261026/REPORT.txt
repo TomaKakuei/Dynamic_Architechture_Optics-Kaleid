@@ -1,0 +1,89 @@
+Olympus: local search and model prediction loops
+Saved-results interpretation; no additional inference or independent replay.
+Updated 2026-10-27T03:13:44.033738+00:00
+
+Same existing noisy nine-field observation packet. Frozen 4-epoch FP32 network.
+Center ABS, signed edge DIFF, all9 fields <.07 waves plus original validity.
+Truth is used only to score the fixed command, never to select steps.
+Development12 is deliberately mixed and previously observed; paired32 also
+uses previously observed cases. Neither is a new independent test.
+Original pure-network500 remains317/500; no combined full500 result.
+Means include all finite scored fields, including invalid cases; invalid cases never pass.
+All times below are EXTRA model-loop/search time after saved previous results;
+they do not measure cold end-to-end neural + D + loop inference.
+
+E: g(y)-g(F(x)) frozen neural self-consistency proposal, two bounded cycles.
+F: two fresh8D full-camera linearizations; gains1/.5/1.5; optional +/- extra directions.
+F total departure.2, nominal center trust.01waves, full-resolution aperture model.
+G: after F, two extra directions tangent to active center trust; bracket +/- .025
+then quadratic-interpolated trial; only actual original image-merit decrease accepted.
+G preserves F radius/center limits; maximum7 extra full-camera evaluations.
+
+H: maximum3 fresh-response cycles; increase center trust .01 -> .02 -> .04
+only after an improving in-subspace trial has actual/predicted image-merit gain >=.75
+and the previous center bound is active. No extra-axis fixed-step probes.
+H uses cached first linearizations from F; its timings are cache-assisted.
+G initially stopped on NumPy boolean JSON serialization, repaired with bool conversion.
+Already completed records retained. Reported G seconds exclude the unsaved failed attempt.
+
+development_e_prediction
+  Fullfield: neural 6/12; previous 6/12; candidate 6/12; gained0, lost0
+  Center: 8 -> 8; invalid: 2 -> 2; new invalid0
+  Edge mean: 0.099493899 -> 0.099279491 waves
+  Incremental total 48.985s; mean 4.082s/case; 42 camera / 10 network calls
+  Newly recovered IDs: []; lost IDs: []; accepted extra-direction steps: 0
+  Actual center trust expansions: 0
+
+development_f_model_loop
+  Fullfield: neural 6/12; previous 6/12; candidate 7/12; gained1, lost0
+  Center: 8 -> 8; invalid: 2 -> 2; new invalid0
+  Edge mean: 0.099493899 -> 0.097975233 waves
+  Incremental total 210.218s; mean 17.518s/case; 153 camera / 0 network calls
+  Newly recovered IDs: [7032]; lost IDs: []; accepted extra-direction steps: 0
+  Actual center trust expansions: 0
+
+paired32_f_model_loop
+  Fullfield: neural 20/32; previous 23/32; candidate 23/32; gained0, lost0
+  Center: 30 -> 30; invalid: 0 -> 0; new invalid0
+  Edge mean: 0.058561551 -> 0.054054639 waves
+  Incremental total 349.483s; mean 10.921s/case; 262 camera / 0 network calls
+  Newly recovered IDs: []; lost IDs: []; accepted extra-direction steps: 0
+  Actual center trust expansions: 0
+
+development_g_local
+  Fullfield: neural 6/12; previous 7/12; candidate 7/12; gained0, lost0
+  Center: 8 -> 8; invalid: 2 -> 2; new invalid0
+  Edge mean: 0.097975233 -> 0.098959385 waves
+  Incremental total 63.579s; mean 5.298s/case; 47 camera / 0 network calls
+  Newly recovered IDs: []; lost IDs: []; accepted extra-direction steps: 6
+  Actual center trust expansions: 0
+
+development_h_adaptive
+  Fullfield: neural 6/12; previous 6/12; candidate 7/12; gained1, lost0
+  Center: 8 -> 8; invalid: 2 -> 2; new invalid0
+  Edge mean: 0.099493899 -> 0.097744080 waves
+  Incremental total 136.968s; mean 11.414s/case; 95 camera / 0 network calls
+  Newly recovered IDs: [7032]; lost IDs: []; accepted extra-direction steps: 0
+  Actual center trust expansions: 0
+
+Assistant interpretation:
+E provided no new recovery. F saved one development case but paired32 remained23/32.
+F reduced paired32 mean edge error another7.696percent at10.921s additional mean time.
+Fixed extra-direction probes were never selected in either F cohort.
+G produced accepted finer local steps but no recovery gain over F and slightly worse
+development edge mean; its preregistered paired32 extension gate failed.
+H also gave no further recovery over F; the center expansion condition never triggered.
+H therefore does NOT establish whether a genuinely relaxed center bound would help.
+The nominal center-bound explanation remains unproven. Do not widen scoring gates.
+Example7354: F image merit312.699 ->303.123 while worst physical field.52825 ->.55596.
+This demonstrates non-monotone transfer from image fit to recovery on that case;
+it does not establish an information limit or failure of all local methods.
+No new variant is promoted to the default. G/H paired32 extensions were not run.
+
+Limitations: improving the image fit does not guarantee improving physical recovery.
+The nominal center constraint is a model proxy, not an actual endpoint guarantee.
+No scoring threshold was widened; invalid cases remain failures.
+No original model overwritten, deployment, new observations, or training.
+Development F protocol gain metadata was inherited incorrectly from E; the actual
+saved trials and implementation used1/.5/1.5. Writer fixed before paired32 F.
+All negative variants and results remain saved.

@@ -1,0 +1,28 @@
+{
+  "tag": "development_a4",
+  "split": "development",
+  "ids": [
+    7072,
+    7238,
+    7050,
+    7289,
+    7260,
+    7037,
+    7288,
+    7354,
+    7032,
+    7463,
+    7094,
+    7044
+  ],
+  "rank": 4,
+  "steps": 1,
+  "radius": 0.1,
+  "step_radius": 0.05,
+  "prior_strength": 1.0,
+  "network": "DAO_FULLFIELD_20261024/olympus_repair_4ep_20261026/training/last.pt",
+  "camera": "Original2048pupil/4096FFT; full phase/carrier/aperture/normalization response in retained subspace",
+  "inference_truth": false,
+  "noise_stop_cost": 9,
+  "selection_scope": "6 existing passes,2 center failures,2 edge-only failures,2 invalid; not prevalence representative"
+}

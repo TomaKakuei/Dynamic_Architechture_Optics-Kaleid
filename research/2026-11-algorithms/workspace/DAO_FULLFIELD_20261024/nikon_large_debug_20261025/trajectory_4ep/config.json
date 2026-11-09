@@ -1,0 +1,29 @@
+{
+  "system": "nikon",
+  "trial": "trajectory_4ep",
+  "epochs": 4,
+  "training_count": 28000,
+  "validation_count": 6000,
+  "batch": 128,
+  "seed": 2026102501,
+  "parameters": 14246473,
+  "parameter_dtype": "float32",
+  "source_checkpoint": "DAO_FULLFIELD_20261024/original_routes_40ep_20261025/nikon/candidate.pt",
+  "source_epoch": 0,
+  "only_numerical_change": "Fixed BN statistics + reverse derivative through the actual four accepted GN steps, including optical Hessian-vector products and caps; forward unchanged",
+  "original_loss": true,
+  "original_learning_rates": [
+    1e-05,
+    0.0001
+  ],
+  "original_cosine_horizon": 40,
+  "inference_unchanged": true,
+  "one_acquisition": true,
+  "model_refinements": 4,
+  "measured_closed_loop": false,
+  "metric": "Center ABS + both edges DIFF; all three <0.07 waves",
+  "original_validation_reused_as_epoch0": true,
+  "train_mode_command_max_diff": 6.556510925292969e-07,
+  "backward": "Exact derivative of chosen smooth four-step branch, verified on real training samples",
+  "derivative_check": "trajectory_branch_acceptance.json; initial larger-step check failure preserved separately"
+}

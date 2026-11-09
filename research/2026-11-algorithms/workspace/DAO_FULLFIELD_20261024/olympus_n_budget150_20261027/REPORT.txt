@@ -1,0 +1,16 @@
+Original N budget150 complete and interpreted2026-10-27. No background,EST=0.
+Same fixed150;only N maximum iteration count changed. One packet,no inference truth,no training.
+Original12directions,gains1/.5/.25,all constraints and centerABS/signed edgeDIFF scoring unchanged.
+N2:112/150(74.6667percent),center136,invalid1,centermean.04552025,edgemean.06041049.
+N4:115/150(76.6667percent),center137,invalid1,centermean.04507470,edgemean.05924221.
+N8:114/150(76percent),center137,invalid0,centermean.04475912,edgemean.05851343.
+N16:114/150(76percent),center137,invalid0,centermean.04469844,edgemean.05866090.
+N4 versusN2 gains7252/7283/7428/7239,loses7399;net+3. N8 adds loss7373,no new gains.
+N16 versusN8 no gain/loss. No new invalids/model errors.100earlystopped cases reused.
+Extra loop cost aboveN2: N4 161.836s,N8 345.813s,N16 409.007s(shared prefix,do not sum).
+Necessary original N state reconstruction140.358s/94renders separately;total new run553.062s.
+These are cache-assisted incremental costs,not full cold pipeline latency.
+N4 is best for fullfield recovery in this150. N8 improves invalid count/mean error but loses one pass.
+No reason from this experiment to extend16 further:only2cases reach16;most already stop earlier.
+Original full500 N2 result373/500 remains the full-cohort reference;no new500 or automatic deployment.
+Evidence:result.json,predictions150.npz,cases/,trajectories/,assistant_interpretation.json.

@@ -1,0 +1,1131 @@
+{
+  "status": "completed_and_assistant_checked",
+  "updated": "2026-10-25T00:13:26.078497+00:00",
+  "trials": [
+    {
+      "idea": "bounded_control",
+      "epochs": 4,
+      "optimizer_updates": 752,
+      "selected_epoch": 0,
+      "baseline_passes": 0,
+      "epoch4_passes": 0,
+      "selected_passes": 0,
+      "count": 6000,
+      "protocol": "one_shot",
+      "active_seconds": 116.45140949994675
+    },
+    {
+      "idea": "pseudohuber",
+      "epochs": 4,
+      "optimizer_updates": 752,
+      "selected_epoch": 4,
+      "baseline_passes": 0,
+      "epoch4_passes": 0,
+      "selected_passes": 0,
+      "count": 6000,
+      "protocol": "one_shot",
+      "active_seconds": 117.85533370013582
+    },
+    {
+      "idea": "native_projection",
+      "epochs": 4,
+      "optimizer_updates": 752,
+      "selected_epoch": 3,
+      "baseline_passes": 3,
+      "epoch4_passes": 2,
+      "selected_passes": 5,
+      "count": 6000,
+      "protocol": "one_shot",
+      "active_seconds": 115.75903369986918
+    },
+    {
+      "idea": "nonlinear_projection",
+      "epochs": 4,
+      "optimizer_updates": 752,
+      "selected_epoch": 0,
+      "baseline_passes": 5,
+      "epoch4_passes": 3,
+      "selected_passes": 5,
+      "count": 6000,
+      "protocol": "one_shot",
+      "active_seconds": 165.50375660005375
+    },
+    {
+      "idea": "pose_anchor",
+      "epochs": 4,
+      "optimizer_updates": 752,
+      "selected_epoch": 4,
+      "baseline_passes": 0,
+      "epoch4_passes": 0,
+      "selected_passes": 0,
+      "count": 6000,
+      "protocol": "one_shot",
+      "active_seconds": 114.51184670010116
+    },
+    {
+      "idea": "sensor_consistency",
+      "epochs": 4,
+      "optimizer_updates": 752,
+      "selected_epoch": 0,
+      "baseline_passes": 0,
+      "epoch4_passes": 0,
+      "selected_passes": 0,
+      "count": 6000,
+      "protocol": "one_shot",
+      "active_seconds": 190.65562039986253
+    },
+    {
+      "idea": "balanced_pose",
+      "epochs": 4,
+      "optimizer_updates": 752,
+      "selected_epoch": 0,
+      "baseline_passes": 0,
+      "epoch4_passes": 0,
+      "selected_passes": 0,
+      "count": 6000,
+      "protocol": "one_shot",
+      "active_seconds": 116.09529269987252
+    },
+    {
+      "idea": "pose_only",
+      "epochs": 4,
+      "optimizer_updates": 752,
+      "selected_epoch": 0,
+      "baseline_passes": 0,
+      "epoch4_passes": 0,
+      "selected_passes": 0,
+      "count": 6000,
+      "protocol": "one_shot",
+      "active_seconds": 40.87421900004847
+    },
+    {
+      "idea": "closed_loop_training",
+      "epochs": 4,
+      "optimizer_updates": 752,
+      "selected_epoch": 4,
+      "baseline_passes": 2802,
+      "epoch4_passes": 3291,
+      "selected_passes": 3291,
+      "count": 6000,
+      "protocol": "network plus original diff_calibrated measured feedback",
+      "active_seconds": 907.8105481001548
+    },
+    {
+      "idea": "nonlinear_local_model",
+      "epochs": 4,
+      "optimizer_updates": 752,
+      "selected_epoch": 4,
+      "baseline_passes": 862,
+      "epoch4_passes": 1150,
+      "selected_passes": 1150,
+      "count": 6000,
+      "protocol": "one acquisition: network plus4model-only nonlinear refinements",
+      "active_seconds": 329.6015730999643
+    },
+    {
+      "idea": "exact_local_response",
+      "epochs": 4,
+      "optimizer_updates": 752,
+      "selected_epoch": 0,
+      "baseline_passes": 1726,
+      "epoch4_passes": 1491,
+      "selected_passes": 1726,
+      "count": 6000,
+      "protocol": "one acquisition: network plus4exact-response nonlinear model refinements",
+      "active_seconds": 1435.1425943999493
+    }
+  ],
+  "protocols": {
+    "closed_loop_training": {
+      "new_noise": {
+        "original_direct": {
+          "passes": 0,
+          "count": 6000,
+          "rate": 0.0,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 0,
+            "1": 0,
+            "2": 0
+          },
+          "field_mean": 0.6472596455329274,
+          "acquisitions_mean": 1.0,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "original_measured_loop": {
+          "passes": 2835,
+          "count": 6000,
+          "rate": 0.4725,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 825,
+            "1": 826,
+            "2": 1184
+          },
+          "field_mean": 0.07123970887215425,
+          "acquisitions_mean": 5.881166666666667,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "idea_selected": {
+          "passes": 3274,
+          "count": 6000,
+          "rate": 0.5456666666666666,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 1010,
+            "1": 963,
+            "2": 1301
+          },
+          "field_mean": 0.06026221675357945,
+          "acquisitions_mean": 5.8755,
+          "epoch": 4,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/closed_loop_training/candidate.pt"
+        }
+      }
+    },
+    "nonlinear_local_model": {
+      "original": {
+        "original_direct": {
+          "passes": 0,
+          "count": 6000,
+          "rate": 0.0,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 0,
+            "1": 0,
+            "2": 0
+          },
+          "field_mean": 0.647249878581408,
+          "acquisitions_mean": 1.0,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "original_measured_loop": {
+          "passes": 2802,
+          "count": 6000,
+          "rate": 0.467,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 791,
+            "1": 834,
+            "2": 1177
+          },
+          "field_mean": 0.07121163401244561,
+          "acquisitions_mean": 5.902,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "idea_epoch0": {
+          "passes": 862,
+          "count": 6000,
+          "rate": 0.14366666666666666,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 174,
+            "1": 200,
+            "2": 488
+          },
+          "field_mean": 0.1325723671182078,
+          "acquisitions_mean": 1.0,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "idea_epoch0_measured_loop": {
+          "passes": 2915,
+          "count": 6000,
+          "rate": 0.48583333333333334,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 898,
+            "1": 881,
+            "2": 1136
+          },
+          "field_mean": 0.057806665062695425,
+          "acquisitions_mean": 4.472166666666666,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "idea_selected": {
+          "passes": 1150,
+          "count": 6000,
+          "rate": 0.19166666666666668,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 237,
+            "1": 266,
+            "2": 647
+          },
+          "field_mean": 0.1144050047181013,
+          "acquisitions_mean": 1.0,
+          "epoch": 4,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/candidate.pt"
+        },
+        "idea_selected_measured_loop": {
+          "passes": 3096,
+          "count": 6000,
+          "rate": 0.516,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 948,
+            "1": 950,
+            "2": 1198
+          },
+          "field_mean": 0.05646937984893799,
+          "acquisitions_mean": 4.380166666666667,
+          "epoch": 4,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/candidate.pt"
+        }
+      },
+      "new_noise": {
+        "original_direct": {
+          "passes": 0,
+          "count": 6000,
+          "rate": 0.0,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 0,
+            "1": 0,
+            "2": 0
+          },
+          "field_mean": 0.6472596455329274,
+          "acquisitions_mean": 1.0,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "original_measured_loop": {
+          "passes": 2835,
+          "count": 6000,
+          "rate": 0.4725,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 825,
+            "1": 826,
+            "2": 1184
+          },
+          "field_mean": 0.07123970887215425,
+          "acquisitions_mean": 5.881166666666667,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "idea_epoch0": {
+          "passes": 852,
+          "count": 6000,
+          "rate": 0.142,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 158,
+            "1": 212,
+            "2": 482
+          },
+          "field_mean": 0.13279158015861095,
+          "acquisitions_mean": 1.0,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "idea_epoch0_measured_loop": {
+          "passes": 2947,
+          "count": 6000,
+          "rate": 0.49116666666666664,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 896,
+            "1": 905,
+            "2": 1146
+          },
+          "field_mean": 0.05778195796915568,
+          "acquisitions_mean": 4.464666666666667,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "idea_selected": {
+          "passes": 1150,
+          "count": 6000,
+          "rate": 0.19166666666666668,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 231,
+            "1": 294,
+            "2": 625
+          },
+          "field_mean": 0.11441007727519724,
+          "acquisitions_mean": 1.0,
+          "epoch": 4,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/candidate.pt"
+        },
+        "idea_selected_measured_loop": {
+          "passes": 3162,
+          "count": 6000,
+          "rate": 0.527,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 943,
+            "1": 992,
+            "2": 1227
+          },
+          "field_mean": 0.056270975625160265,
+          "acquisitions_mean": 4.3598333333333334,
+          "epoch": 4,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/candidate.pt"
+        }
+      }
+    },
+    "exact_local_response": {
+      "original": {
+        "original_direct": {
+          "passes": 0,
+          "count": 6000,
+          "rate": 0.0,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 0,
+            "1": 0,
+            "2": 0
+          },
+          "field_mean": 0.647249878581408,
+          "acquisitions_mean": 1.0,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "original_measured_loop": {
+          "passes": 2802,
+          "count": 6000,
+          "rate": 0.467,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 791,
+            "1": 834,
+            "2": 1177
+          },
+          "field_mean": 0.07121163401244561,
+          "acquisitions_mean": 5.902,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "idea_epoch0_measured_loop": {
+          "passes": 3644,
+          "count": 6000,
+          "rate": 0.6073333333333333,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 1157,
+            "1": 1096,
+            "2": 1391
+          },
+          "field_mean": 0.05193324519778935,
+          "acquisitions_mean": 4.119666666666666,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/candidate.pt"
+        },
+        "idea_epoch0": {
+          "passes": 1726,
+          "count": 6000,
+          "rate": 0.2876666666666667,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 469,
+            "1": 426,
+            "2": 831
+          },
+          "field_mean": 0.08038609360750866,
+          "acquisitions_mean": 1.0,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/candidate.pt"
+        },
+        "idea_selected_measured_loop": {
+          "passes": 3644,
+          "count": 6000,
+          "rate": 0.6073333333333333,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 1157,
+            "1": 1096,
+            "2": 1391
+          },
+          "field_mean": 0.05193324519778935,
+          "acquisitions_mean": 4.119666666666666,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/candidate.pt"
+        },
+        "idea_selected": {
+          "passes": 1726,
+          "count": 6000,
+          "rate": 0.2876666666666667,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 469,
+            "1": 426,
+            "2": 831
+          },
+          "field_mean": 0.08038609360750866,
+          "acquisitions_mean": 1.0,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/candidate.pt"
+        },
+        "idea_epoch4_measured_loop": {
+          "passes": 3713,
+          "count": 6000,
+          "rate": 0.6188333333333333,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 1192,
+            "1": 1118,
+            "2": 1403
+          },
+          "field_mean": 0.05213554678499235,
+          "acquisitions_mean": 4.225,
+          "epoch": 4,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/last.pt"
+        },
+        "idea_epoch4": {
+          "passes": 1491,
+          "count": 6000,
+          "rate": 0.2485,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 409,
+            "1": 353,
+            "2": 729
+          },
+          "field_mean": 0.11851587064830577,
+          "acquisitions_mean": 1.0,
+          "epoch": 4,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/last.pt"
+        }
+      },
+      "new_noise": {
+        "original_direct": {
+          "passes": 0,
+          "count": 6000,
+          "rate": 0.0,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 0,
+            "1": 0,
+            "2": 0
+          },
+          "field_mean": 0.6472596455329274,
+          "acquisitions_mean": 1.0,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "original_measured_loop": {
+          "passes": 2835,
+          "count": 6000,
+          "rate": 0.4725,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 825,
+            "1": 826,
+            "2": 1184
+          },
+          "field_mean": 0.07123970887215425,
+          "acquisitions_mean": 5.881166666666667,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt"
+        },
+        "idea_epoch0_measured_loop": {
+          "passes": 3670,
+          "count": 6000,
+          "rate": 0.6116666666666667,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 1200,
+            "1": 1093,
+            "2": 1377
+          },
+          "field_mean": 0.05201768251221511,
+          "acquisitions_mean": 4.064333333333333,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/candidate.pt"
+        },
+        "idea_epoch0": {
+          "passes": 1692,
+          "count": 6000,
+          "rate": 0.282,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 443,
+            "1": 439,
+            "2": 810
+          },
+          "field_mean": 0.08058508246323733,
+          "acquisitions_mean": 1.0,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/candidate.pt"
+        },
+        "idea_selected_measured_loop": {
+          "passes": 3670,
+          "count": 6000,
+          "rate": 0.6116666666666667,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 1200,
+            "1": 1093,
+            "2": 1377
+          },
+          "field_mean": 0.05201768251221511,
+          "acquisitions_mean": 4.064333333333333,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/candidate.pt"
+        },
+        "idea_selected": {
+          "passes": 1692,
+          "count": 6000,
+          "rate": 0.282,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 443,
+            "1": 439,
+            "2": 810
+          },
+          "field_mean": 0.08058508246323733,
+          "acquisitions_mean": 1.0,
+          "epoch": 0,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/candidate.pt"
+        },
+        "idea_epoch4_measured_loop": {
+          "passes": 3756,
+          "count": 6000,
+          "rate": 0.626,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 1220,
+            "1": 1134,
+            "2": 1402
+          },
+          "field_mean": 0.05218286397043952,
+          "acquisitions_mean": 4.174666666666667,
+          "epoch": 4,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/last.pt"
+        },
+        "idea_epoch4": {
+          "passes": 1472,
+          "count": 6000,
+          "rate": 0.24533333333333332,
+          "invalid": 0,
+          "cohort_passes": {
+            "0": 397,
+            "1": 366,
+            "2": 709
+          },
+          "field_mean": 0.11839378028286163,
+          "acquisitions_mean": 1.0,
+          "epoch": 4,
+          "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/last.pt"
+        }
+      }
+    }
+  },
+  "historical11": {
+    "original": {
+      "one_shot": {
+        "count": 11,
+        "fullfield_pass": 0,
+        "center_pass": 11,
+        "field_mean": 0.5543200096854665,
+        "per_field_mean": [
+          0.0448667333096974,
+          0.7684445478042381,
+          0.8496487479424638
+        ],
+        "acquisitions_mean": 1.0,
+        "invalid": 0
+      },
+      "original_center_loop": {
+        "count": 11,
+        "fullfield_pass": 0,
+        "center_pass": 11,
+        "field_mean": 0.4300447032364474,
+        "per_field_mean": [
+          0.03999722269495915,
+          0.6084137067753513,
+          0.6417231802390316
+        ],
+        "acquisitions_mean": 4.909090909090909,
+        "invalid": 0
+      },
+      "diff_loop": {
+        "count": 11,
+        "fullfield_pass": 0,
+        "center_pass": 9,
+        "field_mean": 0.3507377223078835,
+        "per_field_mean": [
+          0.04954093934712655,
+          0.5131392804864184,
+          0.48953294709010553
+        ],
+        "acquisitions_mean": 7.2727272727272725,
+        "invalid": 0
+      },
+      "diff_local": {
+        "count": 11,
+        "fullfield_pass": 5,
+        "center_pass": 11,
+        "field_mean": 0.05319612579935726,
+        "per_field_mean": [
+          0.03124962096427277,
+          0.061158358365509986,
+          0.067180398068289
+        ],
+        "acquisitions_mean": 4.818181818181818,
+        "invalid": 0
+      },
+      "diff_calibrated": {
+        "count": 11,
+        "fullfield_pass": 9,
+        "center_pass": 11,
+        "field_mean": 0.04284960475527733,
+        "per_field_mean": [
+          0.035598557306205585,
+          0.04525692927746378,
+          0.04769332768216264
+        ],
+        "acquisitions_mean": 5.818181818181818,
+        "invalid": 0
+      }
+    },
+    "exact_epoch4": {
+      "epoch": 4,
+      "source": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/last.pt",
+      "results": {
+        "one_shot": {
+          "count": 11,
+          "fullfield_pass": 6,
+          "center_pass": 11,
+          "field_mean": 0.05375226580907506,
+          "acquisitions": 1.0
+        },
+        "diff_calibrated": {
+          "count": 11,
+          "fullfield_pass": 8,
+          "center_pass": 11,
+          "field_mean": 0.04908917803030979,
+          "acquisitions": 3.6363636363636362
+        }
+      },
+      "scope": "Original11 only; center ABS and edge DIFF; noisy observations only in control; no independent-test claim"
+    }
+  },
+  "array_checks": [
+    {
+      "idea": "closed_loop_training",
+      "mode": "new_noise",
+      "route": "original_direct",
+      "passed": true
+    },
+    {
+      "idea": "closed_loop_training",
+      "mode": "new_noise",
+      "route": "original_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "closed_loop_training",
+      "mode": "new_noise",
+      "route": "idea_selected",
+      "passed": true
+    },
+    {
+      "idea": "nonlinear_local_model",
+      "mode": "original",
+      "route": "original_direct",
+      "passed": true
+    },
+    {
+      "idea": "nonlinear_local_model",
+      "mode": "original",
+      "route": "original_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "nonlinear_local_model",
+      "mode": "original",
+      "route": "idea_epoch0",
+      "passed": true
+    },
+    {
+      "idea": "nonlinear_local_model",
+      "mode": "original",
+      "route": "idea_epoch0_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "nonlinear_local_model",
+      "mode": "original",
+      "route": "idea_selected",
+      "passed": true
+    },
+    {
+      "idea": "nonlinear_local_model",
+      "mode": "original",
+      "route": "idea_selected_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "nonlinear_local_model",
+      "mode": "new_noise",
+      "route": "original_direct",
+      "passed": true
+    },
+    {
+      "idea": "nonlinear_local_model",
+      "mode": "new_noise",
+      "route": "original_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "nonlinear_local_model",
+      "mode": "new_noise",
+      "route": "idea_epoch0",
+      "passed": true
+    },
+    {
+      "idea": "nonlinear_local_model",
+      "mode": "new_noise",
+      "route": "idea_epoch0_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "nonlinear_local_model",
+      "mode": "new_noise",
+      "route": "idea_selected",
+      "passed": true
+    },
+    {
+      "idea": "nonlinear_local_model",
+      "mode": "new_noise",
+      "route": "idea_selected_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "original",
+      "route": "original_direct",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "original",
+      "route": "original_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "original",
+      "route": "idea_epoch0_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "original",
+      "route": "idea_epoch0",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "original",
+      "route": "idea_selected_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "original",
+      "route": "idea_selected",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "original",
+      "route": "idea_epoch4_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "original",
+      "route": "idea_epoch4",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "new_noise",
+      "route": "original_direct",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "new_noise",
+      "route": "original_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "new_noise",
+      "route": "idea_epoch0_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "new_noise",
+      "route": "idea_epoch0",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "new_noise",
+      "route": "idea_selected_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "new_noise",
+      "route": "idea_selected",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "new_noise",
+      "route": "idea_epoch4_measured_loop",
+      "passed": true
+    },
+    {
+      "idea": "exact_local_response",
+      "mode": "new_noise",
+      "route": "idea_epoch4",
+      "passed": true
+    }
+  ],
+  "inference_check": {
+    "updated": "2026-10-25T00:11:56.633170+00:00",
+    "cli_command": [
+      "C:\\Users\\Ar114514\\.conda\\envs\\ao311\\python.exe",
+      "-u",
+      "DAO_FULLFIELD_20261024/nikon_short_training/predict_nikon.py",
+      "--input",
+      "DAO_FULLFIELD_20261024/nikon_short_training/inference_smoke_input.npz",
+      "--output",
+      "DAO_FULLFIELD_20261024/nikon_short_training/inference_smoke_output.npz",
+      "--idea",
+      "exact_local_response",
+      "--batch",
+      "128"
+    ],
+    "label_free_input_keys": [
+      "raw",
+      "maps"
+    ],
+    "count": 128,
+    "max_command_difference": 0.0,
+    "comparison": "First128original validation measurements; same128batch and selected checkpoint",
+    "passed": true,
+    "parameters": {
+      "closed_loop_training": {
+        "parameter_count": 7121929,
+        "parameter_tensors": 276,
+        "changed_parameter_tensors": 276,
+        "last_parameter_delta_l2": 2.3793562341016337,
+        "selected_parameter_delta_l2": 2.3793562341016337,
+        "selected_epoch": 4,
+        "dtypes": [
+          "torch.float32"
+        ],
+        "all_trainable": true,
+        "excludes_buffers": true,
+        "source_checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt",
+        "saved_optimizer_step_counts": [
+          752
+        ],
+        "optimizer_parameter_tensors": 276
+      },
+      "nonlinear_local_model": {
+        "parameter_count": 7121929,
+        "parameter_tensors": 276,
+        "changed_parameter_tensors": 276,
+        "last_parameter_delta_l2": 3.148090496284568,
+        "selected_parameter_delta_l2": 3.148090496284568,
+        "selected_epoch": 4,
+        "dtypes": [
+          "torch.float32"
+        ],
+        "all_trainable": true,
+        "excludes_buffers": true,
+        "source_checkpoint": "DAO_FULLFIELD_20261024/nikon_large/candidate.pt",
+        "saved_optimizer_step_counts": [
+          752
+        ],
+        "optimizer_parameter_tensors": 276
+      },
+      "exact_local_response": {
+        "parameter_count": 7121929,
+        "parameter_tensors": 276,
+        "changed_parameter_tensors": 276,
+        "last_parameter_delta_l2": 2.3575548706574403,
+        "selected_parameter_delta_l2": 0.0,
+        "selected_epoch": 0,
+        "dtypes": [
+          "torch.float32"
+        ],
+        "all_trainable": true,
+        "excludes_buffers": true,
+        "source_checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/candidate.pt",
+        "saved_optimizer_step_counts": [
+          752
+        ],
+        "optimizer_parameter_tensors": 276
+      }
+    }
+  },
+  "recommendation": {
+    "idea": "exact_local_response",
+    "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/candidate.pt",
+    "selected_epoch": 0,
+    "network_source": "DAO_FULLFIELD_20261024/nikon_short_training/nonlinear_local_model/candidate.pt",
+    "network_source_epoch": 4,
+    "inference_protocol": "One acquisition: FP32 network plus4model-only exact-response refinements",
+    "training_attribution": "This trial4epoch fine-tuning rejected for one-acquisition inference; epoch4 retained separately for measured-loop comparison. Selected one-acquisition weights come from previous successful4epoch local-model trial",
+    "original": {
+      "passes": 1726,
+      "count": 6000,
+      "rate": 0.2876666666666667,
+      "invalid": 0,
+      "cohort_passes": {
+        "0": 469,
+        "1": 426,
+        "2": 831
+      },
+      "field_mean": 0.08038609360750866,
+      "acquisitions_mean": 1.0,
+      "epoch": 0,
+      "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/candidate.pt"
+    },
+    "new_noise": {
+      "passes": 1692,
+      "count": 6000,
+      "rate": 0.282,
+      "invalid": 0,
+      "cohort_passes": {
+        "0": 443,
+        "1": 439,
+        "2": 810
+      },
+      "field_mean": 0.08058508246323733,
+      "acquisitions_mean": 1.0,
+      "epoch": 0,
+      "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/candidate.pt"
+    },
+    "same_checkpoint_with_original_measured_loop": {
+      "original": {
+        "passes": 3644,
+        "count": 6000,
+        "rate": 0.6073333333333333,
+        "invalid": 0,
+        "cohort_passes": {
+          "0": 1157,
+          "1": 1096,
+          "2": 1391
+        },
+        "field_mean": 0.05193324519778935,
+        "acquisitions_mean": 4.119666666666666,
+        "epoch": 0,
+        "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/candidate.pt"
+      },
+      "new_noise": {
+        "passes": 3670,
+        "count": 6000,
+        "rate": 0.6116666666666667,
+        "invalid": 0,
+        "cohort_passes": {
+          "0": 1200,
+          "1": 1093,
+          "2": 1377
+        },
+        "field_mean": 0.05201768251221511,
+        "acquisitions_mean": 4.064333333333333,
+        "epoch": 0,
+        "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/candidate.pt"
+      }
+    },
+    "separate_epoch4_closed_loop_candidate": {
+      "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/last.pt",
+      "original": {
+        "passes": 3713,
+        "count": 6000,
+        "rate": 0.6188333333333333,
+        "invalid": 0,
+        "cohort_passes": {
+          "0": 1192,
+          "1": 1118,
+          "2": 1403
+        },
+        "field_mean": 0.05213554678499235,
+        "acquisitions_mean": 4.225,
+        "epoch": 4,
+        "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/last.pt"
+      },
+      "new_noise": {
+        "passes": 3756,
+        "count": 6000,
+        "rate": 0.626,
+        "invalid": 0,
+        "cohort_passes": {
+          "0": 1220,
+          "1": 1134,
+          "2": 1402
+        },
+        "field_mean": 0.05218286397043952,
+        "acquisitions_mean": 4.174666666666667,
+        "epoch": 4,
+        "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/last.pt"
+      },
+      "one_acquisition_original": {
+        "passes": 1491,
+        "count": 6000,
+        "rate": 0.2485,
+        "invalid": 0,
+        "cohort_passes": {
+          "0": 409,
+          "1": 353,
+          "2": 729
+        },
+        "field_mean": 0.11851587064830577,
+        "acquisitions_mean": 1.0,
+        "epoch": 4,
+        "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/last.pt"
+      },
+      "one_acquisition_new_noise": {
+        "passes": 1472,
+        "count": 6000,
+        "rate": 0.24533333333333332,
+        "invalid": 0,
+        "cohort_passes": {
+          "0": 397,
+          "1": 366,
+          "2": 709
+        },
+        "field_mean": 0.11839378028286163,
+        "acquisitions_mean": 1.0,
+        "epoch": 4,
+        "checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/last.pt"
+      }
+    },
+    "default_entry": "DAO_FULLFIELD_20261024/nikon_short_training/predict_nikon.py",
+    "original_default_overwritten": false,
+    "metric": "Center ABS and both outer-field DIFF relative to fixed corrected bias; all3<0.07waves",
+    "new_noise_independent_scenes": false,
+    "updated": "2026-10-25T00:13:26.077994+00:00"
+  },
+  "metric": "center ABS; edge DIFF; evaluation fields0,+/-0.1mm,197pupil nodes; all3<0.07waves",
+  "data": "Original24000training/6000validation;3cohorts with2000validation each",
+  "new_noise_scope": "Same6000poses, separate fixed measurement noise; not independent scenes",
+  "training_dtype": "All7121929neural parameters FP32; precise optical response/scoring FP64",
+  "trepan": "Unchanged; prior training remains stopped",
+  "original_default_overwritten": false,
+  "diagnosis": [
+    "Center correction alone did not control outer-field DIFF.",
+    "Fixed nominal inverse severely amplified nonlinear model error; limiting its step did not solve the full-field problem.",
+    "State-dependent nonlinear refinement and training through actual measured feedback both produced substantial recovery.",
+    "Pose weighting and sensor consistency alone failed; exact-response implicit-gradient fine-tuning degraded one-acquisition recovery while improving original-noise measured-loop pass count.",
+    "Remaining failures and incomplete observability are unresolved; no complete-cure or independent-scene claim."
+  ]
+}

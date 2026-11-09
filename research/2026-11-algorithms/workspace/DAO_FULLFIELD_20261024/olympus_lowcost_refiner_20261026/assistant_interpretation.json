@@ -1,0 +1,20 @@
+{
+  "completed_utc": "2026-10-27T02:19:38.086306+00:00",
+  "cases": 32,
+  "center_gained": 0,
+  "center_lost": 0,
+  "edge_mean_reduction_percent": 24.04969160646756,
+  "noise_exit_count": 14,
+  "noise_exit_mean_seconds": 1.2886446285713515,
+  "refined_count": 18,
+  "refined_mean_seconds": 14.85173369999979,
+  "mean_seconds": 8.917882231249848,
+  "median_seconds": 11.843708099999276,
+  "max_seconds": 18.760831400000825,
+  "model_calls": 215,
+  "timing_scope": "Cold per-case model response and scoring; neural predictions and one-time calibration reused",
+  "no_background": true,
+  "independent_replay": false,
+  "full500_score_unchanged": true,
+  "status": "Promising small confirmation result; no deployment and no automatic full500"
+}

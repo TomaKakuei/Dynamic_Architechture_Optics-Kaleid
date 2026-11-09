@@ -1,0 +1,6 @@
+KLA full27000 model + full27000-trained residual head,3epochs.
+Generated results; assistant interpretation pending. Same reused200selection cases.
+Frozen full-data prior: 124/200; mean WRMS 0.09448326; invalid 0.
+Plus residual correction: 134/200; mean WRMS 0.09049390; invalid 0.
+Paired gain/loss: +14/-4.
+One measured packet, extra native model render, no physical feedback; no automatic deployment.

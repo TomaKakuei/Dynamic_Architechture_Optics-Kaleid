@@ -1,0 +1,27 @@
+Olympus constrained local solver: interim report
+One existing noisy nine-field packet; frozen FP32 neural network.
+Inference receives image, neural estimate and previous D estimate only.
+Truth is passed only to score the final command.
+Original center ABS + signed edge DIFF, all9<.07 plus validity unchanged.
+
+I: direct joint constrained local quadratic solve, removing post-solve radial projection.
+All14 I local solves reported success and satisfied the registered local constraints.
+Same12: F7 -> I7 fullfield, center8->8, invalid2->2.
+J: central full-camera difference h=.005, instead of one-sided h=.02.
+Same12: fullfield7,center8,invalid2; actual/model first-step gain ratio near1.
+K: same constrained central8 solve; next-cycle center trust doubles from.01 up to.04
+only if accepted actual/model improvement>=.75 and center bound is active.
+Same12: F fullfield7 -> K7,center8->9,invalid2->2; no lost F passes.
+Edge mean F.097975233 -> K.087536152 (finite values including invalid cases).
+The fixed recovery threshold stays.07; the relaxed quantity is only the model prior
+trust constraint inside inference. Total prior departure<=.2 and per-step<=.05 remain.
+Old H could not trigger: recorded first center usage only57-88percent, below90percent.
+New jointly constrained solves actually reach the boundary, allowing the gate to act.
+
+K frozen before original32 comparison; reused validation, exploratory, not a fresh test.
+Original32 is RUNNING. See paired32_interim_snapshot.json and eventual result.json.
+Case7488 newly passes fullfield with worst.062779; do not extrapolate to32 or500.
+K development took125.443s/96 additional camera calls with reused J responses.
+These are incremental cache-assisted research timings, not cold pipeline latency.
+No neural training, new observation, default deployment, independent replay, or hash checks.
+All earlier failures and candidate weights remain preserved.

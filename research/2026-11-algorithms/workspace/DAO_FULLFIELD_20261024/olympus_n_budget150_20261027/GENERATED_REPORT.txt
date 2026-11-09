@@ -1,0 +1,6 @@
+Original N iteration-budget comparison on fixed150; generated results await assistant interpretation.
+N2: fullfield112/150;center136;invalid1;center_mean0.045520246;edge_mean0.060410489
+N4: fullfield115/150;center137;invalid1;center_mean0.045074696;edge_mean0.059242212
+N8: fullfield114/150;center137;invalid0;center_mean0.044759124;edge_mean0.058513428
+N16: fullfield114/150;center137;invalid0;center_mean0.044698440;edge_mean0.058660902
+Only iteration cap changed. No automatic500 or deployment.

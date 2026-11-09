@@ -1,0 +1,137 @@
+{
+  "completed": 50,
+  "total": 50,
+  "complete": true,
+  "metrics": {
+    "network": {
+      "fullfield": 30,
+      "center": 43,
+      "invalid": 2,
+      "center_mean": 0.03752602052993148,
+      "edge_mean": 0.09250245923774102
+    },
+    "D": {
+      "fullfield": 33,
+      "center": 43,
+      "invalid": 2,
+      "center_mean": 0.03669712480335757,
+      "edge_mean": 0.07320569171192498
+    },
+    "K": {
+      "fullfield": 35,
+      "center": 44,
+      "invalid": 2,
+      "center_mean": 0.03612920761526837,
+      "edge_mean": 0.06053859651182545
+    },
+    "N": {
+      "fullfield": 39,
+      "center": 44,
+      "invalid": 2,
+      "center_mean": 0.036724767523319046,
+      "edge_mean": 0.05312917243758632
+    },
+    "equal_loop": {
+      "fullfield": 39,
+      "center": 44,
+      "invalid": 2,
+      "center_mean": 0.03661772835392134,
+      "edge_mean": 0.05289254113613918
+    },
+    "equal_search": {
+      "fullfield": 39,
+      "center": 44,
+      "invalid": 2,
+      "center_mean": 0.037640592137099686,
+      "edge_mean": 0.053419383064026243
+    },
+    "unequal_search": {
+      "fullfield": 40,
+      "center": 44,
+      "invalid": 2,
+      "center_mean": 0.03898083893226053,
+      "edge_mean": 0.052804521080320334
+    }
+  },
+  "paired_changes": {
+    "N_to_equal_loop": {
+      "gained": [],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    },
+    "N_to_equal_search": {
+      "gained": [],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    },
+    "N_to_unequal_search": {
+      "gained": [
+        7223
+      ],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    },
+    "equal_loop_to_equal_search": {
+      "gained": [],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    },
+    "equal_search_to_unequal_search": {
+      "gained": [
+        7223
+      ],
+      "lost": [],
+      "center_gained": 0,
+      "center_lost": 0,
+      "new_invalid": 0,
+      "fixed_invalid": 0
+    }
+  },
+  "scope": "Same old exploratory50, all continuations start from saved N; not a fresh validation set or a from-scratch pipeline comparison",
+  "truth_in_inference": false,
+  "new_acquisitions": 0,
+  "training_updates": 0,
+  "costs": {
+    "equal_loop": {
+      "actual_camera_calls": 104,
+      "cache_hits": 0,
+      "logical_proposal_trials": 64,
+      "actual_network_calls": 64,
+      "accepted_steps": 15,
+      "seconds": 136.00745869996172,
+      "model_errors": []
+    },
+    "equal_search": {
+      "actual_camera_calls": 1244,
+      "cache_hits": 294,
+      "logical_proposal_trials": 1696,
+      "actual_network_calls": 54,
+      "accepted_steps": 61,
+      "seconds": 1326.0508998999794,
+      "model_errors": []
+    },
+    "unequal_search": {
+      "actual_camera_calls": 1871,
+      "cache_hits": 308,
+      "logical_proposal_trials": 2560,
+      "actual_network_calls": 110,
+      "accepted_steps": 140,
+      "seconds": 1949.4246019999919,
+      "model_errors": []
+    }
+  },
+  "incremental_active_seconds": 3414.295915200026,
+  "timing_scope": "Cache-assisted sequential paired comparison including new scoring; not cold route latency. Reused renderings and network forwards disclosed separately."
+}

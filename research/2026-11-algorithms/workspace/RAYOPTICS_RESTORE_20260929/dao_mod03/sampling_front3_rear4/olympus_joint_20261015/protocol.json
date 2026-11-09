@@ -1,0 +1,53 @@
+﻿{
+  "name": "Olympus Mod. joint seven-body one-shot training",
+  "created": "2026-10-15",
+  "authorization": "Train Olympus with Nikon/Trepan-style joint architecture and physical objective; reuse resources; use new CPU/GPU; no independent re-verification or digest comparisons.",
+  "epochs": 50,
+  "retained_startup_updates": 1,
+  "data": {
+    "joint_training": 7000,
+    "joint_validation": 500,
+    "source": "Previous 7000/500 branch pose splits, paired within split; no optical-quality filtering.",
+    "reused_isolated_training": 14000,
+    "epoch_schedule": "7000 whole-system observations plus 7000 original isolated observations; alternate front/rear rehearsal each epoch.",
+    "observations": "Actual noisy whole-assembly 9x128x128 uint16 packets; old isolated images remain labeled as isolated states.",
+    "validation_status": "Reused component validation poses combined into joint cases; used for checkpoint selection; not a fresh independent test.",
+    "camera": "Original 2048-pupil/4096-FFT renderer, unchanged fixed diffuser/relay/noise; original phase fit, bounded degree24/28/32/36 refinement on same state; no independent probe."
+  },
+  "network": {
+    "initialization": "Both previous Olympus selected candidates and calibration",
+    "architecture": "Two existing CNN/raw-image cross-attention encoders; same joint observation feeds both; new seven-body self-attention and residual action heads.",
+    "outputs": 35,
+    "acquisition_sets": 1,
+    "command": "-clip(normalized prediction,-1,1); no ground-truth selection, endpoint clipping or feedback"
+  },
+  "training": {
+    "objective": "Trepan-style bounded log1p(center_PTTD_WRMS^2/.07^2) physical loss, plus .05 pose auxiliary and10 domain penalty; invalid physical paths receive penalty2.",
+    "physics": "Existing full nonlinear24interface float64 trace,64pupil grid, center training and ninefield normal validation.",
+    "optimizer": "AdamW: reused parameters2e-5,new parameters1e-4,cosine to2e-6,weight_decay1e-4,gradient_clip5",
+    "effective_batch": 25,
+    "validation": "100fixed cases each epoch; all500 every5epochs and epoch0; select on full500 only.",
+    "amp": false,
+    "tf32": "Enabled for neural FP32 convolutions/matmul only; ray tracing remains float64."
+  },
+  "resources": {
+    "cpu": "AMD Ryzen9 7950X16C32T",
+    "gpu": "RTX3080 10GB",
+    "cpu_phase_workers": 8,
+    "io": "Bounded queues and block reading; no all-dataset RAM loading",
+    "timing": "Process effective time excludes standby; stages serial",
+    "automatic_gpu_microbatch_reduction": true
+  },
+  "outputs": [
+    "training/candidate.pt",
+    "training/resume.pt",
+    "training/summary.json",
+    "training/curves.csv",
+    "training/curves.png",
+    "training/curves.pdf"
+  ],
+  "independent_review": false,
+  "digest_comparisons": false,
+  "automatic_deployment": false,
+  "notifications_configured": false
+}

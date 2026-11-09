@@ -1,0 +1,53 @@
+{
+  "system": "nikon",
+  "epochs": 10,
+  "seed": 2026102503,
+  "batch": 128,
+  "microbatch": 64,
+  "training_count": 28000,
+  "validation_count": 6000,
+  "all_4000_added_points_in_training": true,
+  "fields_mm": [
+    0.0,
+    -0.1,
+    0.1,
+    -0.15,
+    0.15
+  ],
+  "field_kinds": [
+    "ABS",
+    "DIFF",
+    "DIFF",
+    "DIFF",
+    "DIFF"
+  ],
+  "nodes_per_field": 197,
+  "input_shape": [
+    5,
+    197
+  ],
+  "measurement_acquisitions": 1,
+  "measured_feedback": false,
+  "model_refinements": 4,
+  "parameters": 15054537,
+  "neural_dtype": "float32",
+  "source_checkpoint": "DAO_FULLFIELD_20261024/nikon_large_debug_20261025/trajectory_4ep/candidate.pt",
+  "source_epoch": 3,
+  "architecture": "Original 15/15/5 grouped CNNs plus 4-layer wide field attention; five-field inputs",
+  "bn_running_statistics": "Frozen; affine and all neural parameters trainable",
+  "input_projection": "Shared 197-node PTTD; same packet function for data, inverse and endpoint loss",
+  "initialization": "Reuse E3 weights; input interfaces expanded, not function-preserving",
+  "loss": "Original bounded .5mean+.5worst on all five fields + .02 pose; invalid100",
+  "initial_learning_rates": [
+    1e-05,
+    0.0001
+  ],
+  "scheduler": "Cosine decay over 10 epochs",
+  "ordinary_validation": "Once after epoch10 only; both original3 and expanded5 scores from same trace",
+  "baseline_validation": false,
+  "per_epoch_validation": false,
+  "independent_review": false,
+  "derivative_checks": false,
+  "measured_closed_loop": false,
+  "gpu": "NVIDIA GeForce RTX 3080"
+}

@@ -1,0 +1,164 @@
+{
+  "updated": "2026-11-01T05:54:51.943392+00:00",
+  "status": "completed_and_interpreted",
+  "method": "Read saved result/history only; no independent replay",
+  "completed_arms": 6,
+  "total_new_updates": 1692,
+  "baseline": {
+    "count": 200,
+    "passes": 111,
+    "rate": 0.555,
+    "invalid": 0,
+    "q_mean": 0.4361803645541811,
+    "wrms_mean": 0.10108458467001785,
+    "worst_field_wrms_mean": 0.12885463488883686
+  },
+  "bounded_control": {
+    "count": 200,
+    "passes": 120,
+    "rate": 0.6,
+    "invalid": 0,
+    "q_mean": 0.43437481628653574,
+    "wrms_mean": 0.10199828969475946,
+    "worst_field_wrms_mean": 0.13096288914952
+  },
+  "rows": {
+    "direct_wrms": {
+      "count": 200,
+      "passes": 117,
+      "rate": 0.585,
+      "invalid": 0,
+      "q_mean": 0.4402343511981642,
+      "wrms_mean": 0.0982679487117972,
+      "worst_field_wrms_mean": 0.12622109214096497,
+      "gained_vs_control": 7,
+      "lost_vs_control": 10
+    },
+    "psf_l2": {
+      "count": 200,
+      "passes": 101,
+      "rate": 0.505,
+      "invalid": 0,
+      "q_mean": 0.4242399326510501,
+      "wrms_mean": 0.10509720667694054,
+      "worst_field_wrms_mean": 0.13237287589317492,
+      "gained_vs_control": 8,
+      "lost_vs_control": 27
+    },
+    "q2000_gap": {
+      "count": 200,
+      "passes": 109,
+      "rate": 0.545,
+      "invalid": 0,
+      "q_mean": 0.4321759302267543,
+      "wrms_mean": 0.1036530581056237,
+      "worst_field_wrms_mean": 0.13265030794947857,
+      "gained_vs_control": 8,
+      "lost_vs_control": 19
+    },
+    "psf_prediction": {
+      "count": 200,
+      "passes": 79,
+      "rate": 0.395,
+      "invalid": 0,
+      "q_mean": 0.38920760743769,
+      "wrms_mean": 0.1204992815925227,
+      "worst_field_wrms_mean": 0.14905092316684604,
+      "gained_vs_control": 5,
+      "lost_vs_control": 46
+    },
+    "psf_q2000": {
+      "count": 200,
+      "passes": 104,
+      "rate": 0.52,
+      "invalid": 0,
+      "q_mean": 0.4274984179679287,
+      "wrms_mean": 0.10363758561240448,
+      "worst_field_wrms_mean": 0.13160216148505793,
+      "gained_vs_control": 7,
+      "lost_vs_control": 23
+    },
+    "psf_prediction_q2000": {
+      "count": 200,
+      "passes": 87,
+      "rate": 0.435,
+      "invalid": 0,
+      "q_mean": 0.4062981914124441,
+      "wrms_mean": 0.11627160374719052,
+      "worst_field_wrms_mean": 0.1446650392160767,
+      "gained_vs_control": 4,
+      "lost_vs_control": 37
+    }
+  },
+  "effective_training_seconds": 4286.436995500037,
+  "effective_evaluation_seconds": 53.771930100003374,
+  "component_pairs": {
+    "psf_l2_to_psf_prediction": {
+      "gained": 16,
+      "lost": 38,
+      "net": -22
+    },
+    "psf_l2_to_psf_q2000": {
+      "gained": 9,
+      "lost": 6,
+      "net": 3
+    },
+    "psf_prediction_to_psf_prediction_q2000": {
+      "gained": 12,
+      "lost": 4,
+      "net": 8
+    },
+    "psf_q2000_to_psf_prediction_q2000": {
+      "gained": 12,
+      "lost": 29,
+      "net": -17
+    }
+  },
+  "direct_wrms_reduction_vs_control_percent": 3.6572583659252533,
+  "gradient_clipping": {
+    "direct_wrms": {
+      "clipped": 282,
+      "updates": 282,
+      "mean_preclip_norm": 641.9530480026353
+    },
+    "psf_l2": {
+      "clipped": 282,
+      "updates": 282,
+      "mean_preclip_norm": 179.422104571728
+    },
+    "q2000_gap": {
+      "clipped": 282,
+      "updates": 282,
+      "mean_preclip_norm": 137.51487044746995
+    },
+    "psf_prediction": {
+      "clipped": 282,
+      "updates": 282,
+      "mean_preclip_norm": 176.10952427370327
+    },
+    "psf_q2000": {
+      "clipped": 282,
+      "updates": 282,
+      "mean_preclip_norm": 308.5455850912324
+    },
+    "psf_prediction_q2000": {
+      "clipped": 282,
+      "updates": 282,
+      "mean_preclip_norm": 304.4043199796203
+    }
+  },
+  "interpretation": [
+    "No new objective exceeds the archived same-budget bounded-WRMS control on these200cases.",
+    "Direct WRMS lowers mean WRMS and raises mean Q, but loses3 net threshold recoveries; continuous quality and threshold success are not interchangeable.",
+    "Adding image consistency reduces PSF recovery101->79 and PSF+Q recovery104->87; Q partially recovers79->87 with image consistency.",
+    "Image-loss composite training loss decreases while training WRMS increases; consistent with a competing objective, not proof of its unique cause.",
+    "The original successful model already optimized transformed WRMS; the evidence does not support a simple omitted-WRMS/PSF/Q explanation.",
+    "One seed, reused validation, fixed unit coefficients and stochastic camera derivatives limit causal/generalization claims. All282updates in every new arm were clipped.",
+    "No candidate adopted. Preserve all checkpoints and the previously evaluated full3000 incumbent."
+  ],
+  "image_loss_definition": "Expected original-camera image at inferred initial pose -command minus existing noisy acquisition; no true pose input to image loss",
+  "inference": "One packet, one network prediction; no loop",
+  "new_acquisitions": 0,
+  "remaining_seconds": 0,
+  "automatic_followup": false
+}

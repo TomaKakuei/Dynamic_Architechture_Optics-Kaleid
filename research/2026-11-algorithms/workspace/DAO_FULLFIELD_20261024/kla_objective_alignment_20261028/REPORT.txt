@@ -1,0 +1,92 @@
+KLA objective alignment diagnosis — 2026-10-28
+
+Completed: source inspection, saved3000 endpoint distribution analysis,48-case
+objective-gradient experiment, and normalization diagnosis. Actual diagnostic
+compute53.6seconds. Separate two-arm four-epoch training pilot is now running;
+its state/results take precedence over this launch-time report.
+
+Olympus disposition
+Original N2 plus refined scalar line search is locked in
+../olympus_version_lock_20261028/LOCK.json with73 source/weight/calibration/evidence
+files. Original N373/500; paired150 original112 vs line113, one marginal gain7428.
+No full500 claim for the line version. Search64 aborted at97: N75,line76,search64
+74, no gained passes versus either reference. Its STOP persists. No Olympus
+continuation, pattern search, gain changes or larger search is scheduled.
+
+What the KLA code actually optimizes
+Source: Adaptive Optics/ADAPTIVE_OPTICS_V15P/kla_joint_sensorless_20261008.
+Network receives one noisy9-field camera packet and predicts40 normalized lens
+coordinates. It does NOT backpropagate MTF. Physical training loss is mean
+ell/(1+ell), ell=log1p((PT WRMS/0.07)^2), plus0.05 inverse-pose SmoothL1 and10
+mechanical penalty. Defocus is retained at a fixed image plane. Original Q2000
+is mean of9 tangential MTF values at2000lp/mm minus0.3 population SD, pass>=0.45.
+It is a single spatial-frequency/direction score, not a full2D PSF match.
+
+Archived checkpoint19:775/3000 after original grid refinement. Checkpoint20:
+grid65 recovery10.43% versus26.00% at19, despite decreasing epoch-average train
+loss. This demonstrates instability but does not alone establish its cause.
+
+Nominal system itself has PT WRMS0.03274–0.03907waves and Q2000=0.62804 atgrid65.
+Thus zero absolute wavefront and reproduction of the nominal PSF are different
+objectives. This is a design distinction, not proof of a code defect or proof
+that nominal subtraction will improve Q2000.
+
+Saved3000 distribution, no network rerun
+grid129 Q passes774; all9 PT WRMS<0.07 occurs86times.688 Q-passing cases exceed
+that WFE threshold in at leastone field. Different criteria are being measured;
+this does not retroactively replace the registered Q threshold.
+Correlation between Q and mean WFE=-0.6045. Relative to unbounded log-WFE loss,
+the bounded loss multiplies per-field derivatives by1/(1+ell)^2: median0.1641,
+10th percentile0.07189. Hard fields are strongly downweighted. This is a
+candidate training issue, not established causal attribution.
+
+48-case objective experiment
+Selection registered before compute:16 evenly spaced indices per cohort from
+saved validation endpoints. No inference input, model weights or dataset was
+changed. Same normalized-coordinate step caps0.0001,0.0003,0.001 for every loss.
+True endpoint gradients are used to study TRAINING losses. They are not
+observable at deployment and these steps are NOT a one-shot recovery method.
+
+At cap0.001 (baseline14/48,meanQ0.346418,PSF error0.274736):
+objective            Q passes  meanQ     PSF Hellinger   Q improved /48
+old bounded WFE        16      0.375206    0.245021          44
+unbounded log WFE      16      0.375219    0.244976          44
+nominal phase          16      0.372774    0.245765          42
+nominal PSF            17      0.379684    0.238522          46
+direct negative Q      17      0.380054    0.245154          47
+nominal complex OTF    17      0.378530    0.241651          46
+All candidate paths valid; no threshold losses at this step size.
+At infinitesimal scale old WFE opposed Q in3/48; nominalPSF in1/48. Old WFE/Q
+gradient cosine median0.9787. Removing bounded saturation barely changes
+normalized per-case directions here; any training benefit would involve
+gradient magnitude or weighting across cases/fields, not a wholesale direction
+repair. PSF has a modest promising local advantage, not evidence of a dramatic
+one-shot network improvement. Nominal phase subtraction alone did not win.
+
+Normalization diagnosis
+Seven BatchNorm layers. Same48 cases:
+epoch19 frozen stats14passes; batch stats13; train-only recalibration15.
+epoch20 frozen stats5passes; batch stats4; train-only recalibration4.
+Recalibration uses576 training images, no labels or optimizer updates. Thus it
+did not explain/rescue epoch20 collapse. Batch-stat inference is diagnostic only,
+not a deployable one-packet inference change. No recalibrated model deployed.
+
+Next bounded experiment already launched
+Executable entrypoint: kla_objective_alignment_20261028/train_compare.py.
+Two sequential arms,4epochs each, same checkpoint19, same3000 training samples
+(1000/cohort), same orders and effectivebatch32.600 selection validation cases
+(200/cohort), excluding the48 diagnosis rows; all remain reused selection data.
+Common stabilization: LR3e-5, original BatchNorm running stats frozen while all
+weights including affine terms train, opticalgrid65. NetworkFP32, physicalray
+calculationsFP64. Old-WFE versus unit-flux nominalPSF Hellinger objective;
+original pose/mechanical auxiliaries and validity kept. This compares objectives
+under the same stabilized conditions, not an isolated test of LR/BN/grid changes.
+Fresh AdamW states for both, no old training continuation or original overwrite.
+Only winner with at least+12/600 passes, no extra invalid and lower PSF error
+continues to original3000 evaluation. No further training or deployment automatic.
+
+Authoritative files
+protocol.json,objective_result.json,normalization_result.json,landscape48.npz
+training_compare/state.json,stdout.log,stderr.log,selection.npz,protocol.json
+training_compare/<arm>/history.json,candidate.pt,resume.pt,complete.json
+training_compare/complete.json appears only after the registered pilot/final gate.

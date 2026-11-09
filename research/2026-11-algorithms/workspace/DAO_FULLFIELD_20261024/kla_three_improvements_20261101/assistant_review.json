@@ -1,0 +1,197 @@
+{
+  "status": "complete_and_interpreted",
+  "updated": "2026-11-01T21:08:44.648566+00:00",
+  "completed_arms": 3,
+  "evidence": "Read existing result/history/prediction arrays; no independent replay",
+  "control": {
+    "count": 200,
+    "passes": 120,
+    "rate": 0.6,
+    "invalid": 0,
+    "q_mean": 0.43437481628653574,
+    "wrms_mean": 0.10199828969475946,
+    "worst_field_wrms_mean": 0.13096288914952
+  },
+  "initial": {
+    "count": 200,
+    "passes": 111,
+    "rate": 0.555,
+    "invalid": 0,
+    "q_mean": 0.4361803645541811,
+    "wrms_mean": 0.10108458467001785,
+    "worst_field_wrms_mean": 0.12885463488883686
+  },
+  "arms": {
+    "spatial_head": {
+      "count": 200,
+      "passes": 115,
+      "rate": 0.575,
+      "invalid": 0,
+      "q_mean": 0.4336427820564128,
+      "wrms_mean": 0.10208426908623972,
+      "worst_field_wrms_mean": 0.13025228758167187,
+      "gained_vs_control": 5,
+      "lost_vs_control": 10,
+      "training_samples": 3000,
+      "updates": 282
+    },
+    "model_residual": {
+      "count": 200,
+      "passes": 119,
+      "rate": 0.595,
+      "invalid": 0,
+      "q_mean": 0.43831672413152317,
+      "wrms_mean": 0.09944897479040155,
+      "worst_field_wrms_mean": 0.1282521447519547,
+      "gained_vs_control": 8,
+      "lost_vs_control": 9,
+      "training_samples": 3000,
+      "updates": 282
+    },
+    "full_data": {
+      "count": 200,
+      "passes": 124,
+      "rate": 0.62,
+      "invalid": 0,
+      "q_mean": 0.45399626769461743,
+      "wrms_mean": 0.09448326330277299,
+      "worst_field_wrms_mean": 0.12263875115135087,
+      "gained_vs_control": 10,
+      "lost_vs_control": 6,
+      "training_samples": 27000,
+      "updates": 2532
+    }
+  },
+  "cohorts": {
+    "initial": {
+      "0": {
+        "count": 67,
+        "passes": 34,
+        "q_mean": 0.4221417962268701,
+        "wrms_mean": 0.10806990402798038
+      },
+      "1": {
+        "count": 67,
+        "passes": 38,
+        "q_mean": 0.4345183683931246,
+        "wrms_mean": 0.10338629463719909
+      },
+      "2": {
+        "count": 66,
+        "passes": 39,
+        "q_mean": 0.4521188163832814,
+        "wrms_mean": 0.09165684277934162
+      }
+    },
+    "bounded_control": {
+      "0": {
+        "count": 67,
+        "passes": 35,
+        "q_mean": 0.4171757733977332,
+        "wrms_mean": 0.11041898753771165
+      },
+      "1": {
+        "count": 67,
+        "passes": 39,
+        "q_mean": 0.4305336915969155,
+        "wrms_mean": 0.1043275178909683
+      },
+      "2": {
+        "count": 66,
+        "passes": 46,
+        "q_mean": 0.4557337742828133,
+        "wrms_mean": 0.0910854859883384
+      }
+    },
+    "spatial_head": {
+      "0": {
+        "count": 67,
+        "passes": 34,
+        "q_mean": 0.4179957171135224,
+        "wrms_mean": 0.10910343593455356
+      },
+      "1": {
+        "count": 67,
+        "passes": 38,
+        "q_mean": 0.4283098965386321,
+        "wrms_mean": 0.10569064214587984
+      },
+      "2": {
+        "count": 66,
+        "passes": 43,
+        "q_mean": 0.4549406105543669,
+        "wrms_mean": 0.09129773614937729
+      }
+    },
+    "model_residual": {
+      "0": {
+        "count": 67,
+        "passes": 35,
+        "q_mean": 0.4198839464461904,
+        "wrms_mean": 0.10821878573452387
+      },
+      "1": {
+        "count": 67,
+        "passes": 40,
+        "q_mean": 0.4409283811263481,
+        "wrms_mean": 0.09973738573092546
+      },
+      "2": {
+        "count": 66,
+        "passes": 44,
+        "q_mean": 0.45437755877188746,
+        "wrms_mean": 0.0902535071196243
+      }
+    },
+    "full_data": {
+      "0": {
+        "count": 67,
+        "passes": 37,
+        "q_mean": 0.4377270945172486,
+        "wrms_mean": 0.10112475226688018
+      },
+      "1": {
+        "count": 67,
+        "passes": 39,
+        "q_mean": 0.4478928019333204,
+        "wrms_mean": 0.09853316135006125
+      },
+      "2": {
+        "count": 66,
+        "passes": 48,
+        "q_mean": 0.4767078860111418,
+        "wrms_mean": 0.08362988557908363
+      }
+    }
+  },
+  "full_data_mean_wrms_reduction_vs_control_percent": 7.367796474309496,
+  "residual_correction": {
+    "mean_abs": 0.001017063856124878,
+    "max_abs": 0.005035191774368286,
+    "cases_any_coordinate_near_cap": 0,
+    "training_render_fallbacks": 0,
+    "validation_render_fallbacks": 0
+  },
+  "cost": {
+    "training_seconds": 4862.643982700254,
+    "evaluation_seconds": 28.70099960000516,
+    "cached_model_render_seconds": 1647.9558230998882,
+    "total_recorded_compute_seconds": 6539.3008054001475,
+    "scope": "Excludes interruption downtime, initialization, cache IO and initial prior inference; cached residual evaluation is not uncached deployment latency"
+  },
+  "conclusion": [
+    "Full27000training is best in this trial:124/200=62%,versus matched-old3000control120/200=60%;10gains6losses,net4.",
+    "Mean Q rises0.434375->0.453996 and mean WRMS falls0.101998->0.094483waves; quality change is broader than the4threshold crossings.",
+    "This supports the full-data continuation recipe as a promising candidate, but does not isolate sample coverage from9xmore optimizer updates.",
+    "Spatial readout115/200 loses5net versus control; no advantage established.",
+    "Model-residual119/200 improves the frozen initial111/200 but remains1below the ordinary fine-tuning control and adds native-camera inference computation.",
+    "All routes have0invalid endpoints; all3200model context renders succeeded without fallback.",
+    "Small gain on reused200selection cases, one seed; not a confirmed full3000 improvement or independent generalization result.",
+    "Keep existing full3000 incumbent and preserve this candidate separately; no automatic deployment or full3000 evaluation."
+  ],
+  "one_observed_packet": true,
+  "loss_changed": false,
+  "remaining_seconds": 0,
+  "queue_and_final_worker_exited": true,
+  "automatic_followup": false
+}

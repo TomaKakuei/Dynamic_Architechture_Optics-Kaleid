@@ -1,0 +1,22 @@
+{
+  "status": "assistant_read_and_interpreted",
+  "independent_review": false,
+  "conclusion": "Small improvement only; seven-body full-motion recovery remains low. No automatic continuation or deployment.",
+  "baseline_passes": 1825,
+  "final_passes": 1846,
+  "change": {
+    "passes": 21,
+    "percentage_points": 0.3500000000000003,
+    "gained": 92,
+    "lost": 71
+  },
+  "seven_body_passes": 175,
+  "seven_body_count": 1333,
+  "initial_prior_training_loss": 0.4704702675683158,
+  "final_prior_training_loss": 0.4688012635707855,
+  "attribution_limit": "Four more epochs were also run; no matched four-epoch control without auxiliary loss, so do not isolate the gain as causal effect of prior supervision.",
+  "training_active_seconds": 2141.1778231000644,
+  "evaluation_active_seconds": 56.69955220000702,
+  "finished_utc": "2026-10-26T07:01:39.370274+00:00",
+  "current_process_observed_exited": true
+}

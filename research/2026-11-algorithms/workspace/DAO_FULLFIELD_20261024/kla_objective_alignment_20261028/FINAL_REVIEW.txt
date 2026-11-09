@@ -1,0 +1,44 @@
+KLA paired objective pilot completed and interpreted,2026-10-28.
+
+Same600 selection cases, baseline147/600 (24.50%):
+Old bounded wavefront loss with common stabilization:337/600 (56.17%),epoch4.
+Nominal-PSF loss with identical stabilization:303/600 (50.50%),epoch3 selected.
+Old-WFE winner also has better PSF Hellinger error0.16268 than PSF-selected
+0.17588 and PSF epoch4 0.17251. No invalid cases in either route.
+Pure PSF replacement did not win this paired pilot; do not promote it.
+
+Full original3000 selection validation, winner only:
+grid129=1685/3000; original near-threshold/disagreement refinement at257 gives
+1684/3000=56.1333%, versus original checkpoint19 775/3000=25.8333%.
+Net+909, gains954, losses45. No invalid corrected cases.
+Cohorts2/3/4: original225/305/245 ->536/597/551 out of1000 each.
+One noisy9-field acquisition and a single neural prediction; inference receives
+no truth, observed feedback, case-specific gains or endpoint optimization.
+This is the reused model-selection validation set, not a new independent test.
+
+Attribution: old loss improved after jointly lowering LR, freezing BN running
+statistics, moving the common training optics grid33->65, restarting AdamW and
+fine-tuning the existing model. These contributions are not individually isolated.
+The prior48-case BN recalibration did not rescue checkpoint20, and the old WFE
+direction usually agrees with Q. Therefore a simple MTF-versus-PSF explanation
+does not account for the result. Do not call this a proven single-code bug fix.
+
+Remaining failures1316:342 lie at Q0.40-0.45,474 at0.30-0.40,500 below0.30.
+Within the existing bounded objective, gradient attenuation relative to log-WFE
+is about0.054 for Q<0.10 versus0.424 for Q>=0.50 (per-field medians in those
+bands). Removing saturation is a supported next hypothesis, not an established
+repair. Common command bias explains only10.7% of command-change energy.
+
+User authorized continuing improvements. Next isolated experiment:
+../kla_unsaturated_loss_20261028/train_compare.py, two sequential4epoch arms,
+same winning checkpoint, same3000train/600selection. Control continues bounded
+WFE; candidate removes only the1+ell denominator. Fixed learning rate, BN,
+network, grids, labels, batch and auxiliary terms remain common. Fresh optimizer
+states for both. Candidate may trade off previously passing cases; report paired
+gains/losses and retain this incumbent. No automatic deployment.
+
+Current incumbent reference:
+training_compare/old_wfe_stable/candidate.pt
+Full scores:training_compare/selected_refined_scores.npz
+Saved-only breakdown:completed_analysis.json
+Measured previous paired run:1258.3seconds total active elapsed,about21minutes.

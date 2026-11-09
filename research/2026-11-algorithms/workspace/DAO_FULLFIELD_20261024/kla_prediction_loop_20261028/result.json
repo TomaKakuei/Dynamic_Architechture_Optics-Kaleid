@@ -1,0 +1,76 @@
+{
+  "completed": 50,
+  "total": 50,
+  "complete": true,
+  "metrics": {
+    "one_shot": {
+      "passes": 27,
+      "rate": 0.54,
+      "invalid": 0,
+      "q_mean": 0.43591131490632096,
+      "wrms_mean": 0.10355796299395945
+    },
+    "loop1": {
+      "passes": 29,
+      "rate": 0.58,
+      "invalid": 0,
+      "q_mean": 0.4531192833344609,
+      "wrms_mean": 0.09479672160078854
+    },
+    "loop2": {
+      "passes": 31,
+      "rate": 0.62,
+      "invalid": 0,
+      "q_mean": 0.4531242292633141,
+      "wrms_mean": 0.0943272217122352
+    }
+  },
+  "paired": {
+    "one_shot_to_loop1": {
+      "gained": [
+        9476,
+        19433,
+        19653,
+        29665
+      ],
+      "lost": [
+        29085,
+        29344
+      ]
+    },
+    "one_shot_to_loop2": {
+      "gained": [
+        9476,
+        19433,
+        19653,
+        29746,
+        29665,
+        29485
+      ],
+      "lost": [
+        29085,
+        29344
+      ]
+    },
+    "loop1_to_loop2": {
+      "gained": [
+        29746,
+        29485
+      ],
+      "lost": []
+    }
+  },
+  "training_updates": 0,
+  "new_acquisitions": 0,
+  "truth_in_inference": false,
+  "max_loop_updates": 2,
+  "seconds": 88.10145300003933,
+  "camera_calls": 304,
+  "cache_hits": 46,
+  "network_calls": 100,
+  "model_fallback_cases": [],
+  "trial_model_errors": 0,
+  "scope": "Fixed50 from the previous600 selection set; single unchanged measured packet; not fresh independent validation",
+  "automatic_full3000": false,
+  "automatic_training": false
+}

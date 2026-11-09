@@ -1,0 +1,13 @@
+{
+  "cases": [
+    7007,
+    7111,
+    7049,
+    7363
+  ],
+  "scope": "Failure-conditioned local mechanism diagnosis; not unbiased evaluation",
+  "controls": "Saved prior and final command; local image derivative; true pose forward rendering used only to diagnose model mismatch",
+  "acquisitions": 0,
+  "training_updates": 0,
+  "full_evaluation_resume": false
+}

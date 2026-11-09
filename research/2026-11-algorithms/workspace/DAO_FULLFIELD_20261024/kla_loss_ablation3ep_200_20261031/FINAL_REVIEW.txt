@@ -1,0 +1,29 @@
+KLA loss ablation COMPLETE and interpreted. Finished2026-10-31 22:37 PDT.
+Six new arms, each3epochs/282updates; reused3000train and fixed200validation.
+Initial selected full3000 incumbent on200:111/200=55.5%.
+Same-budget bounded-WRMS epoch3 control:120/200=60.0%.
+One packet and one neural prediction throughout; original Q2000>=.45 and validity retained.
+Reused model-selection validation, not an independent test. All routes invalid0.
+
+Loss | passes/200 | percent | mean WRMS waves | gains/losses vs bounded control
+direct_wrms | 117/200 | 58.5 | 0.09826795 | +7/-10
+psf_l2 | 101/200 | 50.5 | 0.10509721 | +8/-27
+q2000_gap | 109/200 | 54.5 | 0.10365306 | +8/-19
+psf_prediction | 79/200 | 39.5 | 0.12049928 | +5/-46
+psf_q2000 | 104/200 | 52.0 | 0.10363759 | +7/-23
+psf_prediction_q2000 | 87/200 | 43.5 | 0.11627160 | +4/-37
+
+Interpretation:
+No new objective exceeds the archived same-budget bounded-WRMS control on these200cases.
+Direct WRMS lowers mean WRMS and raises mean Q, but loses3 net threshold recoveries; continuous quality and threshold success are not interchangeable.
+Adding image consistency reduces PSF recovery101->79 and PSF+Q recovery104->87; Q partially recovers79->87 with image consistency.
+Image-loss composite training loss decreases while training WRMS increases; consistent with a competing objective, not proof of its unique cause.
+The original successful model already optimized transformed WRMS; the evidence does not support a simple omitted-WRMS/PSF/Q explanation.
+One seed, reused validation, fixed unit coefficients and stochastic camera derivatives limit causal/generalization claims. All282updates in every new arm were clipped.
+No candidate adopted. Preserve all checkpoints and the previously evaluated full3000 incumbent.
+
+Direct-WRMS mean reduction versus control: 3.657%.
+Effective training 4286.44s; evaluation 53.77s.
+Image arms use original native camera, fixed calibration and stochastic field/coordinate central differences.
+Prior provisional extra pose-MSE was cancelled before affected training; only original weak pose auxiliary remains.
+No background work remains for this suite. EST=0. No automatic full3000, extra training or deployment.

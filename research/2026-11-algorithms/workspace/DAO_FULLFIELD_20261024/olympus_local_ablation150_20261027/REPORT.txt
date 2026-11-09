@@ -1,0 +1,16 @@
+Fixed N2 local-search factorial ablation complete and interpreted. No background,EST=0.
+Same150 cases;all four arms start from sameK endpoint and use at most2 N updates.
+Original N:112/150(74.6667percent);refined line:113/150(75.3333percent);pattern112;combined113.
+All centers136/150,invalid1. No fullfield losses,new invalids,center gate changes or model errors.
+Onlygain7428:worst.07058856->.06992102waves. Second step quadratic alpha.80058077 replaces originalalpha1.
+Line/combined centermean.04552419 versus original.04552025;edgemean.06043472 versus.06041049.
+Thus+1pass is a small threshold effect,not broad mean-quality improvement.
+No direction_poll was selected in either pattern arm;factorial recovery interaction0.
+Current N already solves jointly in the same12D response;tested single-axis polls never beat its chosen candidate.
+This is evidence for these four ranked directions and radius.025,not all possible local-search algorithms.
+Measured model evaluation requests including cached images:line516,pattern468,combined877.
+Combined0newrenders/4.19s reflects reuse of prior arms,NOT a cold standalone efficiency advantage.
+Total experiment1175.70s~19.6min.52active cases,98original inactive cases reused.
+Conclusion for fixed2-loop budget:refined line is best of tested additions;combinedaddsworkwithoutgain.
+Original full500 N373/500 is not overwritten. No automatic500/deployment or new experiment.
+Pattern diagnostics: {"N_pattern": {"attempted": 816, "constraint_rejected": 455, "evaluated": 361, "acceptable": 6, "selected": 0}, "N_line_pattern": {"attempted": 816, "constraint_rejected": 455, "evaluated": 361, "acceptable": 6, "selected": 0}}

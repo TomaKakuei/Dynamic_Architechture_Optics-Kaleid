@@ -1,0 +1,26 @@
+KLA input ablation COMPLETE and interpreted. Finished2026-10-31 23:34 PDT.
+Old bounded-WRMS,pose and mechanical loss unchanged. Four new arms,3epochs/282updates each.
+Same3000training and200reused selection cases; one original packet,one prediction,no loop.
+Original full9field matched-budget control120/200=60.0%; initial checkpoint111/200=55.5%.
+All routes have0invalid endpoints. Queue and final worker have exited; EST=0.
+
+Input | passes/200 | percent | mean WRMS waves | gains/losses vs9field control
+center_only | 0/200 | 0.0 | 1.48350907 | +0/-120
+three_fields | 1/200 | 0.5 | 0.43413555 | +0/-119
+nine_raw_adapter | 116/200 | 58.0 | 0.10146600 | +4/-8
+nine_diff_adapter | 105/200 | 52.5 | 0.10391770 | +5/-20
+
+Interpretation:
+No new input variant beats the original nine-field bounded-loss epoch3 control120/200.
+Raw adapter116/200 adds4 and loses8 against control. Difference adapter105/200 adds5 and loses20.
+At matched added capacity and identical initial prediction, signed-difference features lose11net cases versus raw features (4gains15losses).
+The1/3field masks yield0/1passes but are not clean information-theoretic evidence. They warm-start nine-field weights with frozen BN and large input distribution changes, followed by only three epochs.
+Masked training WRMS is still declining strongly across epochs: center6.787->3.248->2.034,three4.115->1.124->0.526waves. Adaptation and old-loss saturation remain confounded with information removal.
+All200 endpoints are valid for every route; losses here are optical quality failures, not invalid-case exclusions.
+No independent observation was added. This experiment measures channel-removal adaptation and same-packet representation, and does not settle whether the original measurement contains enough physical information.
+One seed,3000training subset and reused200selection cases; do not claim an independent test or full3000 ranking.
+Keep the incumbent. No candidate adoption, no automatic follow-up.
+
+Effective training1593.74s; evaluation28.28s.
+Original981584parameters; both adapters1298296parameters. No extra independent sensing channels.
+Original weights, failed candidates and all source evidence preserved. No full3000, deployment or next training queued.

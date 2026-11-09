@@ -1,0 +1,54 @@
+{
+  "cases": 32,
+  "network": {
+    "full": 20,
+    "center": 30,
+    "invalid": 0,
+    "edge_mean": 0.07710508659384112,
+    "center_mean": 0.02270731205810902
+  },
+  "lowcost": {
+    "full": 23,
+    "center": 30,
+    "invalid": 0,
+    "edge_mean": 0.05856155105512256,
+    "center_mean": 0.02261991505684676
+  },
+  "loop": {
+    "full": 23,
+    "center": 30,
+    "invalid": 0,
+    "edge_mean": 0.05405463862253192,
+    "center_mean": 0.022575661877090154
+  },
+  "previous": {
+    "full": 25,
+    "center": 30,
+    "invalid": 0,
+    "edge_mean": 0.04206214591294973,
+    "center_mean": 0.022661723397744638
+  },
+  "candidate": {
+    "full": 27,
+    "center": 30,
+    "invalid": 0,
+    "edge_mean": 0.03661228534314773,
+    "center_mean": 0.02401081243201582
+  },
+  "gained": [
+    7263,
+    7308
+  ],
+  "lost": [],
+  "center_gained": 0,
+  "center_lost": 0,
+  "new_invalid": 0,
+  "additional_seconds": 135.17508169999928,
+  "additional_camera_calls": 110,
+  "model_errors": [],
+  "new_finite_difference_probes": 80,
+  "timing": "Incremental after saved K with prior responses; not cold total pipeline latency",
+  "training_updates": 0,
+  "new_acquisitions": 0,
+  "truth_in_inference": false
+}

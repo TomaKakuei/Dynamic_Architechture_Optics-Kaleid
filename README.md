@@ -2,6 +2,14 @@
 
 **Train Kaleid for coordinated one-shot optical alignment.**
 
+The subsequent algorithm research is available in
+**[research/2026-11-algorithms](research/2026-11-algorithms)**: full-field training,
+Nikon model refinement, Olympus constrained/secant updates, KLA measurement
+feedback, and the latest frozen-prior residual controller. It includes source,
+configuration, text result records, and verification commands. Candidate status
+and measurement budgets are documented separately; the installed package keeps
+its existing one-shot behavior.
+
 ## What is DAO?
 
 **Dynamic Architecture Optics (DAO)** is an optical architecture in which
@@ -18,8 +26,8 @@ footprint on downstream optics, so corrections must account for the whole assemb
 
 ## What is Kaleid?
 
-**Kaleid is the alignment algorithm for DAO.** This repository implements its
-current one-shot form: **one whole-system observation packet, one network
+**Kaleid is the alignment algorithm for DAO.** The installed package implements
+the one-shot form: **one whole-system observation packet, one network
 evaluation, one coordinated correction.**
 
 A single observation supplies both multiscale CNN features and native measurement
@@ -50,8 +58,8 @@ calibrations are included; no local research directories or live RayOptics
 installation are needed to evaluate these training losses.
 
 ```shell
-git clone https://github.com/TomaKakuei/DAO-Kaleid.git
-cd DAO-Kaleid
+git clone https://github.com/TomaKakuei/Dynamic_Architechture_Optics-Kaleid.git
+cd Dynamic_Architechture_Optics-Kaleid
 python -m pip install .
 
 # Exercise a real forward/backward/update step with tiny synthetic inputs.

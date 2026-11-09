@@ -1,0 +1,9 @@
+KLA three candidates:3epochs each,3000/3000/27000train,same200validation,oldloss fixed.
+Generated metrics; assistant interpretation pending. Original Q2000>=0.45 and validity retained.
+Inference: one archived packet; model-residual uses extra model computation. Selection validation reused, not an independent test.
+
+initial: 111/200; WRMS 0.10108458; invalid 0.
+bounded_epoch3: 120/200; WRMS 0.10199829; invalid 0.
+spatial_head: 115/200; WRMS 0.10208427; invalid 0; vs bounded +5/-10.
+model_residual: 119/200; WRMS 0.09944897; invalid 0; vs bounded +8/-9.
+full_data: 124/200; WRMS 0.09448326; invalid 0; vs bounded +10/-6.

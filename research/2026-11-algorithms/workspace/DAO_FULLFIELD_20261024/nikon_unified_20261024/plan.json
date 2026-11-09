@@ -1,0 +1,29 @@
+{
+  "user_authorization": "Try one unified network at the existing size, then a network with twice as many parameters",
+  "order": ["1x", "2x"],
+  "models": {
+    "1x": {"feedforward_width": 1648, "parameter_count": 7121987, "ratio_to_original": 1.0000081438610242},
+    "2x": {"feedforward_width": 5120, "parameter_count": 14246531, "ratio_to_original": 2.0003753196640965}
+  },
+  "scaling": "Keep one shared CNN, four256D attention blocks and one35D head; enlarge block feedforward width to match total parameter budgets",
+  "initialization": "Both sizes transfer the same existing global branch and start with zero outgoing weights on added FFN units. Old three-group encoders and coordination branch are absent. This is not function-preserving relative to the complete modular model.",
+  "source_checkpoint": "../nikon_short_training/exact_local_response/candidate.pt",
+  "epochs_per_model": 4,
+  "optimizer_updates_per_model": 752,
+  "seed": 202610241,
+  "batch": 128,
+  "microbatch": 128,
+  "learning_rate": 0.0001,
+  "training_count": 24000,
+  "validation_count": 6000,
+  "data": "Original archived split, no new training samples",
+  "observation": "One packet:3native fields,49nodes each; raw and its original interpolated maps; no hidden pose input",
+  "inference": "Four original exact-response model-only steps; no measured feedback",
+  "loss": "Unchanged bounded full-field loss +0.02pose; invalid100; original approximate implicit-GN backward",
+  "metric": "center ABS and both outer-field DIFF; all3<0.07waves; invalids fail",
+  "report": "Own epoch0, each epoch, selected and epoch4; mixed6000 and all7moving subset; original modular baseline",
+  "additional_confirmation": "Same6000poses with prior fixed separate-noise rule; not independent scenes",
+  "network_dtype": "float32",
+  "optics_dtype": "float64",
+  "original_models": "Preserved; no automatic deployment; Trepan unchanged"
+}

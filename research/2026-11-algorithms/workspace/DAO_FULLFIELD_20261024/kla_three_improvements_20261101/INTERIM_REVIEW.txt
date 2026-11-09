@@ -1,0 +1,9 @@
+Partial results, interpreted2026-11-01; suite not complete.
+Spatial readout115/200=57.5%,same3000x3old-loss control120/200=60%.
+Spatial gained5/lost10; invalid0. No improvement, no deployment.
+Model-residual cache3200complete,zero rendering fallbacks; no full metric yet.
+Old processes disappeared after154committed updates; empty stderr,no stop marker.
+Cause unknown. Original evidence and checkpoint archived; no source/numeric changes.
+Resumed queue3752,worker29132; confirmed174/282updates.
+Full27000x3not started; it remains queued after residual evaluation.
+Remaining65-80min effective; downtime excluded. No notification configured.

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "scope": "Synthetic shape/loading/zero-head/fallback contract; no measured cases rescored",
+  "converted_weights_equal": true,
+  "strict_native_model_load": true,
+  "correction_parameters": 522888,
+  "network_dtype": "float32",
+  "zero_head_preserves_prior": true,
+  "fallback_preserves_prior": true,
+  "bounded_correction": true,
+  "train": 27000,
+  "test": 200,
+  "disjoint": true
+}

@@ -1,0 +1,39 @@
+{
+  "authorization": "User correction 2026-10-25: Nikon ONLY. Trepan expansion was an assistant scope error and is cancelled.",
+  "all_additional_samples_in_training": true,
+  "original_validation_unchanged": true,
+  "epochs_per_system": 40,
+  "network_expansion": "Retain the complete original grouped base plus global residual; widen four Transformer feed-forward layers with initially zero new output columns",
+  "nikon": {
+    "source": "../nikon_short_training/exact_local_response/candidate.pt",
+    "source_recovery_rate": 0.2876666666666667,
+    "old_parameters": 7121929,
+    "new_parameters": 14246473,
+    "ffn_width": 4496,
+    "training_count": 28000,
+    "validation_count": 6000,
+    "new_data": "2000 all seven bodies; 1000 front plus middle six; 500 front plus rear; 500 middle plus rear. Original independent uniform physical coordinate ranges and Gaussian 0.015-wave measurement noise.",
+    "scoring": "Original center ABS and both edge DIFF, all three below 0.07 waves",
+    "inference": "One acquisition, original full grouped neural prior plus four model-only exact-response refinements, no measured closed loop and no truth at inference",
+    "new_data_directory": "nikon_data_v2",
+    "new_seed_range": [
+      3100000000,
+      3100003999
+    ]
+  },
+  "neural_parameter_dtype": "float32",
+  "optimizer": "Original AdamW: base lr 1e-5, global residual lr 1e-4, weight decay 1e-4, clip norm 5, cosine over 40 full epochs",
+  "old_failed_experiments_preserved": true,
+  "extra_diagnostic_sweeps": false,
+  "queue": [
+    "generate_nikon",
+    "train_nikon"
+  ],
+  "active_systems": [
+    "nikon"
+  ],
+  "excluded_systems": [
+    "trepan"
+  ],
+  "additional_samples": 4000
+}

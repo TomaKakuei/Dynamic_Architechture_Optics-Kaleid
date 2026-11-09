@@ -1,0 +1,16 @@
+{
+  "reason": "K finished32 at25 fullfield, up from23, no lost/new invalid. Of7 failures,5 exhausted steps above noise level and2 fit below9 yet failed edge recovery.",
+  "candidate": "Two extra secant model-only steps using last K8-direction response and actual synthetic image changes",
+  "routing": "Only whether prior K made an accepted step; no truth, recovery labels or failed-case list in inference",
+  "unchanged": "One observed packet, original endpoint validity and centerABS/edgeDIFF<.07, frozen network",
+  "maximum_extra_camera_calls": 7,
+  "new_finite_difference_probes": 0,
+  "pose_prior_radius": 0.2,
+  "center_trust": "Keep the K terminal value, no further expansion",
+  "development": "Existing12, evaluate once; no prior K rerun",
+  "paired32_gate": "No lost K fullfield/center passes or new invalid; either new recovery or improved mean edge error; no model errors",
+  "paired32": "At most one frozen candidate on previously observed32; exploratory, not fresh confirmation",
+  "full500": false,
+  "automatic_deployment": false,
+  "network_training": false
+}

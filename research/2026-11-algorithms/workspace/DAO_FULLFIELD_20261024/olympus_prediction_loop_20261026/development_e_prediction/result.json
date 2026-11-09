@@ -1,0 +1,37 @@
+{
+  "cases": 12,
+  "network": {
+    "fullfield_pass": 6,
+    "center_pass": 8,
+    "invalid": 2,
+    "center_mean": 0.057606274074642604,
+    "edge_mean": 0.12589339031023053
+  },
+  "previous": {
+    "fullfield_pass": 6,
+    "center_pass": 8,
+    "invalid": 2,
+    "center_mean": 0.057119302128071835,
+    "edge_mean": 0.09949389908456881
+  },
+  "candidate": {
+    "fullfield_pass": 6,
+    "center_pass": 8,
+    "invalid": 2,
+    "center_mean": 0.05718496729157344,
+    "edge_mean": 0.09927949109802718
+  },
+  "gained_over_previous": 0,
+  "lost_previous": 0,
+  "center_gained": 0,
+  "center_lost": 0,
+  "new_invalid": 0,
+  "additional_seconds": 48.98535349999838,
+  "additional_model_calls": 42,
+  "additional_network_calls": 10,
+  "timing_scope": "Incremental loop only; previous D outputs/model caches reused; not complete cold pipeline timing",
+  "observations_per_case": 1,
+  "truth_used_in_inference": false,
+  "training_updates": 0,
+  "automatic_deployment": false
+}

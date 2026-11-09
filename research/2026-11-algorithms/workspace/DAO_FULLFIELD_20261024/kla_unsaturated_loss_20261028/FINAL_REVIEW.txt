@@ -1,0 +1,20 @@
+Completed and interpreted. Neither four-epoch route improved recovery over the
+incumbent on the same600 selection cases.
+
+Incumbent:337/600,meanQ0.43343083,PSF error0.16267761,invalid0.
+Bounded continuation best(epoch3):337/600,30gains/30losses,meanQ0.43355040,
+PSF error0.16009065,invalid0. It changes which cases pass without a net gain.
+Unbounded-log best(epoch3):330/600,34gains/41losses,meanQ0.42916115,
+PSF error0.16400162,invalid0. Removing saturation did not help this pilot.
+Neither meets the preregistered+12/600 gate; no full3000 run was launched.
+No candidate replaces the previously evaluated1684/3000 checkpoint.
+Total active elapsed1146.6seconds. No background training remains.
+
+Interpretation: additional fine-tuning and the attempted loss reweighting have
+plateaued at this budget/data subset. This does not prove all one-shot approaches
+are exhausted. Preserve the56.1333% one-shot model and use it as the initializer.
+
+Latest user authorization: add loop if one-shot does not work. New isolated
+../kla_prediction_loop_20261028/run.py tests50fixed cases and2model-only neural
+prediction loops using the same measured packet. No new training or measured
+feedback is introduced. See its HANDOFF.txt,state.json and protocol.json.

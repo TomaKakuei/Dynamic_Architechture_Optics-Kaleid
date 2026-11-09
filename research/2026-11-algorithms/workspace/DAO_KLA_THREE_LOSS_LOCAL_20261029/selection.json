@@ -1,0 +1,38 @@
+{
+  "cases": [
+    9002,
+    9361,
+    9700,
+    9993,
+    19021,
+    19316,
+    19624,
+    19990,
+    29030,
+    29344,
+    29703,
+    29975
+  ],
+  "selection": "Before new loss calculations: four equally spaced case IDs per cohort from the existing complete150.",
+  "baseline": "Latest frozen old_wfe_stable E4 one-shot correction, recovered from saved first feedback endpoint minus its recorded first action.",
+  "count": 12,
+  "steps": [
+    0.0001,
+    0.0003,
+    0.001
+  ],
+  "camera_fd": 0.0001,
+  "objectives": {
+    "wavefront": "Mean squared absolute PT-removed wavefront at corrected endpoint, defocus retained; no log/bounding or Q term.",
+    "pose": "Mean squared normalized pose-estimation error.",
+    "image": "Mean original-camera expected-ADU squared residual divided by fixed observed shot/read variance."
+  },
+  "selection_of_step": "Report all three fixed caps. Optional own-loss choice includes unchanged baseline; Q never selects a step.",
+  "truth_scope": "Offline loss diagnosis only; not an input-only inference method.",
+  "capture": "Reconstruct the original first noisy packet using original pose, camera/calibration and exact dataset seed; do not add feedback.",
+  "training_updates": 0,
+  "network_inference_calls": 0,
+  "automatic_training": false,
+  "automatic_deployment": false,
+  "scope": "Reused development/validation cases, not independent validation; 12-case pilot, not all600/3000."
+}

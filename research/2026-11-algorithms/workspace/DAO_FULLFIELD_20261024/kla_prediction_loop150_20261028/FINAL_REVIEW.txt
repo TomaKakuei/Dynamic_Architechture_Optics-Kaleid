@@ -1,0 +1,21 @@
+Same-packet computational prediction-loop150 completed and interpreted.
+One-shot82/150=54.6667%;loop1 86/150=57.3333%;loop2 85/150=56.6667%.
+Loop1 gains9/losses5;loop2 gains12/losses9 versus one-shot. All endpoints valid,
+zero camera model errors. Second loop gains3 but loses4 versus first loop.
+MeanQ0.430158->0.443220->0.441238;WRMS0.111876->0.104396->0.101847waves.
+This is a small net recovery increase, not the62% suggested by the earlier50.
+
+Image-fit selection is not equivalent to restoration: median image-merit
+reduction64.1%,yet Q worsened on57/150 cases. Case29344:Q0.50739->0.19080
+despite61.4% image-merit decrease. All298 accepted updates use gain1; the
+learned correction and forward-image inverse need not be interchangeable.
+This supports an observation/objective mismatch diagnosis; it does not prove a
+unique causal explanation. Do not raise search/loop budgets from these results.
+
+Aggregate257.14seconds includes pilot50 costs; extension worker172.35seconds
+computes only100new cases.918fresh renders,126cache hits,298neural calls.
+No new measured packets or training. No deployment/full3000 for this route.
+Preserve the original56.1333% one-shot checkpoint.
+
+Next diagnostic is measured feedback in simulation, explicitly allowing new
+observations and scoring that route separately from one-shot computation.

@@ -1,0 +1,138 @@
+{
+  "status": "complete",
+  "assistant_interpretation": "pending",
+  "protocol_file": "protocol.json",
+  "baseline": {
+    "count": 200,
+    "passes": 124,
+    "rate": 0.62,
+    "invalid": 0,
+    "q_mean": 0.45399626769461743,
+    "wrms_mean": 0.09448326330277299,
+    "worst_field_wrms_mean": 0.12263875115135087
+  },
+  "bounded_control": {
+    "count": 200,
+    "passes": 124,
+    "rate": 0.62,
+    "invalid": 0,
+    "q_mean": 0.45399626769461743,
+    "wrms_mean": 0.09448326330277299,
+    "worst_field_wrms_mean": 0.12263875115135087
+  },
+  "candidate": {
+    "count": 200,
+    "passes": 134,
+    "rate": 0.67,
+    "invalid": 0,
+    "q_mean": 0.4622944148046134,
+    "wrms_mean": 0.09049389715630361,
+    "worst_field_wrms_mean": 0.11888133038908891
+  },
+  "arm": "model_residual",
+  "direct_vs_control": {
+    "gained": 14,
+    "lost": 4,
+    "net": 10,
+    "gained_ids": [
+      9126,
+      9933,
+      9964,
+      9883,
+      19785,
+      19058,
+      19954,
+      29795,
+      29010,
+      29154,
+      29175,
+      29443,
+      29325,
+      29908
+    ],
+    "lost_ids": [
+      9548,
+      29657,
+      29013,
+      29181
+    ],
+    "valid_pairs": 200,
+    "wrms_improved": 132,
+    "q_improved": 127,
+    "wrms_improved_but_q_worse": 15,
+    "mean_wrms_change": -0.0039893661464693786
+  },
+  "direct_vs_initial": {
+    "gained": 14,
+    "lost": 4,
+    "net": 10,
+    "gained_ids": [
+      9126,
+      9933,
+      9964,
+      9883,
+      19785,
+      19058,
+      19954,
+      29795,
+      29010,
+      29154,
+      29175,
+      29443,
+      29325,
+      29908
+    ],
+    "lost_ids": [
+      9548,
+      29657,
+      29013,
+      29181
+    ],
+    "valid_pairs": 200,
+    "wrms_improved": 132,
+    "q_improved": 127,
+    "wrms_improved_but_q_worse": 15,
+    "mean_wrms_change": -0.0039893661464693786
+  },
+  "control_vs_initial": {
+    "gained": 0,
+    "lost": 0,
+    "net": 0,
+    "gained_ids": [],
+    "lost_ids": [],
+    "valid_pairs": 200,
+    "wrms_improved": 0,
+    "q_improved": 0,
+    "wrms_improved_but_q_worse": 0,
+    "mean_wrms_change": 0.0
+  },
+  "training_active_seconds": 3881.7996882998414,
+  "evaluation_active_seconds": 9.750972800000454,
+  "inference": "One observed packet per case; model_residual adds model computation and a correction head, no observed feedback",
+  "automatic_deployment": false,
+  "automatic_full3000": false,
+  "limitations": [
+    "Reused selection validation; not a fresh independent test",
+    "Stronger full-data frozen prior;27000sample residual training",
+    "Model residual adds computation from one observation, not a second physical observation"
+  ],
+  "camera_context_cost": {
+    "complete": true,
+    "count": 27200,
+    "train_count": 27000,
+    "validation_count": 200,
+    "render_seconds": 8442.194941700494,
+    "fallbacks": [],
+    "training_render_seconds": 8399.964673700539,
+    "validation_render_seconds": 42.230267999955686,
+    "training_fallbacks": 0,
+    "validation_fallbacks": 0,
+    "cache_format": "float32 .npy memory maps; per25case durable commits",
+    "frozen_prior": "DAO_FULLFIELD_20261024/kla_full27000_residual_20261101/frozen_base.pt",
+    "scope": "No new acquisition or true-pose input. Original expected camera at frozen predicted initial pose.",
+    "inference_cost": "One frozen-network prediction plus native model rendering plus learned bounded correction"
+  },
+  "cost_scope": "Training/evaluation seconds use precomputed camera context; context generation cost reported separately and required for uncached deployment",
+  "actual_training_samples": 27000,
+  "actual_optimizer_updates": 2532
+}

@@ -1,0 +1,25 @@
+Current finding: nominal center-prior trust is not a guarantee of physical recovery.
+
+Case7009 is a current center-pass regression, first crossing the .07 threshold in K:
+NN .057395; D .061292; K .091122; N .078721 waves. It was not a fullfield pass initially.
+Its measured center-image merit falls monotonically from2.6881 to.9271 through K.
+Therefore an actual center-image merit non-increase gate would accept this trajectory.
+Saved local center/edge update agreement is positive (.783,.949,.654), so a simple
+positive-agreement gate also would not identify this regression.
+
+Saved-record analysis reveals a further limitation at large residual aberrations:
+case7049's center RMS changes by.231581 wave while the nominal linearized phase-change
+proxy is.040000;7034 changes by.072558 with the same.040000 proxy.
+The original scoring criteria remain unchanged. These are post-hoc diagnostic
+quantities, not inputs to the running method and not a new recovery guarantee.
+
+No inference or optical scoring was repeated for these diagnostics. Existing image
+caches, candidate commands, original pose labels and saved scores were used on CPU.
+The full500 evaluator continues with one frozen D/K/N method. Partial results remain
+partial. A configured CPU watcher will refresh the complete diagnostic after it ends.
+No nonlinear guard candidate has yet been tested; no claimed fix from this analysis.
+
+Validity follow-up:7074 newly invalid versus the neural baseline, first inD,
+actual endpoint maxabs1.0127 then1.0815 inN; original limit1 retained.7069 re-loses
+validity inN afterD/K fixed the neural-invalid endpoint. Full evaluation counts
+all such outcomes unchanged. No unavailable/invalid case is dropped.

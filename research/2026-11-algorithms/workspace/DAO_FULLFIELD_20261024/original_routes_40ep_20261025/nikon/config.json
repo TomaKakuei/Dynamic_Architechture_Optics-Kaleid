@@ -1,0 +1,30 @@
+{
+  "system": "nikon",
+  "epochs": 40,
+  "seed": 2026102501,
+  "batch": 128,
+  "microbatch": 128,
+  "parameters": 14246473,
+  "ffn_width": 4496,
+  "source_checkpoint": "DAO_FULLFIELD_20261024/nikon_short_training/exact_local_response/candidate.pt",
+  "source_epoch": 0,
+  "network_dtype": "float32",
+  "all_parameters_trainable": true,
+  "original_group_network_retained": true,
+  "initial_learning_rates": [
+    1e-05,
+    0.0001
+  ],
+  "weight_decay": 0.0001,
+  "gradient_clip": 5.0,
+  "scheduler": "Original cosine, 1.0 to 0.1 multiplier over 40 epochs",
+  "original_loss_unchanged": true,
+  "measurement_acquisitions": 1,
+  "measured_closed_loop": false,
+  "inference": "Original network + 4 exact-response model-only refinements",
+  "metric": "Center ABS + two outer DIFF; all <0.07 waves",
+  "training_count": 28000,
+  "validation_count": 6000,
+  "checkpoint_every_batches": 50,
+  "gpu": "NVIDIA GeForce RTX 3080"
+}

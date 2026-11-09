@@ -1,0 +1,143 @@
+{
+  "status": "completed",
+  "epoch": 4,
+  "training_updates": 0,
+  "validation": {
+    "count": 6000,
+    "invalid": 0,
+    "full_field_passes": 1825,
+    "full_field_rate": 0.30416666666666664,
+    "all_fields_below07_rate": 0.30416666666666664,
+    "all_fields_below08_rate": 0.40116666666666667,
+    "center07_rate": 0.999,
+    "center_and_mean08_rate": 0.6835,
+    "field_mean": 0.07886511829971458,
+    "worst_field_mean": 0.11089355410032,
+    "worst_field_p90": 0.17776266210701122,
+    "per_field_mean": [
+      0.03583751131869316,
+      0.10017893608300477,
+      0.10057890749744526
+    ],
+    "per_field_pass_rate": [
+      0.999,
+      0.398,
+      0.387
+    ],
+    "absolute_per_field_mean": [
+      0.03583751131869316,
+      14.169040635828795,
+      14.170613558070123
+    ],
+    "threshold_waves": 0.07,
+    "cohorts": {
+      "0": {
+        "count": 2000,
+        "invalid": 0,
+        "full_field_passes": 498,
+        "full_field_rate": 0.249,
+        "all_fields_below07_rate": 0.249,
+        "all_fields_below08_rate": 0.345,
+        "center07_rate": 0.9985,
+        "center_and_mean08_rate": 0.635,
+        "field_mean": 0.0833871022430567,
+        "worst_field_mean": 0.11789204008173296,
+        "worst_field_p90": 0.1810088464649811,
+        "per_field_mean": [
+          0.03588718803243483,
+          0.1069163144656572,
+          0.10735780423107807
+        ],
+        "per_field_pass_rate": [
+          0.9985,
+          0.336,
+          0.325
+        ],
+        "absolute_per_field_mean": [
+          0.03588718803243483,
+          14.170356018488043,
+          14.17244188872086
+        ],
+        "threshold_waves": 0.07
+      },
+      "1": {
+        "count": 2000,
+        "invalid": 0,
+        "full_field_passes": 458,
+        "full_field_rate": 0.229,
+        "all_fields_below07_rate": 0.229,
+        "all_fields_below08_rate": 0.329,
+        "center07_rate": 0.999,
+        "center_and_mean08_rate": 0.6415,
+        "field_mean": 0.08322704801094309,
+        "worst_field_mean": 0.11868120084380027,
+        "worst_field_p90": 0.1902507321545351,
+        "per_field_mean": [
+          0.03585560923878504,
+          0.10656054257698024,
+          0.10726499221706401
+        ],
+        "per_field_pass_rate": [
+          0.999,
+          0.338,
+          0.3215
+        ],
+        "absolute_per_field_mean": [
+          0.03585560923878504,
+          14.168223965605085,
+          14.168758076817776
+        ],
+        "threshold_waves": 0.07
+      },
+      "2": {
+        "count": 2000,
+        "invalid": 0,
+        "full_field_passes": 869,
+        "full_field_rate": 0.4345,
+        "all_fields_below07_rate": 0.4345,
+        "all_fields_below08_rate": 0.5295,
+        "center07_rate": 0.9995,
+        "center_and_mean08_rate": 0.774,
+        "field_mean": 0.0699812046451439,
+        "worst_field_mean": 0.09610742137542673,
+        "worst_field_p90": 0.15893672959855884,
+        "per_field_mean": [
+          0.035769736684859624,
+          0.08705995120637747,
+          0.0871139260441945
+        ],
+        "per_field_pass_rate": [
+          0.9995,
+          0.52,
+          0.5145
+        ],
+        "absolute_per_field_mean": [
+          0.035769736684859624,
+          14.168541923393386,
+          14.170640708671835
+        ],
+        "threshold_waves": 0.07
+      }
+    }
+  },
+  "historical_E3": {
+    "passes": 1765,
+    "count": 6000,
+    "rate": 0.2941666666666667,
+    "center_passes": 5994,
+    "field_mean": 0.08107524912203068,
+    "source": "DAO_FULLFIELD_20261024/nikon_large_debug_20261025/trajectory_4ep/validation_003.npz",
+    "new_inference": false
+  },
+  "change": {
+    "passes": 60,
+    "percentage_points": 0.9999999999999953,
+    "gained": 130,
+    "lost": 70
+  },
+  "cached_final100_reused": true,
+  "new_predictions": 5900,
+  "independent_review": false,
+  "active_seconds": 58.97508720000042,
+  "updated": "2026-10-26T04:56:50.032314+00:00"
+}

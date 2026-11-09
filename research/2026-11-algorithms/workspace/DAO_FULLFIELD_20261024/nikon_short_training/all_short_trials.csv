@@ -1,0 +1,12 @@
+﻿idea,epochs,optimizer_updates,selected_epoch,baseline_passes,epoch4_passes,selected_passes,count,protocol,active_seconds
+bounded_control,4,752,0,0,0,0,6000,one_shot,116.45140949994675
+pseudohuber,4,752,4,0,0,0,6000,one_shot,117.85533370013582
+native_projection,4,752,3,3,2,5,6000,one_shot,115.75903369986918
+nonlinear_projection,4,752,0,5,3,5,6000,one_shot,165.50375660005375
+pose_anchor,4,752,4,0,0,0,6000,one_shot,114.51184670010116
+sensor_consistency,4,752,0,0,0,0,6000,one_shot,190.65562039986253
+balanced_pose,4,752,0,0,0,0,6000,one_shot,116.09529269987252
+pose_only,4,752,0,0,0,0,6000,one_shot,40.87421900004847
+closed_loop_training,4,752,4,2802,3291,3291,6000,network plus original diff_calibrated measured feedback,907.8105481001548
+nonlinear_local_model,4,752,4,862,1150,1150,6000,one acquisition: network plus4model-only nonlinear refinements,329.6015730999643
+exact_local_response,4,752,0,1726,1491,1726,6000,one acquisition: network plus4exact-response nonlinear model refinements,1435.1425943999493

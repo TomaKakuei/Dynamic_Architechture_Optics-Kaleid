@@ -1,0 +1,62 @@
+Olympus secant continuation and complementary-direction experiment
+Generated 2026-10-27T08:00:17.529957+00:00
+
+Prior K32 finished25/32 fullfield, versus F23/32 and pure network20/32.
+K gained7488 and7472, zero lost passes, center30/32 and invalid0 unchanged.
+Seven K failures: five still above image-cost9 after3 steps; two below9
+but still fail edge recovery. Model-image fit alone is not the recovery criterion.
+
+M: reuse K last8 directions with rank-one secant model-response updates,
+maximum2 constrained continuation steps, no new finite-difference probes.
+Stop using predicted local gain scale2*rank/128^2, not global image cost9.
+M did not pass the registered development gate: no recovery gain and slightly
+worse edge mean. M paired32 is not run.
+
+N: retain those8 responses, add4 complementary known optical-risk basis directions
+with central complete-camera differences h=.005 at the current K estimate.
+Then at most2 jointly constrained steps, with secant response updates.
+Original K final center-trust bound, prior radius.2 and per-step.05 retained.
+Selection to refine depends only on K accepted-step history, never on labels.
+Actual original noisy-image merit selects accepted steps; truth scores only the
+fixed final command. One existing packet, frozen neural weights, no new acquisition.
+Recovery remains center ABS plus signed edge DIFF, all9<.07 and original validity.
+
+These are previously observed12/32 exploratory cases, not fresh independent tests.
+No combined full500 result; original pure-network317/500 remains unchanged.
+All timings below are incremental after archived K and reused response caches;
+they exclude previous stages, neural inference, initialization and offline scoring.
+Means of fields include finite scored values even for invalid cases; invalids never pass.
+
+development_m_secant2
+  Fullfield K7 -> candidate7 / 12; gained[], lost[]
+  Center 9 -> 9; invalid 2 -> 2; center lost0; new invalid0
+  Edge mean 0.087536152 -> 0.087740608 waves
+  Extra time 21.816s total / 1.818s per case / 3.636s per active case
+  15 additional camera calls, 0 finite-difference probes, model errors[]
+
+development_n_expand4
+  Fullfield K7 -> candidate8 / 12; gained[7463], lost[]
+  Center 9 -> 9; invalid 2 -> 2; center lost0; new invalid0
+  Edge mean 0.087536152 -> 0.074079920 waves
+  Extra time 81.921s total / 6.827s per case / 13.653s per active case
+  60 additional camera calls, 48 finite-difference probes, model errors[]
+
+paired32_n_expand4
+  Fullfield K25 -> candidate27 / 32; gained[7263, 7308], lost[]
+  Center 30 -> 30; invalid 0 -> 0; center lost0; new invalid0
+  Edge mean 0.042062146 -> 0.036612285 waves
+  Extra time 135.175s total / 4.224s per case / 13.518s per active case
+  110 additional camera calls, 80 finite-difference probes, model errors[]
+
+N development rescued7463: worst-field.0759789 ->.0360990, while old8-direction
+continuation alone could not move it. This supports an insufficient search subspace
+on this case, not a universal observability conclusion.
+No original weights/defaults overwritten; negative candidates preserved.
+Read state.json/HANDOFF.txt for current running/completed status.
+
+Final assistant interpretation 2026-10-27T08:03:40.394036+00:00:
+N32 passed27/32 versus K25, with gains7263/7308 and no lost passes/new invalid.
+Center pass30 unchanged; center mean worsened by0.001349089wave, a tradeoff to retain.
+Edge mean improved12.957percent. Remaining failures[7013, 7223, 7353, 7424, 7439].
+N retained as current research comparison candidate, not deployed. Full500 remains unevaluated.
+All tasks completed, no automatic follow-up.

@@ -1,0 +1,29 @@
+{
+  "ids": [
+    7072,
+    7238,
+    7050,
+    7289,
+    7260,
+    7037,
+    7288,
+    7354,
+    7032,
+    7463,
+    7094,
+    7044
+  ],
+  "source": "development_k_adaptive8",
+  "scope": "Previously observed exploratory paired comparison",
+  "steps": 2,
+  "fixed_original_K_subspace": false,
+  "extra_directions": 4,
+  "update": "Rank-one secant using synthetic model-image change; optional current central responses outside original8",
+  "max_new_finite_difference_probes_per_active_case": 8,
+  "noise_stop": "Predicted gain>2*rank/128^2 instead of global image cost gate",
+  "eligibility": "Prior K actually accepted a step; no label-based routing",
+  "center_limit": "Frozen at K terminal value",
+  "radius": 0.2,
+  "step_max": 0.05,
+  "truth_in_inference": false
+}

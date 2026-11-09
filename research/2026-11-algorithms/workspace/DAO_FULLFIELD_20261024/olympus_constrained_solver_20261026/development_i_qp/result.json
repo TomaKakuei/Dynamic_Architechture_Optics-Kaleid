@@ -1,0 +1,42 @@
+{
+  "cases": 12,
+  "network": {
+    "full": 6,
+    "center": 8,
+    "invalid": 2,
+    "edge_mean": 0.12589339031023053,
+    "center_mean": 0.057606274074642604
+  },
+  "lowcost": {
+    "full": 6,
+    "center": 8,
+    "invalid": 2,
+    "edge_mean": 0.09949389908456881,
+    "center_mean": 0.057119302128071835
+  },
+  "loop": {
+    "full": 7,
+    "center": 8,
+    "invalid": 2,
+    "edge_mean": 0.09797523297176007,
+    "center_mean": 0.05697213647218801
+  },
+  "candidate": {
+    "full": 7,
+    "center": 8,
+    "invalid": 2,
+    "edge_mean": 0.09264906104867891,
+    "center_mean": 0.05703125109226439
+  },
+  "gained_over_loop": [],
+  "lost_loop": [],
+  "center_gained": 0,
+  "center_lost": 0,
+  "new_invalid": 0,
+  "additional_seconds": 123.59689249999792,
+  "additional_camera_calls": 83,
+  "timing": "Incremental cache-assisted research time; not cold total pipeline latency",
+  "training_updates": 0,
+  "new_acquisitions": 0,
+  "truth_in_inference": false
+}

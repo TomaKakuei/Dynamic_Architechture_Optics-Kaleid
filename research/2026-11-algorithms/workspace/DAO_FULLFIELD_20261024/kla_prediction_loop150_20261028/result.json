@@ -1,0 +1,104 @@
+{
+  "completed": 150,
+  "total": 150,
+  "complete": true,
+  "metrics": {
+    "one_shot": {
+      "passes": 82,
+      "rate": 0.5466666666666666,
+      "invalid": 0,
+      "q_mean": 0.43015836602036644,
+      "wrms_mean": 0.1118756545301918
+    },
+    "loop1": {
+      "passes": 86,
+      "rate": 0.5733333333333334,
+      "invalid": 0,
+      "q_mean": 0.4432197017147191,
+      "wrms_mean": 0.10439597659022343
+    },
+    "loop2": {
+      "passes": 85,
+      "rate": 0.5666666666666667,
+      "invalid": 0,
+      "q_mean": 0.44123767254300106,
+      "wrms_mean": 0.1018467607707744
+    }
+  },
+  "paired": {
+    "one_shot_to_loop1": {
+      "gained": [
+        9476,
+        19433,
+        19653,
+        29665,
+        9238,
+        9957,
+        19362,
+        19776,
+        29771
+      ],
+      "lost": [
+        29085,
+        29344,
+        9282,
+        19264,
+        29855
+      ]
+    },
+    "one_shot_to_loop2": {
+      "gained": [
+        9476,
+        19433,
+        19653,
+        29746,
+        29665,
+        29485,
+        9238,
+        9957,
+        19362,
+        19776,
+        29923,
+        29771
+      ],
+      "lost": [
+        29085,
+        29344,
+        9282,
+        9786,
+        19264,
+        19744,
+        29425,
+        29855,
+        29470
+      ]
+    },
+    "loop1_to_loop2": {
+      "gained": [
+        29746,
+        29485,
+        29923
+      ],
+      "lost": [
+        9786,
+        19744,
+        29425,
+        29470
+      ]
+    }
+  },
+  "training_updates": 0,
+  "new_acquisitions": 0,
+  "truth_in_inference": false,
+  "max_loop_updates": 2,
+  "seconds": 257.1419139998616,
+  "camera_calls": 918,
+  "cache_hits": 126,
+  "network_calls": 298,
+  "model_fallback_cases": [],
+  "trial_model_errors": 0,
+  "scope": "Fixed150 from previous600 selection set; original50 records reused plus100 additional cases; unchanged method; not fresh independent validation",
+  "cost_scope": "Aggregate inference costs include original50; fresh worker elapsed excludes their computation",
+  "automatic_full3000": false,
+  "automatic_training": false
+}

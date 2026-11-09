@@ -1,0 +1,177 @@
+{
+  "trepan": {
+    "rows": 11,
+    "registered_passes": 10,
+    "optical_only_registered_passes": 11,
+    "optical_all_positions": 11,
+    "valid_all_positions": 10,
+    "invalid": [
+      7100105
+    ],
+    "mean_fields": [
+      0.04504266515263425,
+      0.051981497477733014,
+      0.051828275743949395,
+      0.052779047965924426,
+      0.053825562075012,
+      0.055849063888773504,
+      0.05687532838901488,
+      0.05594496988277899,
+      0.053609978646155805
+    ],
+    "finite_fields": true,
+    "exact_paper_seed_set": true
+  },
+  "nikon": {
+    "rows": 11,
+    "registered_passes": 11,
+    "optical_only_registered_passes": 11,
+    "optical_all_positions": 11,
+    "valid_all_positions": 11,
+    "invalid": [],
+    "mean_fields": [
+      0.03560889848629604,
+      0.008041060528601485,
+      0.006923736547935419
+    ],
+    "finite_fields": true,
+    "exact_paper_seed_set": true
+  },
+  "kla": {
+    "rows": 11,
+    "registered_passes": 4,
+    "optical_only_registered_passes": 4,
+    "optical_all_positions": 3,
+    "valid_all_positions": 3,
+    "invalid": [],
+    "mean_fields": [
+      0.3169255709776171,
+      0.3323805255728735,
+      0.3425536012260406,
+      0.34781690465821674,
+      0.3521898769197289,
+      0.35266373435272763,
+      0.3451056224937897,
+      0.3316634835147529,
+      0.315030942075866
+    ],
+    "finite_fields": true,
+    "exact_paper_seed_set": true,
+    "Q2000": [
+      0.05087430618526355,
+      0.27020990232341147,
+      0.2584906461991979,
+      0.01737320062169351,
+      0.025243152676726954,
+      0.4332876337747272,
+      0.473311660673326,
+      0.537649813968608,
+      0.43052163129996424,
+      0.5764425423227458,
+      0.5163168956294084
+    ],
+    "minimum_MTF": [
+      0.010339053336544734,
+      0.18569410756021235,
+      0.22303862145586506,
+      0.0031378426467066315,
+      0.0034922352851801115,
+      0.4148514929596696,
+      0.4638146035256923,
+      0.517639263501114,
+      0.3267538171846141,
+      0.48930182202283806,
+      0.39775105350693846
+    ]
+  },
+  "trepan_geometry": [
+    {
+      "seed": 7100066,
+      "initial_geometry": true,
+      "endpoint_geometry": true,
+      "full_path": true,
+      "minimum_initial_bound_mm": 0.13437457679196996,
+      "minimum_endpoint_bound_mm": 0.06862656244265963
+    },
+    {
+      "seed": 7100105,
+      "initial_geometry": false,
+      "endpoint_geometry": true,
+      "full_path": false,
+      "minimum_initial_bound_mm": -0.008833542645540149,
+      "minimum_endpoint_bound_mm": 0.04821740435340871
+    },
+    {
+      "seed": 7100138,
+      "initial_geometry": true,
+      "endpoint_geometry": true,
+      "full_path": true,
+      "minimum_initial_bound_mm": 0.13998766608642654,
+      "minimum_endpoint_bound_mm": 0.03393278371117958
+    },
+    {
+      "seed": 7100167,
+      "initial_geometry": true,
+      "endpoint_geometry": true,
+      "full_path": true,
+      "minimum_initial_bound_mm": 0.20907692566205327,
+      "minimum_endpoint_bound_mm": 0.1673377604261148
+    },
+    {
+      "seed": 7100197,
+      "initial_geometry": true,
+      "endpoint_geometry": true,
+      "full_path": true,
+      "minimum_initial_bound_mm": 0.2047997374312871,
+      "minimum_endpoint_bound_mm": 0.233863681224193
+    },
+    {
+      "seed": 7100201,
+      "initial_geometry": true,
+      "endpoint_geometry": true,
+      "full_path": true,
+      "minimum_initial_bound_mm": 0.15573505121262343,
+      "minimum_endpoint_bound_mm": 0.26290666606064406
+    },
+    {
+      "seed": 7100209,
+      "initial_geometry": true,
+      "endpoint_geometry": true,
+      "full_path": true,
+      "minimum_initial_bound_mm": 0.22110621541570197,
+      "minimum_endpoint_bound_mm": 0.06907925945165516
+    },
+    {
+      "seed": 7100267,
+      "initial_geometry": true,
+      "endpoint_geometry": true,
+      "full_path": true,
+      "minimum_initial_bound_mm": 0.0023305989001656258,
+      "minimum_endpoint_bound_mm": 0.15676850734160297
+    },
+    {
+      "seed": 7100268,
+      "initial_geometry": true,
+      "endpoint_geometry": true,
+      "full_path": true,
+      "minimum_initial_bound_mm": 0.0938527212213387,
+      "minimum_endpoint_bound_mm": 0.10966537474996585
+    },
+    {
+      "seed": 7100269,
+      "initial_geometry": true,
+      "endpoint_geometry": true,
+      "full_path": true,
+      "minimum_initial_bound_mm": 0.1464048898315582,
+      "minimum_endpoint_bound_mm": 0.18009767706395508
+    },
+    {
+      "seed": 7100276,
+      "initial_geometry": true,
+      "endpoint_geometry": true,
+      "full_path": true,
+      "minimum_initial_bound_mm": 0.20366980192052608,
+      "minimum_endpoint_bound_mm": 0.21132099305441443
+    }
+  ]
+}

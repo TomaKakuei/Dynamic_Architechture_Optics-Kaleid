@@ -1,0 +1,76 @@
+{
+  "status": "completed",
+  "systems": {
+    "trepan": {
+      "passes": 10,
+      "total": 11,
+      "passed_seeds": [
+        7100066,
+        7100138,
+        7100167,
+        7100197,
+        7100201,
+        7100209,
+        7100267,
+        7100268,
+        7100269,
+        7100276
+      ],
+      "failed_seeds": [
+        7100105
+      ],
+      "invalid_seeds": [
+        7100105
+      ],
+      "center_passes": 10,
+      "effective_case_seconds": 15.556902099982835,
+      "mean_passes": 10,
+      "optical_only_all_fields_below07": 11
+    },
+    "nikon": {
+      "passes": 11,
+      "total": 11,
+      "passed_seeds": [
+        4,
+        7,
+        13,
+        14,
+        21,
+        25,
+        27,
+        31,
+        32,
+        41,
+        42
+      ],
+      "failed_seeds": [],
+      "invalid_seeds": [],
+      "center_passes": 11,
+      "effective_case_seconds": 227.69065950001823
+    },
+    "kla": {
+      "passes": 4,
+      "total": 11,
+      "passed_seeds": [
+        221,
+        256,
+        389,
+        480
+      ],
+      "failed_seeds": [
+        121,
+        128,
+        135,
+        142,
+        156,
+        200,
+        270
+      ],
+      "invalid_seeds": [],
+      "center_passes": 5,
+      "effective_case_seconds": 45.42559979998623,
+      "all_fields_ge045": 3
+    }
+  },
+  "protocol": "DAO_EXACT11_ONESHOT_20261030/protocol.json"
+}
